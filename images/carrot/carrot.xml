@@ -1,0 +1,26 @@
+<annotation>
+	<folder>carrot</folder>
+	<filename>Carrots_001.jpg</filename>
+	<path>/Users/liupeng/Desktop/research/Object_detection/images/carrot/Carrots_001.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>348</width>
+		<height>348</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>cabbage</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>254</xmin>
+			<ymin>56</ymin>
+			<xmax>317</xmax>
+			<ymax>190</ymax>
+		</bndbox>
+	</object>
+</annotation>
