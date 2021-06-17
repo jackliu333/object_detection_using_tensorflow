@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Apple</folder>
+	<filename>Apple_021.jpg</filename>
+	<path>/Users/liupeng/Desktop/research/Object_detection/images/Apple/Apple_021.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>348</width>
+		<height>348</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Apple</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>91</xmin>
+			<ymin>85</ymin>
+			<xmax>240</xmax>
+			<ymax>248</ymax>
+		</bndbox>
+	</object>
+</annotation>
