@@ -1,7 +1,7 @@
 <annotation>
-	<folder>banana</folder>
+	<folder>Banana</folder>
 	<filename>Banana_031.jpg</filename>
-	<path>/Users/liupeng/Desktop/research/Object_detection/images/banana/Banana_031.jpg</path>
+	<path>/Users/liupeng/Desktop/research/Object_detection/images/Banana/Banana_031.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -12,7 +12,7 @@
 	</size>
 	<segmented>0</segmented>
 	<object>
-		<name>banana</name>
+		<name>Banana</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>
@@ -24,7 +24,7 @@
 		</bndbox>
 	</object>
 	<object>
-		<name>banana</name>
+		<name>Banana</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>

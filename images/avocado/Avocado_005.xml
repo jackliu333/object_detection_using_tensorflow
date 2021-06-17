@@ -1,7 +1,7 @@
 <annotation>
-	<folder>avocado</folder>
+	<folder>Avocado</folder>
 	<filename>Avocado_005.jpg</filename>
-	<path>/Users/liupeng/Desktop/research/Object_detection/images/avocado/Avocado_005.jpg</path>
+	<path>/Users/liupeng/Desktop/research/Object_detection/images/Avocado/Avocado_005.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -12,7 +12,7 @@
 	</size>
 	<segmented>0</segmented>
 	<object>
-		<name>avocade</name>
+		<name>Avocado</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>

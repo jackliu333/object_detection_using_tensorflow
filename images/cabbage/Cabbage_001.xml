@@ -1,7 +1,7 @@
 <annotation>
-	<folder>cabbage</folder>
+	<folder>Cabbage</folder>
 	<filename>Cabbage_001.jpg</filename>
-	<path>/Users/liupeng/Desktop/research/Object_detection/images/cabbage/Cabbage_001.jpg</path>
+	<path>/Users/liupeng/Desktop/research/Object_detection/images/Cabbage/Cabbage_001.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -12,7 +12,7 @@
 	</size>
 	<segmented>0</segmented>
 	<object>
-		<name>cabbage</name>
+		<name>Cabbage</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>
@@ -24,7 +24,7 @@
 		</bndbox>
 	</object>
 	<object>
-		<name>cabbage</name>
+		<name>Cabbage</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>
