@@ -1,7 +1,7 @@
 <annotation>
 	<folder>Carrot</folder>
-	<filename>Carrots_012.jpg</filename>
-	<path>/Users/liupeng/Desktop/research/Object_detection/images/Carrot/Carrots_012.jpg</path>
+	<filename>Carrot_015.jpg</filename>
+	<path>/Users/liupeng/Desktop/research/Object_detection/images/Carrot/Carrot_015.jpg</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -17,10 +17,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>7</xmin>
-			<ymin>38</ymin>
-			<xmax>237</xmax>
-			<ymax>263</ymax>
+			<xmin>103</xmin>
+			<ymin>20</ymin>
+			<xmax>327</xmax>
+			<ymax>277</ymax>
 		</bndbox>
 	</object>
 </annotation>
