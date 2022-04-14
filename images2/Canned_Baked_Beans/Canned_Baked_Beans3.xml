@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Canned_Baked_Beans</folder>
+	<filename>Canned_Baked_Beans3.png</filename>
+	<path>/Users/liupeng/Desktop/research/Object_detection/FoodBankImages/Canned_Baked_Beans/Canned_Baked_Beans3.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>450</width>
+		<height>616</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Canned_Baked_Beans</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>110</xmin>
+			<ymin>89</ymin>
+			<xmax>344</xmax>
+			<ymax>473</ymax>
+		</bndbox>
+	</object>
+</annotation>
