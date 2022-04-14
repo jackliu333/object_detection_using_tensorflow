@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Biscuits</folder>
+	<filename>Biscuits21.jpg</filename>
+	<path>/Users/liupeng/Desktop/research/Object_detection/FoodBankImages/Biscuits/Biscuits21.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1200</width>
+		<height>1600</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Biscuits</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>395</xmin>
+			<ymin>409</ymin>
+			<xmax>838</xmax>
+			<ymax>1229</ymax>
+		</bndbox>
+	</object>
+</annotation>
