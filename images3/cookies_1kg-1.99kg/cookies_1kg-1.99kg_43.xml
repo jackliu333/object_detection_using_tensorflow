@@ -1,0 +1,26 @@
+<annotation>
+	<folder>cookies_1kg-1.99kg</folder>
+	<filename>cookies_1kg-1.99kg_43.JPG</filename>
+	<path>D:\Documents\PhD\food bank project\cookies\cookies_1kg-1.99kg_43.JPG</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3024</width>
+		<height>4032</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>cookies_1kg-1.99kg</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>65</xmin>
+			<ymin>544</ymin>
+			<xmax>2915</xmax>
+			<ymax>3473</ymax>
+		</bndbox>
+	</object>
+</annotation>
