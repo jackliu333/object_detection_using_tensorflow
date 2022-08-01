@@ -1,0 +1,26 @@
+<annotation>
+	<folder>crackers</folder>
+	<filename>crackers50.JPG</filename>
+	<path>D:\Documents\PhD\food bank project\crackers\crackers50.JPG</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3024</width>
+		<height>4032</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>crackers</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>115</xmin>
+			<ymin>1152</ymin>
+			<xmax>2908</xmax>
+			<ymax>2144</ymax>
+		</bndbox>
+	</object>
+</annotation>

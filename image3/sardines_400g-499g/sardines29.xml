@@ -1,0 +1,26 @@
+<annotation>
+	<folder>sardines</folder>
+	<filename>sardines29.JPG</filename>
+	<path>D:\Documents\PhD\food bank project\sardines\sardines29.JPG</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3024</width>
+		<height>4032</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>sardines</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>515</xmin>
+			<ymin>509</ymin>
+			<xmax>2194</xmax>
+			<ymax>3159</ymax>
+		</bndbox>
+	</object>
+</annotation>
