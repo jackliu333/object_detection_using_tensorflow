@@ -1,7 +1,7 @@
 <annotation>
-	<folder>cookies</folder>
-	<filename>cookies29.JPG</filename>
-	<path>D:\Documents\PhD\food bank project\cookies\cookies29.JPG</path>
+	<folder>cookies_200g-299g</folder>
+	<filename>cookies_200g-299g_29.JPG</filename>
+	<path>/Users/liupeng/Downloads/images3/cookies_200g-299g/cookies_200g-299g_29.JPG</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -12,15 +12,15 @@
 	</size>
 	<segmented>0</segmented>
 	<object>
-		<name>cookies</name>
+		<name>cookies_200g-299g</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>58</xmin>
-			<ymin>880</ymin>
-			<xmax>3015</xmax>
-			<ymax>2694</ymax>
+			<xmin>146</xmin>
+			<ymin>991</ymin>
+			<xmax>2827</xmax>
+			<ymax>2622</ymax>
 		</bndbox>
 	</object>
 </annotation>

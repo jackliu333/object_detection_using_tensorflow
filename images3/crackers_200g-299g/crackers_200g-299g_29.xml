@@ -1,7 +1,7 @@
 <annotation>
-	<folder>crackers</folder>
-	<filename>crackers29.JPG</filename>
-	<path>D:\Documents\PhD\food bank project\crackers\crackers29.JPG</path>
+	<folder>crackers_200g-299g</folder>
+	<filename>crackers_200g-299g_29.JPG</filename>
+	<path>/Users/liupeng/Downloads/images3/crackers_200g-299g/crackers_200g-299g_29.JPG</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -12,15 +12,15 @@
 	</size>
 	<segmented>0</segmented>
 	<object>
-		<name>crackers</name>
+		<name>crackers_200g-299g</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>286</xmin>
-			<ymin>394</ymin>
-			<xmax>2708</xmax>
-			<ymax>3130</ymax>
+			<xmin>434</xmin>
+			<ymin>447</ymin>
+			<xmax>2671</xmax>
+			<ymax>3110</ymax>
 		</bndbox>
 	</object>
 </annotation>

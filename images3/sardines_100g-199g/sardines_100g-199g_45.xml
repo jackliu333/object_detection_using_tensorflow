@@ -1,7 +1,7 @@
 <annotation>
-	<folder>sardines</folder>
-	<filename>sardines45.JPG</filename>
-	<path>D:\Documents\PhD\food bank project\sardines\sardines45.JPG</path>
+	<folder>sardines_100g-199g</folder>
+	<filename>sardines_100g-199g_45.JPG</filename>
+	<path>/Users/liupeng/Downloads/images3/sardines_100g-199g/sardines_100g-199g_45.JPG</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -12,15 +12,15 @@
 	</size>
 	<segmented>0</segmented>
 	<object>
-		<name>sardines</name>
+		<name>sardines_100g-199g</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>551</xmin>
-			<ymin>944</ymin>
-			<xmax>2022</xmax>
-			<ymax>3352</ymax>
+			<xmin>721</xmin>
+			<ymin>1160</ymin>
+			<xmax>1940</xmax>
+			<ymax>3154</ymax>
 		</bndbox>
 	</object>
 </annotation>
