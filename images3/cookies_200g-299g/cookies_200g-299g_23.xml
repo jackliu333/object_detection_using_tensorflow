@@ -1,0 +1,26 @@
+<annotation>
+	<folder>cookies</folder>
+	<filename>cookies23.JPG</filename>
+	<path>D:\Documents\PhD\food bank project\cookies\cookies23.JPG</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3024</width>
+		<height>4032</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>cookies</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>44</xmin>
+			<ymin>887</ymin>
+			<xmax>2986</xmax>
+			<ymax>2723</ymax>
+		</bndbox>
+	</object>
+</annotation>

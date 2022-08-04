@@ -1,7 +1,7 @@
 <annotation>
-	<folder>cookies_1kg-1.99kg</folder>
-	<filename>cookies_1kg-1.99kg_43.JPG</filename>
-	<path>D:\Documents\PhD\food bank project\cookies\cookies_1kg-1.99kg_43.JPG</path>
+	<folder>cookies</folder>
+	<filename>cookies43.JPG</filename>
+	<path>D:\Documents\PhD\food bank project\cookies\cookies43.JPG</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -12,7 +12,7 @@
 	</size>
 	<segmented>0</segmented>
 	<object>
-		<name>cookies_1kg-1.99kg</name>
+		<name>cookies</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>
