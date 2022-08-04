@@ -1,0 +1,26 @@
+<annotation>
+	<folder>sardines_400g-499g</folder>
+	<filename>sardines_400g-499g_21.JPG</filename>
+	<path>/Users/liupeng/Downloads/images3/sardines_400g-499g/sardines_400g-499g_21.JPG</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3024</width>
+		<height>4032</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>sardines_400g-499g</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>652</xmin>
+			<ymin>585</ymin>
+			<xmax>2134</xmax>
+			<ymax>2979</ymax>
+		</bndbox>
+	</object>
+</annotation>
