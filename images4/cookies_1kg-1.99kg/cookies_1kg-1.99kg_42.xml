@@ -1,0 +1,26 @@
+<annotation>
+	<folder>cookies_1kg-1.99kg</folder>
+	<filename>cookies_1kg-1.99kg_42.JPG</filename>
+	<path>/Users/liupeng/Downloads/images3/cookies_1kg-1.99kg/cookies_1kg-1.99kg_42.JPG</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3024</width>
+		<height>4032</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>cookies_1kg-1.99kg</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>334</xmin>
+			<ymin>647</ymin>
+			<xmax>2696</xmax>
+			<ymax>3310</ymax>
+		</bndbox>
+	</object>
+</annotation>
