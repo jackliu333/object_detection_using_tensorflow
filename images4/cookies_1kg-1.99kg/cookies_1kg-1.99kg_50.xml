@@ -1,13 +1,13 @@
 <annotation>
 	<folder>cookies_1kg-1.99kg</folder>
-	<filename>cookies_1kg-1.99kg_50.JPG</filename>
-	<path>/Users/liupeng/Downloads/images4/cookies_1kg-1.99kg/cookies_1kg-1.99kg_50.JPG</path>
+	<filename>cookies_1kg-1.99kg_50.png</filename>
+	<path>/Users/liupeng/Downloads/images4/cookies_1kg-1.99kg/cookies_1kg-1.99kg_50.png</path>
 	<source>
 		<database>Unknown</database>
 	</source>
 	<size>
-		<width>3024</width>
-		<height>4032</height>
+		<width>884</width>
+		<height>1074</height>
 		<depth>3</depth>
 	</size>
 	<segmented>0</segmented>
@@ -17,10 +17,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>321</xmin>
-			<ymin>785</ymin>
-			<xmax>2559</xmax>
-			<ymax>3272</ymax>
+			<xmin>71</xmin>
+			<ymin>218</ymin>
+			<xmax>771</xmax>
+			<ymax>997</ymax>
 		</bndbox>
 	</object>
 </annotation>
