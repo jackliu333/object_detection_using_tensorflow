@@ -1,0 +1,26 @@
+<annotation>
+	<folder>crackers_200g-299g</folder>
+	<filename>crackers_200g-299g_11.png</filename>
+	<path>/Users/liupeng/Downloads/images4/crackers_200g-299g/crackers_200g-299g_11.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>776</width>
+		<height>1074</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>crackers_200g-299g</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>94</xmin>
+			<ymin>174</ymin>
+			<xmax>580</xmax>
+			<ymax>907</ymax>
+		</bndbox>
+	</object>
+</annotation>
