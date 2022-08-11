@@ -1,0 +1,26 @@
+<annotation>
+	<folder>halal</folder>
+	<filename>halal_36.png</filename>
+	<path>/Users/liupeng/Downloads/images4/halal/halal_36.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>914</width>
+		<height>1184</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>halal</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>651</xmin>
+			<ymin>672</ymin>
+			<xmax>677</xmax>
+			<ymax>708</ymax>
+		</bndbox>
+	</object>
+</annotation>
