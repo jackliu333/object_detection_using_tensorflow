@@ -1,13 +1,13 @@
 <annotation>
 	<folder>halal</folder>
-	<filename>halal_5.png</filename>
-	<path>/Users/liupeng/Downloads/images4/halal/halal_5.png</path>
+	<filename>halal_24.png</filename>
+	<path>/Users/liupeng/Downloads/images4/halal/halal_24.png</path>
 	<source>
 		<database>Unknown</database>
 	</source>
 	<size>
-		<width>928</width>
-		<height>1000</height>
+		<width>690</width>
+		<height>1030</height>
 		<depth>3</depth>
 	</size>
 	<segmented>0</segmented>
@@ -17,10 +17,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>659</xmin>
-			<ymin>541</ymin>
-			<xmax>690</xmax>
-			<ymax>573</ymax>
+			<xmin>160</xmin>
+			<ymin>760</ymin>
+			<xmax>183</xmax>
+			<ymax>786</ymax>
 		</bndbox>
 	</object>
 </annotation>
