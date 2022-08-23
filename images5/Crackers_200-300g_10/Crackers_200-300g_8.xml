@@ -1,0 +1,26 @@
+<annotation>
+	<folder>images5</folder>
+	<filename>Crackers_200-300g_8.png</filename>
+	<path>/Users/liupeng/Downloads/images5/Crackers_200-300g_8.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3024</width>
+		<height>4032</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Crackers_200-300g</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>371</xmin>
+			<ymin>266</ymin>
+			<xmax>2621</xmax>
+			<ymax>3060</ymax>
+		</bndbox>
+	</object>
+</annotation>
