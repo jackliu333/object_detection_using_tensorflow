@@ -1,7 +1,7 @@
 <annotation>
-	<folder>images5</folder>
-	<filename>Crackers_200-300g_9.png</filename>
-	<path>/Users/liupeng/Downloads/images5/Crackers_200-300g_9.png</path>
+	<folder>Baked beans_400-499g</folder>
+	<filename>Baked beans_400-499g_25.png</filename>
+	<path>/Users/liupeng/Downloads/Baked beans_400-499g/Baked beans_400-499g_25.png</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -12,15 +12,15 @@
 	</size>
 	<segmented>0</segmented>
 	<object>
-		<name>Crackers_200-300g</name>
+		<name>Baked beans_400-499g</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>402</xmin>
-			<ymin>354</ymin>
-			<xmax>2702</xmax>
-			<ymax>3110</ymax>
+			<xmin>621</xmin>
+			<ymin>666</ymin>
+			<xmax>2334</xmax>
+			<ymax>3397</ymax>
 		</bndbox>
 	</object>
 </annotation>
