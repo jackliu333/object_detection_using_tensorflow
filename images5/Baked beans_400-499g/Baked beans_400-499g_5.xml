@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Baked beans_400-499g</folder>
+	<filename>Baked beans_400-499g_5.png</filename>
+	<path>/Users/liupeng/Downloads/images5/Baked beans_400-499g/Baked beans_400-499g_5.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>852</width>
+		<height>1150</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Baked beans_400-499g</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>164</xmin>
+			<ymin>98</ymin>
+			<xmax>681</xmax>
+			<ymax>989</ymax>
+		</bndbox>
+	</object>
+</annotation>
