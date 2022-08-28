@@ -1,0 +1,26 @@
+<annotation>
+	<folder>sardines_100g-199g</folder>
+	<filename>sardines_100g-199g_54.png</filename>
+	<path>/Users/liupeng/Downloads/images4/sardines_100g-199g/sardines_100g-199g_54.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>774</width>
+		<height>1102</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>sardines_100g-199g</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>158</xmin>
+			<ymin>189</ymin>
+			<xmax>513</xmax>
+			<ymax>847</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>cookies_200g-299g</folder>
+	<filename>cookies_200g-299g_11.png</filename>
+	<path>/Users/liupeng/Downloads/images4/cookies_200g-299g/cookies_200g-299g_11.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>928</width>
+		<height>1192</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>cookies_200g-299g</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>29</xmin>
+			<ymin>263</ymin>
+			<xmax>889</xmax>
+			<ymax>889</ymax>
+		</bndbox>
+	</object>
+</annotation>
