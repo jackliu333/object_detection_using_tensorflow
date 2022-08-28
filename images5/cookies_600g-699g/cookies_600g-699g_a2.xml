@@ -1,0 +1,26 @@
+<annotation>
+	<folder>cookies_600g-699g</folder>
+	<filename>cookies_600g-699g_a2.png</filename>
+	<path>/Users/liupeng/Downloads/images5/cookies_600g-699g/cookies_600g-699g_a2.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>702</width>
+		<height>890</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>cookies_600g-699g</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>104</xmin>
+			<ymin>262</ymin>
+			<xmax>638</xmax>
+			<ymax>766</ymax>
+		</bndbox>
+	</object>
+</annotation>

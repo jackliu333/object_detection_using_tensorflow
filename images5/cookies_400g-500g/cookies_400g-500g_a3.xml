@@ -1,0 +1,26 @@
+<annotation>
+	<folder>cookies_400g-500g</folder>
+	<filename>cookies_400g-500g_a3.png</filename>
+	<path>/Users/liupeng/Downloads/images5/cookies_400g-500g/cookies_400g-500g_a3.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>728</width>
+		<height>928</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>cookies_400g-500g</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>91</xmin>
+			<ymin>251</ymin>
+			<xmax>612</xmax>
+			<ymax>784</ymax>
+		</bndbox>
+	</object>
+</annotation>
