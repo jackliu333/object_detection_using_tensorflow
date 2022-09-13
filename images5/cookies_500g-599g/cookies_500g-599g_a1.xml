@@ -1,7 +1,7 @@
 <annotation>
 	<folder>cookies_500g-599g</folder>
 	<filename>cookies_500g-599g_a1.png</filename>
-	<path>/Users/liupeng/Downloads/images5/cookies_500g-599g/cookies_500g-599g_a1.png</path>
+	<path>/Users/liupeng/Documents/GitHub/object_detection_using_tensorflow/images5/cookies_500g-599g/cookies_500g-599g_a1.png</path>
 	<source>
 		<database>Unknown</database>
 	</source>
@@ -17,10 +17,10 @@
 		<truncated>0</truncated>
 		<difficult>0</difficult>
 		<bndbox>
-			<xmin>58</xmin>
-			<ymin>244</ymin>
-			<xmax>944</xmax>
-			<ymax>448</ymax>
+			<xmin>53</xmin>
+			<ymin>232</ymin>
+			<xmax>949</xmax>
+			<ymax>458</ymax>
 		</bndbox>
 	</object>
 </annotation>
