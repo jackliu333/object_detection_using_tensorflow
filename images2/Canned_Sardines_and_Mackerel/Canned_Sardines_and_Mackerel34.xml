@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Canned_Sardines_and_Mackerel</folder>
+	<filename>Canned_Sardines_and_Mackerel34.png</filename>
+	<path>/Users/liupeng/Desktop/research/Object_detection/FoodBankImages/Canned_Sardines_and_Mackerel/Canned_Sardines_and_Mackerel34.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>567</width>
+		<height>804</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Canned_Sardines_and_Mackerel</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>155</xmin>
+			<ymin>156</ymin>
+			<xmax>418</xmax>
+			<ymax>591</ymax>
+		</bndbox>
+	</object>
+</annotation>

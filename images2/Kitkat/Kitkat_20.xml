@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Kitkat</folder>
+	<filename>Kitkat_20.png</filename>
+	<path>/Users/liupeng/Desktop/research/Object_detection/FoodBankImages/Kitkat/Kitkat_20.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>648</width>
+		<height>906</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Kitkat</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>112</xmin>
+			<ymin>147</ymin>
+			<xmax>350</xmax>
+			<ymax>834</ymax>
+		</bndbox>
+	</object>
+</annotation>

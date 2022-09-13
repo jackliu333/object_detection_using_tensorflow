@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Wafers</folder>
+	<filename>Wafers_7.png</filename>
+	<path>/Users/liupeng/Desktop/research/Object_detection/FoodBankImages/Wafers/Wafers_7.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1126</width>
+		<height>750</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Wafers</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>106</xmin>
+			<ymin>202</ymin>
+			<xmax>1091</xmax>
+			<ymax>623</ymax>
+		</bndbox>
+	</object>
+</annotation>

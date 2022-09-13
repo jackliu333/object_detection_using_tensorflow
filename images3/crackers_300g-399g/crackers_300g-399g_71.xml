@@ -1,0 +1,26 @@
+<annotation>
+	<folder>crackers_300g-399g</folder>
+	<filename>crackers_300g-399g_71.JPG</filename>
+	<path>/Users/liupeng/Downloads/images3/crackers_300g-399g/crackers_300g-399g_71.JPG</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3024</width>
+		<height>4032</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>crackers_300g-399g</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>527</xmin>
+			<ymin>360</ymin>
+			<xmax>2540</xmax>
+			<ymax>3297</ymax>
+		</bndbox>
+	</object>
+</annotation>
