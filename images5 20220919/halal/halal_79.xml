@@ -1,0 +1,26 @@
+<annotation>
+	<folder>halal</folder>
+	<filename>halal_79.png</filename>
+	<path>/Users/liupeng/Desktop/research/Object_detection/FoodBankAppV2/images/halal/halal_79.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>622</width>
+		<height>894</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>halal</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>123</xmin>
+			<ymin>134</ymin>
+			<xmax>143</xmax>
+			<ymax>180</ymax>
+		</bndbox>
+	</object>
+</annotation>
