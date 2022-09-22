@@ -1,0 +1,26 @@
+<annotation>
+	<folder>crackers_800g-899g</folder>
+	<filename>crackers_800g-899g_d5.png</filename>
+	<path>/Users/liupeng/Documents/GitHub/object_detection_using_tensorflow/images5/crackers_800g-899g/crackers_800g-899g_d5.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>962</width>
+		<height>570</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>crackers_800g-899g</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>80</xmin>
+			<ymin>39</ymin>
+			<xmax>931</xmax>
+			<ymax>553</ymax>
+		</bndbox>
+	</object>
+</annotation>
