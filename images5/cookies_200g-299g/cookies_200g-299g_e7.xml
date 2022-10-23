@@ -1,0 +1,26 @@
+<annotation>
+	<folder>cookies_200g-299g</folder>
+	<filename>cookies_200g-299g_e7.png</filename>
+	<path>/Users/liupeng/Documents/GitHub/object_detection_using_tensorflow/images5/cookies_200g-299g/cookies_200g-299g_e7.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>992</width>
+		<height>620</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>cookies_200g-299g</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>204</xmin>
+			<ymin>64</ymin>
+			<xmax>510</xmax>
+			<ymax>558</ymax>
+		</bndbox>
+	</object>
+</annotation>
