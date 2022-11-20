@@ -1,0 +1,26 @@
+<annotation>
+	<folder>halal</folder>
+	<filename>halal_e22.png</filename>
+	<path>/Users/liupeng/Documents/GitHub/object_detection_using_tensorflow/images5/halal/halal_e22.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>510</width>
+		<height>282</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>halal</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>243</xmin>
+			<ymin>120</ymin>
+			<xmax>322</xmax>
+			<ymax>202</ymax>
+		</bndbox>
+	</object>
+</annotation>

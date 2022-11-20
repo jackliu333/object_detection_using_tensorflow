@@ -1,0 +1,26 @@
+<annotation>
+	<folder>crackers_400g-499g</folder>
+	<filename>crackers_400g-499g_d8.png</filename>
+	<path>/Users/liupeng/Documents/GitHub/object_detection_using_tensorflow/images5/crackers_400g-499g/crackers_400g-499g_d8.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>944</width>
+		<height>534</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>crackers_400g-499g</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>65</xmin>
+			<ymin>80</ymin>
+			<xmax>900</xmax>
+			<ymax>486</ymax>
+		</bndbox>
+	</object>
+</annotation>
