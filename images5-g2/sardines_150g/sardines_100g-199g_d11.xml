@@ -1,0 +1,26 @@
+<annotation>
+	<folder>sardines_100g-199g</folder>
+	<filename>sardines_100g-199g_d11.png</filename>
+	<path>/Users/liupeng/Documents/GitHub/object_detection_using_tensorflow/images5/sardines_100g-199g/sardines_100g-199g_d11.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>942</width>
+		<height>524</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>sardines_100g-199g</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>152</xmin>
+			<ymin>67</ymin>
+			<xmax>828</xmax>
+			<ymax>461</ymax>
+		</bndbox>
+	</object>
+</annotation>

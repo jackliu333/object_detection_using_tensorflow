@@ -1,0 +1,26 @@
+<annotation>
+	<folder>crackers_800g-899g</folder>
+	<filename>crackers_800g-899g_a5.png</filename>
+	<path>/Users/liupeng/Downloads/images5/crackers_800g-899g/crackers_800g-899g_a5.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1052</width>
+		<height>780</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>crackers_800g-899g</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>59</xmin>
+			<ymin>97</ymin>
+			<xmax>975</xmax>
+			<ymax>656</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>crackers_400g-499g</folder>
+	<filename>crackers_400g-499g_7.png</filename>
+	<path>/Users/liupeng/Downloads/images4/crackers_400g-499g/crackers_400g-499g_7.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>854</width>
+		<height>1138</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>crackers_400g-499g</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>193</xmin>
+			<ymin>169</ymin>
+			<xmax>611</xmax>
+			<ymax>972</ymax>
+		</bndbox>
+	</object>
+</annotation>

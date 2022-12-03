@@ -1,0 +1,26 @@
+<annotation>
+	<folder>cookies_600g-699g</folder>
+	<filename>cookies_600g-699g_e1.png</filename>
+	<path>/Users/liupeng/Documents/GitHub/object_detection_using_tensorflow/images5/cookies_600g-699g/cookies_600g-699g_e1.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1006</width>
+		<height>626</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>cookies_600g-699g</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>307</xmin>
+			<ymin>55</ymin>
+			<xmax>704</xmax>
+			<ymax>519</ymax>
+		</bndbox>
+	</object>
+</annotation>

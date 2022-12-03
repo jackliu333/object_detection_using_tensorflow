@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Baked beans_400-499g</folder>
+	<filename>Baked beans_400-499g_e9.png</filename>
+	<path>/Users/liupeng/Documents/GitHub/object_detection_using_tensorflow/images5/Baked beans_400-499g/Baked beans_400-499g_e9.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>996</width>
+		<height>618</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Baked beans_400-499g</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>378</xmin>
+			<ymin>128</ymin>
+			<xmax>634</xmax>
+			<ymax>563</ymax>
+		</bndbox>
+	</object>
+</annotation>

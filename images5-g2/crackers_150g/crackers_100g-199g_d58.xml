@@ -1,0 +1,26 @@
+<annotation>
+	<folder>crackers_100g-199g</folder>
+	<filename>crackers_100g-199g_d58.png</filename>
+	<path>/Users/liupeng/Documents/GitHub/object_detection_using_tensorflow/images5/crackers_100g-199g/crackers_100g-199g_d58.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>690</width>
+		<height>312</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>crackers_100g-199g</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>60</xmin>
+			<ymin>54</ymin>
+			<xmax>649</xmax>
+			<ymax>282</ymax>
+		</bndbox>
+	</object>
+</annotation>
