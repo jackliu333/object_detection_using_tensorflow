@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <annotation>
 	<folder>cookies_1kg-1.99kg</folder>
 	<filename>cookies_1kg-1.99kg_e2.png</filename>
@@ -12,7 +13,7 @@
 	</size>
 	<segmented>0</segmented>
 	<object>
-		<name>cookies_1kg-1.99kg</name>
+		<name>cookies_1500g</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>

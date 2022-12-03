@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <annotation>
 	<folder>crackers_100g-199g</folder>
 	<filename>crackers_100g-199g_d14.png</filename>
@@ -12,7 +13,7 @@
 	</size>
 	<segmented>0</segmented>
 	<object>
-		<name>crackers_100g-199g</name>
+		<name>crackers_150g</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>

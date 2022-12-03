@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <annotation>
 	<folder>Baked beans_400-499g</folder>
 	<filename>Baked beans_400-499g_d8.png</filename>
@@ -12,7 +13,7 @@
 	</size>
 	<segmented>0</segmented>
 	<object>
-		<name>Baked beans_400-499g</name>
+		<name>Baked beans_450g</name>
 		<pose>Unspecified</pose>
 		<truncated>0</truncated>
 		<difficult>0</difficult>
