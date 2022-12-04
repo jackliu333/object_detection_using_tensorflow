@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<annotation>
+	<folder>crackers_800g-899g</folder>
+	<filename>crackers_800g-899g_a3.png</filename>
+	<path>/Users/liupeng/Downloads/images5/crackers_800g-899g/crackers_800g-899g_a3.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1054</width>
+		<height>762</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>crackers_550g</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>94</xmin>
+			<ymin>82</ymin>
+			<xmax>1013</xmax>
+			<ymax>662</ymax>
+		</bndbox>
+	</object>
+</annotation>

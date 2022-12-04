@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<annotation>
+	<folder>sardines_400g-499g</folder>
+	<filename>sardines_400g-499g_d6.png</filename>
+	<path>/Users/liupeng/Documents/GitHub/object_detection_using_tensorflow/images5/sardines_400g-499g/sardines_400g-499g_d6.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>800</width>
+		<height>566</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>sardines_450g</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>271</xmin>
+			<ymin>63</ymin>
+			<xmax>552</xmax>
+			<ymax>511</ymax>
+		</bndbox>
+	</object>
+</annotation>

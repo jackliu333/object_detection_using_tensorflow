@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<annotation>
+	<folder>crackers_100g-199g</folder>
+	<filename>crackers_100g-199g_50.png</filename>
+	<path>/Users/liupeng/Downloads/images4/crackers_100g-199g/crackers_100g-199g_50.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>914</width>
+		<height>1076</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>crackers_150g</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>74</xmin>
+			<ymin>363</ymin>
+			<xmax>843</xmax>
+			<ymax>611</ymax>
+		</bndbox>
+	</object>
+</annotation>
