@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Crackers_400-499g</folder>
+	<filename>Crackers_400-499g_0311_NonHalal_5.png</filename>
+	<path>/Users/liupeng/Downloads/New pics 110323/Crackers_400-499g/Crackers_400-499g_0311_NonHalal_5.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>310</width>
+		<height>413</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Crackers_400-499g</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>104</xmin>
+			<ymin>175</ymin>
+			<xmax>238</xmax>
+			<ymax>372</ymax>
+		</bndbox>
+	</object>
+</annotation>

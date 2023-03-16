@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Crackers_100-199g</folder>
+	<filename>Crackers_100-199g_0311_Halal_2.png</filename>
+	<path>/Users/liupeng/Downloads/New pics 110323/Crackers_100-199g/Crackers_100-199g_0311_Halal_2.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>310</width>
+		<height>410</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Crackers_100-199g</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>105</xmin>
+			<ymin>52</ymin>
+			<xmax>264</xmax>
+			<ymax>343</ymax>
+		</bndbox>
+	</object>
+</annotation>

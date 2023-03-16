@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Sardines_400-499g</folder>
+	<filename>Sardines_400-499g_0311_Halal_4.png</filename>
+	<path>/Users/liupeng/Downloads/New pics 110323/Sardines_400-499g/Sardines_400-499g_0311_Halal_4.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>313</width>
+		<height>412</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Sardines_400-499g</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>58</xmin>
+			<ymin>112</ymin>
+			<xmax>260</xmax>
+			<ymax>254</ymax>
+		</bndbox>
+	</object>
+</annotation>

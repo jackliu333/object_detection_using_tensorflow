@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Cookies_300-399g</folder>
+	<filename>Cookies_300-399g_0311_Halal_5.png</filename>
+	<path>/Users/liupeng/Downloads/New pics 110323/Cookies_300-399g/Cookies_300-399g_0311_Halal_5.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>309</width>
+		<height>412</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Cookies_300-399g</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>73</xmin>
+			<ymin>192</ymin>
+			<xmax>236</xmax>
+			<ymax>343</ymax>
+		</bndbox>
+	</object>
+</annotation>
