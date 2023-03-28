@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Nonfood</folder>
+	<filename>nonfood_0325_11.png</filename>
+	<path>/Users/liupeng/Desktop/School/NUS/FoodBank/images5/Nonfood/nonfood_0325_11.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>392</width>
+		<height>294</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Nonfood</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>60</xmin>
+			<ymin>58</ymin>
+			<xmax>361</xmax>
+			<ymax>190</ymax>
+		</bndbox>
+	</object>
+</annotation>
