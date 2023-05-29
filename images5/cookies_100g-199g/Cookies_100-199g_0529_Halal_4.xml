@@ -1,0 +1,26 @@
+<annotation>
+	<folder>cookies_100g-199g</folder>
+	<filename>Cookies_100-199g_0529_Halal_4.png</filename>
+	<path>/Users/liupeng/Documents/GitHub/object_detection_using_tensorflow/images5/cookies_100g-199g/Cookies_100-199g_0529_Halal_4.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1182</width>
+		<height>846</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>cookies_100g-199g</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>268</xmin>
+			<ymin>197</ymin>
+			<xmax>1080</xmax>
+			<ymax>714</ymax>
+		</bndbox>
+	</object>
+</annotation>

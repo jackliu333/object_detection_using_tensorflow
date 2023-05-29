@@ -1,0 +1,26 @@
+<annotation>
+	<folder>crackers_100g-199g</folder>
+	<filename>Crackers_100-199g_0529_NonHalal_27.png</filename>
+	<path>/Users/liupeng/Documents/GitHub/object_detection_using_tensorflow/images5/crackers_100g-199g/Crackers_100-199g_0529_NonHalal_27.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>648</width>
+		<height>890</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>crackers_100g-199g</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>119</xmin>
+			<ymin>192</ymin>
+			<xmax>338</xmax>
+			<ymax>803</ymax>
+		</bndbox>
+	</object>
+</annotation>
