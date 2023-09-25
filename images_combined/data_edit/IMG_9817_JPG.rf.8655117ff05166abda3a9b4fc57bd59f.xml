@@ -1,0 +1,1 @@
+<annotation><folder>data_edit</folder><filename>IMG_9817_JPG.rf.8655117ff05166abda3a9b4fc57bd59f.jpg</filename><size><width>640</width><height>640</height><depth>3</depth></size><object><name>object_name</name><pose>Unspecified</pose><truncated>0</truncated><difficult>0</difficult><bndbox><xmin>4</xmin><ymin>92</ymin><xmax>640</xmax><ymax>591</ymax></bndbox></object></annotation>
