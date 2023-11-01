@@ -1,1 +1,0 @@
-<annotation><folder>data_edit</folder><filename>nonfood_0325_55.png</filename><size><width>226</width><height>302</height><depth>3</depth></size><object><name>object_name</name><pose>Unspecified</pose><truncated>0</truncated><difficult>0</difficult><bndbox><xmin>55</xmin><ymin>59</ymin><xmax>197</xmax><ymax>289</ymax></bndbox></object></annotation>
