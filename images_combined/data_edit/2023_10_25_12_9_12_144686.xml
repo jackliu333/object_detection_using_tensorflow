@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Babymilk-powder_900-999g_NonHalal_NonHealthy</folder>
+	<filename>2023_10_25_12_9_12_144686.jpg</filename>
+	<path>C:\Users\Mio\Downloads\added_labels-20231029T013223Z-001\added_labels\Babymilk-powder_900-999g_NonHalal_NonHealthy\2023_10_25_12_9_12_144686.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>704</width>
+		<height>528</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Babymilk-powder_900-999g_NonHalal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>200</xmin>
+			<ymin>140</ymin>
+			<xmax>532</xmax>
+			<ymax>528</ymax>
+		</bndbox>
+	</object>
+</annotation>

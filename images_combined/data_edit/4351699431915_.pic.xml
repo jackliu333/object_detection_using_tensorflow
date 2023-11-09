@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Crackers_1-99g_NonHalal_NonHealthy</folder>
+	<filename>4351699431915_.pic.jpg</filename>
+	<path>C:\Users\Mio\Downloads\adhoc-20231108T090646Z-001\adhoc\Crackers_1-99g_NonHalal_NonHealthy\4351699431915_.pic.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1280</width>
+		<height>1707</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Crackers_1-99g_NonHalal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1</xmin>
+			<ymin>244</ymin>
+			<xmax>1148</xmax>
+			<ymax>1376</ymax>
+		</bndbox>
+	</object>
+</annotation>
