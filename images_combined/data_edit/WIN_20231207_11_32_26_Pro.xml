@@ -1,0 +1,26 @@
+<annotation>
+	<folder>PotatochipsKeropok_1-99g_NonHalal_NonHealthy</folder>
+	<filename>WIN_20231207_11_32_26_Pro.jpg</filename>
+	<path>C:\Users\Mio\Downloads\new_camera-20231207T034045Z-001\new_camera\PotatochipsKeropok_1-99g_NonHalal_NonHealthy\WIN_20231207_11_32_26_Pro.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3840</width>
+		<height>2160</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>PotatochipsKeropok_1-99g_NonHalal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1717</xmin>
+			<ymin>1357</ymin>
+			<xmax>2362</xmax>
+			<ymax>2076</ymax>
+		</bndbox>
+	</object>
+</annotation>

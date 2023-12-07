@@ -1,0 +1,26 @@
+<annotation>
+	<folder>RolledOatsInstantOatmeal_400-499g_Halal_Healthy</folder>
+	<filename>WIN_20231207_11_15_44_Pro.jpg</filename>
+	<path>C:\Users\Mio\Downloads\new_camera-20231207T034045Z-001\new_camera\RolledOatsInstantOatmeal_400-499g_Halal_Healthy\WIN_20231207_11_15_44_Pro.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3840</width>
+		<height>2160</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>RolledOatsInstantOatmeal_400-499g_Halal_Healthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1569</xmin>
+			<ymin>391</ymin>
+			<xmax>2207</xmax>
+			<ymax>1579</ymax>
+		</bndbox>
+	</object>
+</annotation>
