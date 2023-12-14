@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Pasta_500-599g_NonHalal_NonHealthy</folder>
+	<filename>output_frame_0183.png</filename>
+	<path>/Users/liupeng/Downloads/new_camera 3/Pasta_500-599g_NonHalal_NonHealthy/output_frame_0183.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1620</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Pasta_500-599g_NonHalal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>531</xmin>
+			<ymin>167</ymin>
+			<xmax>1042</xmax>
+			<ymax>676</ymax>
+		</bndbox>
+	</object>
+</annotation>
