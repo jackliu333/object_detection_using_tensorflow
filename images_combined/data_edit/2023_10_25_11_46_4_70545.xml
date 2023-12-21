@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Babymilk-powder_800-899g_Halal_Healthy</folder>
+	<filename>2023_10_25_11_46_4_70545.jpg</filename>
+	<path>C:\Users\Mio\Downloads\added_labels-20231029T013223Z-001\added_labels\Babymilk-powder_800-899g_Halal_Healthy\2023_10_25_11_46_4_70545.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>704</width>
+		<height>528</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Babymilk-powder_800-899g_Halal_Healthy</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>226</xmin>
+			<ymin>80</ymin>
+			<xmax>547</xmax>
+			<ymax>528</ymax>
+		</bndbox>
+	</object>
+</annotation>
