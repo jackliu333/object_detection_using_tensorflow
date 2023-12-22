@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Pasta_500-599g_Halal_NonHealthy</folder>
+	<filename>20231222_0845.jpg</filename>
+	<path>/Users/liupeng/Documents/new_imgs_20231222/Pasta_500-599g_Halal_NonHealthy/20231222_0845.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1620</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Pasta_500-599g_Halal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>436</xmin>
+			<ymin>256</ymin>
+			<xmax>843</xmax>
+			<ymax>1019</ymax>
+		</bndbox>
+	</object>
+</annotation>

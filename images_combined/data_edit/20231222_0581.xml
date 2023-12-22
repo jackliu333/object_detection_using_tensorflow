@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Salt_500-599g_Halal_NonHealthy</folder>
+	<filename>20231222_0581.jpg</filename>
+	<path>/Users/liupeng/Documents/new_imgs_20231222/Salt_500-599g_Halal_NonHealthy/20231222_0581.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1620</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Salt_500-599g_Halal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>499</xmin>
+			<ymin>329</ymin>
+			<xmax>1109</xmax>
+			<ymax>978</ymax>
+		</bndbox>
+	</object>
+</annotation>
