@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Book_1-99g_NonHalal_NonHealthy</folder>
+	<filename>output_frame_0007.png</filename>
+	<path>/Users/liupeng/Documents/new_camera_test/Book_1-99g_NonHalal_NonHealthy/output_frame_0007.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1620</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Book_1-99g_NonHalal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>406</xmin>
+			<ymin>265</ymin>
+			<xmax>840</xmax>
+			<ymax>776</ymax>
+		</bndbox>
+	</object>
+</annotation>

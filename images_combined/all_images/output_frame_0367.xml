@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Babyfood_200-299g_Halal_NonHealthy</folder>
+	<filename>output_frame_0367.png</filename>
+	<path>C:\Users\Mio\Downloads\Babyfood_200-299g_Halal_NonHealthy-20231214T034903Z-001\Babyfood_200-299g_Halal_NonHealthy\output_frame_0367.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1620</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>d</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>414</xmin>
+			<ymin>148</ymin>
+			<xmax>1078</xmax>
+			<ymax>817</ymax>
+		</bndbox>
+	</object>
+</annotation>

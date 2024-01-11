@@ -1,0 +1,26 @@
+<annotation>
+	<folder>CerealBeverage-powder_300-399g_NonHalal_Healthy</folder>
+	<filename>WIN_20231207_11_23_01_Pro.jpg</filename>
+	<path>/Users/liupeng/Downloads/new_camera/CerealBeverage-powder_300-399g_NonHalal_Healthy/WIN_20231207_11_23_01_Pro.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3840</width>
+		<height>2160</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>CerealBeverage-powder_300-399g_NonHalal_Healthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>924</xmin>
+			<ymin>495</ymin>
+			<xmax>1772</xmax>
+			<ymax>1560</ymax>
+		</bndbox>
+	</object>
+</annotation>

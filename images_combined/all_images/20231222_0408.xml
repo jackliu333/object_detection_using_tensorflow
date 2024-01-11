@@ -1,0 +1,26 @@
+<annotation>
+	<folder>SweetsChocolatesOthers_200-299g_Halal_NonHealthy</folder>
+	<filename>20231222_0408.jpg</filename>
+	<path>/Users/liupeng/Documents/new_imgs_20231222/SweetsChocolatesOthers_200-299g_Halal_NonHealthy/20231222_0408.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1620</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>SweetsChocolatesOthers_200-299g_Halal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>318</xmin>
+			<ymin>412</ymin>
+			<xmax>1108</xmax>
+			<ymax>1019</ymax>
+		</bndbox>
+	</object>
+</annotation>

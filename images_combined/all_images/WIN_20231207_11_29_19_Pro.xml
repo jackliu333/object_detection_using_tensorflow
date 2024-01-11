@@ -1,0 +1,26 @@
+<annotation>
+	<folder>SweetsChocolatesOthers_100-199g_NonHalal_NonHealthy</folder>
+	<filename>WIN_20231207_11_29_19_Pro.jpg</filename>
+	<path>C:\Users\Mio\Downloads\new_camera-20231207T034045Z-001\new_camera\SweetsChocolatesOthers_100-199g_NonHalal_NonHealthy\WIN_20231207_11_29_19_Pro.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3840</width>
+		<height>2160</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>SweetsChocolatesOthers_100-199g_NonHalal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1472</xmin>
+			<ymin>776</ymin>
+			<xmax>2169</xmax>
+			<ymax>1745</ymax>
+		</bndbox>
+	</object>
+</annotation>

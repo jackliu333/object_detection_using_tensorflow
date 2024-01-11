@@ -1,0 +1,26 @@
+<annotation>
+	<folder>PotatoSticks_1-99g_Halal_NonHealthy</folder>
+	<filename>output_frame_0273.png</filename>
+	<path>/Users/liupeng/Documents/new_camera_test/PotatoSticks_1-99g_Halal_NonHealthy/output_frame_0273.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1620</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>PotatoSticks_1-99g_Halal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>663</xmin>
+			<ymin>160</ymin>
+			<xmax>970</xmax>
+			<ymax>604</ymax>
+		</bndbox>
+	</object>
+</annotation>
