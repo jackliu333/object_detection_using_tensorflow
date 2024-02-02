@@ -1,0 +1,26 @@
+<annotation>
+	<folder>OtherDriedFood_200-299g_NonHalal_NonHealthy</folder>
+	<filename>20240123_2_3111.jpg</filename>
+	<path>C:\Users\Mio\Downloads\image_folder_template\OtherDriedFood_200-299g_NonHalal_NonHealthy\20240123_2_3111.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1620</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>OtherDriedFood_200-299g_NonHalal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>215</xmin>
+			<ymin>1</ymin>
+			<xmax>938</xmax>
+			<ymax>814</ymax>
+		</bndbox>
+	</object>
+</annotation>

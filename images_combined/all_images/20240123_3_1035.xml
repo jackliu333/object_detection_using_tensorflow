@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Rice(BrownOthers)_500-599g_NonHalal_Healthy</folder>
+	<filename>20240123_3_1035.jpg</filename>
+	<path>C:\Users\Mio\Downloads\image_folder_template\Rice(BrownOthers)_500-599g_NonHalal_Healthy\20240123_3_1035.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1620</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Rice(BrownOthers)_500-599g_NonHalal_Healthy</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>234</xmin>
+			<ymin>1</ymin>
+			<xmax>1101</xmax>
+			<ymax>980</ymax>
+		</bndbox>
+	</object>
+</annotation>

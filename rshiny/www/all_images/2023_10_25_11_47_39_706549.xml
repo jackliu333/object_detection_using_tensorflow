@@ -1,0 +1,26 @@
+<annotation>
+	<folder>MaternalMilkPowder_400-499g_NonHalal_Healthy</folder>
+	<filename>2023_10_25_11_47_39_706549.jpg</filename>
+	<path>/Users/mameihui/Downloads/added_labels/MaternalMilkPowder_400-499g_NonHalal_Healthy/2023_10_25_11_47_39_706549.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>704</width>
+		<height>528</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>MaternalMilkPowder_400-499g_NonHalal_Healthy</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>317</xmin>
+			<ymin>249</ymin>
+			<xmax>568</xmax>
+			<ymax>528</ymax>
+		</bndbox>
+	</object>
+</annotation>

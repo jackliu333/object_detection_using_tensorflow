@@ -1,0 +1,26 @@
+<annotation>
+	<folder>CannedTunaDace_0-99g_NonHalal_NonHealthy</folder>
+	<filename>20240123_2_3055.jpg</filename>
+	<path>C:\Users\Mio\Downloads\image_folder_template\CannedTunaDace_0-99g_NonHalal_NonHealthy\20240123_2_3055.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1620</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>CannedTunaDace_0-99g_NonHalal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>465</xmin>
+			<ymin>198</ymin>
+			<xmax>815</xmax>
+			<ymax>554</ymax>
+		</bndbox>
+	</object>
+</annotation>

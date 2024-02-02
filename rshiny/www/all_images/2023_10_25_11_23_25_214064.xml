@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Adult_Milk_0-99g_Halal_NonHealthy</folder>
+	<filename>2023_10_25_11_23_25_214064.jpg</filename>
+	<path>C:\Users\Mio\Downloads\added_labels-20231029T013223Z-001\added_labels\Adult_Milk_0-99g_Halal_NonHealthy\2023_10_25_11_23_25_214064.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>704</width>
+		<height>528</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Adult_Milk_0-99g_Halal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>273</xmin>
+			<ymin>80</ymin>
+			<xmax>535</xmax>
+			<ymax>124</ymax>
+		</bndbox>
+	</object>
+</annotation>

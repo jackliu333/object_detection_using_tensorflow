@@ -1,0 +1,26 @@
+<annotation>
+	<folder>MaternalMilkPowder_600-699g_Halal_NonHealthy</folder>
+	<filename>2023_10_25_11_54_19_278513.jpg</filename>
+	<path>C:\Users\Mio\Downloads\training_labels-20231029T013223Z-001\training_labels\MaternalMilkPowder_600-699g_Halal_NonHealthy\2023_10_25_11_54_19_278513.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>704</width>
+		<height>528</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>MaternalMilkPowder_600-699g_Halal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>163</xmin>
+			<ymin>39</ymin>
+			<xmax>631</xmax>
+			<ymax>528</ymax>
+		</bndbox>
+	</object>
+</annotation>

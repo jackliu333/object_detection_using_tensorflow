@@ -1,0 +1,26 @@
+<annotation>
+	<folder>DriedMeatSeafood_100-199g_NonHalal_NonHealthy</folder>
+	<filename>20240123_2_2569.jpg</filename>
+	<path>C:\Users\Mio\Downloads\image_folder_template\DriedMeatSeafood_100-199g_NonHalal_NonHealthy\20240123_2_2569.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1620</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>DriedMeatSeafood_100-199g_NonHalal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>352</xmin>
+			<ymin>120</ymin>
+			<xmax>1102</xmax>
+			<ymax>946</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>BiscuitsCrackersCookies_1-99g_Halal_NonHealthy</folder>
+	<filename>output_frame_0067.png</filename>
+	<path>/Users/liupeng/Documents/new_camera_test/BiscuitsCrackersCookies_1-99g_Halal_NonHealthy/output_frame_0067.png</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1620</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>BiscuitsCrackersCookies_1-99g_Halal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>524</xmin>
+			<ymin>179</ymin>
+			<xmax>968</xmax>
+			<ymax>756</ymax>
+		</bndbox>
+	</object>
+</annotation>

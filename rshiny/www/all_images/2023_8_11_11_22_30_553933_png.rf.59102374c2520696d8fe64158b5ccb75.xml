@@ -1,0 +1,26 @@
+<annotation>
+	<folder>data_edit</folder>
+	<filename>2023_8_11_11_22_30_553933_png.rf.59102374c2520696d8fe64158b5ccb75.jpg</filename>
+	<path>/Users/liupeng/Documents/GitHub/object_detection_using_tensorflow/images_combined/data_edit/2023_8_11_11_22_30_553933_png.rf.59102374c2520696d8fe64158b5ccb75.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>640</width>
+		<height>640</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>object_name</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>74</xmin>
+			<ymin>229</ymin>
+			<xmax>230</xmax>
+			<ymax>474</ymax>
+		</bndbox>
+	</object>
+</annotation>

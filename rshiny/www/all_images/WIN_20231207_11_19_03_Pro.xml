@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Pasta_400-499g_Halal_NonHealthy</folder>
+	<filename>WIN_20231207_11_19_03_Pro.jpg</filename>
+	<path>C:\Users\Mio\Downloads\new_camera-20231207T034045Z-001\new_camera\Pasta_400-499g_Halal_NonHealthy\WIN_20231207_11_19_03_Pro.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3840</width>
+		<height>2160</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Pasta_400-499g_Halal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1543</xmin>
+			<ymin>826</ymin>
+			<xmax>2277</xmax>
+			<ymax>1972</ymax>
+		</bndbox>
+	</object>
+</annotation>

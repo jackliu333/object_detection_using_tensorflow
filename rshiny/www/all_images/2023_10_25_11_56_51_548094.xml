@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Babymilk-powder-_800-899g_NonHalal_NonHealthy</folder>
+	<filename>2023_10_25_11_56_51_548094.jpg</filename>
+	<path>/Users/mameihui/Downloads/added_labels/Babymilk-powder-_800-899g_NonHalal_NonHealthy/2023_10_25_11_56_51_548094.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>704</width>
+		<height>528</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Babymilk-powder-_800-899g_NonHalal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>247</xmin>
+			<ymin>228</ymin>
+			<xmax>577</xmax>
+			<ymax>528</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Rice(brown-others)_700-799g_NonHalal_Healthy</folder>
+	<filename>WIN_20231207_11_27_29_Pro.jpg</filename>
+	<path>C:\Users\Mio\Downloads\new_camera-20231207T034045Z-001\new_camera\Rice(brown-others)_700-799g_NonHalal_Healthy\WIN_20231207_11_27_29_Pro.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>3840</width>
+		<height>2160</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Rice(brown-others)_700-799g_NonHalal_Healthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1660</xmin>
+			<ymin>757</ymin>
+			<xmax>2288</xmax>
+			<ymax>1869</ymax>
+		</bndbox>
+	</object>
+</annotation>

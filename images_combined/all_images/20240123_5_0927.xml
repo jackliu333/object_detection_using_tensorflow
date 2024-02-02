@@ -1,0 +1,26 @@
+<annotation>
+	<folder>OtherBakingNeeds_600-699g_NonHalal_NonHealthy</folder>
+	<filename>20240123_5_0927.jpg</filename>
+	<path>C:\Users\Mio\Downloads\image_folder_template\OtherBakingNeeds_600-699g_NonHalal_NonHealthy\20240123_5_0927.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1620</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>OtherBakingNeeds_600-699g_NonHalal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>498</xmin>
+			<ymin>127</ymin>
+			<xmax>936</xmax>
+			<ymax>719</ymax>
+		</bndbox>
+	</object>
+</annotation>

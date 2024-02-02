@@ -1,0 +1,26 @@
+<annotation>
+	<folder>MilkPowder_0-99g_Halal_NonHealthy</folder>
+	<filename>20240123_2_2254.jpg</filename>
+	<path>C:\Users\Mio\Downloads\image_folder_template\MilkPowder_0-99g_Halal_NonHealthy\20240123_2_2254.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1620</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>MilkPowder_0-99g_Halal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>282</xmin>
+			<ymin>191</ymin>
+			<xmax>630</xmax>
+			<ymax>1053</ymax>
+		</bndbox>
+	</object>
+</annotation>

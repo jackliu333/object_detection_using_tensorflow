@@ -1,0 +1,26 @@
+<annotation>
+	<folder>BreakfastCereals_100-199g_Halal_NonHealthy</folder>
+	<filename>20240123_1_0590.jpg</filename>
+	<path>C:\Users\Mio\Downloads\image_folder_template\BreakfastCereals_100-199g_Halal_NonHealthy\20240123_1_0590.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1620</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>BreakfastCereals_100-199g_Halal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>149</xmin>
+			<ymin>193</ymin>
+			<xmax>1061</xmax>
+			<ymax>689</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Rice(White)_500-599g_NonHalal_NonHealthy</folder>
+	<filename>20240123_3_0769.jpg</filename>
+	<path>C:\Users\Mio\Downloads\image_folder_template\Rice(White)_500-599g_NonHalal_NonHealthy\20240123_3_0769.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1620</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Rice(White)_500-599g_NonHalal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>633</xmin>
+			<ymin>314</ymin>
+			<xmax>1046</xmax>
+			<ymax>794</ymax>
+		</bndbox>
+	</object>
+</annotation>

@@ -1,0 +1,26 @@
+<annotation>
+	<folder>OtherCannedSeafood_100-199g_Halal_NonHealthy</folder>
+	<filename>20240123_2_1389.jpg</filename>
+	<path>C:\Users\Mio\Downloads\image_folder_template\OtherCannedSeafood_100-199g_Halal_NonHealthy\20240123_2_1389.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1620</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>OtherCannedSeafood_100-199g_Halal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>248</xmin>
+			<ymin>355</ymin>
+			<xmax>912</xmax>
+			<ymax>778</ymax>
+		</bndbox>
+	</object>
+</annotation>
