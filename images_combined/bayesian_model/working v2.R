@@ -57,7 +57,7 @@ print(sum(all_imgs_results_big_model_prdtype$Correct_pred == "yes") / nrow(all_i
 
 
 
-# Sampling a few rows for each category
+# Sampling a few rows for each category for the big model
 sampled_imgs_results_big_model_prdtype1 <- all_imgs_results_big_model_prdtype %>%
   # filter(label_prdtype %in% c("NutellaChocolate","PotatoSticks","CornChip","AdultMilk")) %>%
   filter(img_type == "existing") %>% 
@@ -69,10 +69,10 @@ sampled_imgs_results_big_model_prdtype2 <- all_imgs_results_big_model_prdtype %>
 
 sampled_imgs_results_big_model_prdtype = sampled_imgs_results_big_model_prdtype1 %>% 
   bind_rows(sampled_imgs_results_big_model_prdtype2)
+table(sampled_imgs_results_big_model_prdtype$Correct_pred)
 
-# table(sampled_imgs_results_big_model_prdtype$label_prdtype, sampled_imgs_results_big_model_prdtype$Correct_pred)
+# Sampling a few rows for each category for the big model
 sampled_imgs_results_small_model_prdtype = all_imgs_results_small_model_prdtype[all_imgs_results_small_model_prdtype$RowIndexSmall %in% sampled_imgs_results_big_model_prdtype$RowIndexSmall,]
-# table(sampled_imgs_results_small_model_prdtype$label_prdtype, sampled_imgs_results_small_model_prdtype$Correct_pred)
 
 
 # Label encoding
