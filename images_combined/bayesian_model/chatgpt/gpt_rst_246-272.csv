@@ -1,0 +1,28 @@
+,img_filename,product_type,image_reflection,image_clarity,prediction_confidence
+0,IMG_2210_JPG.rf.daa853cfd9796f29b5468b3286e7748c.jpg,OtherNoodles,Low,High,High
+1,IMG_2201_JPG.rf.496e224f5578bf61250e2e778ef85237.jpg,BeehoonVermicelliMeesua,Low,High,High
+2,IMG_2209_JPG.rf.cab96aee5f343878494d0213f0ee0c18.jpg,BabyMilkPowder,Medium,Low,Medium
+3,IMG_2205_JPG.rf.d6a3dc5b089fee72fa787cbda1aa3c18.jpg,InstantNoodles,Medium,High,High
+4,IMG_2208_JPG.rf.859bd1a6e8cdbf8eac58c382804950f8.jpg,Instant Noodles,Medium,Low,Medium
+5,IMG_2204_JPG.rf.d2da42fc5ed3def049f15b7339abc97d.jpg,InstantNoodles,Low,Medium,Medium
+6,IMG_2206_JPG.rf.3ab803a912fe19ead56c5715ed499c15.jpg,InstantNoodles,Medium,Medium,High
+7,IMG_2211_JPG.rf.d1ade6625a83346536edb0ac4c5ce90c.jpg,InstantNoodles,High,Low,High
+8,IMG_5386_jpeg.rf.b8d1f2f4f3c207d23f4b62fc5a47c7d0.jpg,CerealBeveragePowder,Low,High,High
+9,IMG_5384_jpeg.rf.67921356eef6baa976cb0ada082f119b.jpg,MiloPowder,Medium,High,High
+10,IMG_5383_jpeg.rf.bb7808b651af7de060ccca32329ce126.jpg,MiloPowder,Medium,High,High
+11,IMG_5382_jpeg.rf.90c3cf98dd817253bbfd8a8b54dc141b.jpg,CerealBeveragePowder,Low,High,High
+12,IMG_5385_jpeg.rf.e49237d55fe0b3abaadeae2e25fc5e7e.jpg,BreakfastCerealsCornflakes,Medium,High,High
+13,IMG_9725_JPG.rf.264aa5f74ecfcb452c586df78e05bb41.jpg,RolledOatsInstantOatmeal,Low,High,High
+14,IMG_9721_JPG.rf.2ae65e7edb5815c3cbe7cc721641a511.jpg,Rolled OatsInstant Oatmeal,Low,High,High
+15,IMG_9723_JPG.rf.7834a689521948597b514046a311906d.jpg,RolledOatsInstantOatmeal,Medium,Medium,High
+16,IMG_9722_JPG.rf.b04e761fa4016744962b683f0771f5a7.jpg,OtherNoodles,Medium,High,High
+17,IMG_9724_JPG.rf.e96fbbdaf270f2604f9123546c34ae09.jpg,Instant Noodles,Medium,High,High
+18,2023_8_11_12_12_19_402469_png.rf.a5181f050b65cee65a9e2c43e67fc355.jpg,HoneyOtherSpreads,Low,Low,Medium
+19,2023_8_11_12_12_4_125851_png.rf.30f61a05c7b7cb631f853b5425ddd980.jpg,HoneyOtherSpreads,Medium,Low,High
+20,2023_8_11_12_12_11_373773_png.rf.77bc9f4d7678b005788bb34ce532b185.jpg,HoneyOtherSpreads,Low,Medium,High
+21,2023_8_11_12_12_15_532585_png.rf.dbd2130e0c171077742e965d40d0580a.jpg,HoneyOtherSpreads,Medium,Low,Medium
+22,2023_8_11_12_12_7_132078_png.rf.c21b3a66363f8e0ca87f2b4a3cfc93c2.jpg,HoneyOtherSpreads,Medium,Medium,High
+23,IMG_3389_jpeg.rf.1c19279f127d065b110f667f71e70251.jpg,OtherDriedFood,Medium,High,High
+24,IMG_3430_jpeg.rf.19419910e843de70e9f6bdd7034878f9.jpg,RolledOatsInstantOatmeal,Medium,Medium,Medium
+25,IMG_3371_jpeg.rf.1822a3f9b6b3620a177e86cade60ce20.jpg,Nuts,Low,High,High
+26,IMG_3427_jpeg.rf.2191177f9a38e01a2790c69b555f092e.jpg,Nuts,Medium,High,High

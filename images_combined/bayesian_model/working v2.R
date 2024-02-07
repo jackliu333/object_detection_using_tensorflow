@@ -10,10 +10,10 @@ Mode <- function(x) {
 all_imgs_results_small_model <- read.csv("all_imgs_results_small_model.csv")
 all_imgs_results_big_model <- read.csv("all_imgs_results_big_model.csv")
 
-# adhoc: remove the last four characters in filepath of small model output
-all_imgs_results_small_model$filepath <- substr(all_imgs_results_small_model$filepath, 1, nchar(all_imgs_results_small_model$filepath) - 4)
-# adhoc: remove the last four characters in filepath of big model output for new imgs
-all_imgs_results_big_model$filepath[all_imgs_results_big_model$img_type=="new"] <- substr(all_imgs_results_big_model$filepath[all_imgs_results_big_model$img_type=="new"], 1, nchar(all_imgs_results_big_model$filepath[all_imgs_results_big_model$img_type=="new"]) - 4)
+# # adhoc: remove the last four characters in filepath of small model output
+# all_imgs_results_small_model$filepath <- substr(all_imgs_results_small_model$filepath, 1, nchar(all_imgs_results_small_model$filepath) - 4)
+# # adhoc: remove the last four characters in filepath of big model output for new imgs
+# all_imgs_results_big_model$filepath[all_imgs_results_big_model$img_type=="new"] <- substr(all_imgs_results_big_model$filepath[all_imgs_results_big_model$img_type=="new"], 1, nchar(all_imgs_results_big_model$filepath[all_imgs_results_big_model$img_type=="new"]) - 4)
 
 # align both dataframes rowwise
 all_imgs_results_small_model$RowIndexSmall <- seq_len(nrow(all_imgs_results_small_model))
@@ -73,7 +73,7 @@ table(sampled_imgs_results_big_model_prdtype$Correct_pred)
 
 # Sampling a few rows for each category for the big model
 sampled_imgs_results_small_model_prdtype = all_imgs_results_small_model_prdtype[all_imgs_results_small_model_prdtype$RowIndexSmall %in% sampled_imgs_results_big_model_prdtype$RowIndexSmall,]
-
+table(sampled_imgs_results_small_model_prdtype$Correct_pred)
 
 # Label encoding
 sampled_imgs_results_big_model_prdtype$truelabel <- as.vector(category_to_encoded[as.character(sampled_imgs_results_big_model_prdtype$label_prdtype)])
@@ -91,7 +91,7 @@ sampled_data1 <- sampled_imgs_results_big_model_prdtype %>%
 
 sampled_data2 <- sampled_imgs_results_big_model_prdtype %>%
   filter(Correct_pred == "no")
-sampled_data2 = sampled_data2[1:8,]
+sampled_data2 = sampled_data2[1:6,]
 
 sampled_data = sampled_data1 %>% 
   bind_rows(sampled_data2)
@@ -105,47 +105,61 @@ for(i in 1:length(missingidx_bigmodel)){
   tmp = sampled_imgs_results_big_model_prdtype$truelabel[sampled_imgs_results_big_model_prdtype$RowIndexBig == missingidx_bigmodel[i]]
   truelabel_missing = c(truelabel_missing, tmp)
 }
-trulabel_missing_idx = which(sampled_imgs_results_big_model_prdtype$RowIndexBig %in% missingidx_bigmodel)
+
+sampled_imgs_results_big_model_prdtype$truelabel2 = sampled_imgs_results_big_model_prdtype$truelabel
+
 sampled_imgs_results_big_model_prdtype$truelabel[sampled_imgs_results_big_model_prdtype$RowIndexBig %in% missingidx_bigmodel] = NA
 
 correct_pred_missing_big_model = sampled_imgs_results_big_model_prdtype$Correct_pred[sampled_imgs_results_big_model_prdtype$RowIndexBig %in% missingidx_bigmodel]
-# pred_missing_big_model = sampled_imgs_results_big_model_prdtype$Prediction[sampled_imgs_results_big_model_prdtype$RowIndexBig %in% missingidx_bigmodel]
+
+# testset prediction for big model
 pred_missing_big_model = c()
 for(i in 1:length(missingidx_bigmodel)){
   tmp = sampled_imgs_results_big_model_prdtype$Prediction[sampled_imgs_results_big_model_prdtype$RowIndexBig == missingidx_bigmodel[i]]
   tmp = as.vector(category_to_encoded[as.character(tmp)])
   pred_missing_big_model = c(pred_missing_big_model, tmp)
 }
-# pred_missing_big_model = as.vector(category_to_encoded[as.character(pred_missing_big_model)])
+# verify
+sum(pred_missing_big_model == truelabel_missing) == sum(correct_pred_missing_big_model == "yes")
 
-correct_pred_missing_small_model = sampled_imgs_results_small_model_prdtype$Correct_pred[sampled_imgs_results_small_model_prdtype$RowIndexSmall %in% missingidx_smallmodel]
-# pred_missing_small_model= sampled_imgs_results_small_model_prdtype$Prediction[sampled_imgs_results_small_model_prdtype$RowIndexSmall %in% missingidx_smallmodel]
-# pred_missing_small_model = as.vector(category_to_encoded[as.character(pred_missing_small_model)])
+correct_pred_missing_small_model = sampled_imgs_results_small_model_prdtype$Correct_pred[sampled_imgs_results_small_model_prdtype$RowIndexSmall %in% missingidx_smallmodel] 
+
 pred_missing_small_model = c()
 for(i in 1:length(missingidx_smallmodel)){
   tmp = sampled_imgs_results_small_model_prdtype$Prediction[sampled_imgs_results_small_model_prdtype$RowIndexSmall == missingidx_smallmodel[i]]
   tmp = as.vector(category_to_encoded[as.character(tmp)])
   pred_missing_small_model = c(pred_missing_small_model, tmp)
 }
+# verify
+sum(pred_missing_small_model == truelabel_missing) == sum(correct_pred_missing_small_model == "yes")
 
-# align row level sequence
-sampled_imgs_results_small_model_prdtype <- sampled_imgs_results_small_model_prdtype[match(sampled_imgs_results_big_model_prdtype$RowIndexSmall, sampled_imgs_results_small_model_prdtype$RowIndexSmall), ]
+# # align row level sequence
+# sampled_imgs_results_small_model_prdtype <- sampled_imgs_results_small_model_prdtype[match(sampled_imgs_results_big_model_prdtype$RowIndexSmall, sampled_imgs_results_small_model_prdtype$RowIndexSmall), ]
 
 sampled_imgs_results_small_model_prdtype$Prediction_smallmodel = sampled_imgs_results_small_model_prdtype$Prediction
 sampled_imgs_results_big_model_prdtype = sampled_imgs_results_big_model_prdtype %>% 
   left_join(sampled_imgs_results_small_model_prdtype[,c("RowIndexSmall","Prediction_smallmodel")], by="RowIndexSmall") 
 
+
 # prepare data for Bayesian model
 truelabel = sampled_imgs_results_big_model_prdtype$truelabel
-# logitscoresA <- as.matrix(sampled_imgs_results_big_model_prdtype[, category_names])
+sampled_imgs_results_big_model_prdtype$row_idx = 1:nrow(sampled_imgs_results_big_model_prdtype)
+# logitscoresA <- as.matrix(sampled_imgs_esults_big_model_prdtype[, category_names])
 logitscoresA <- sampled_imgs_results_big_model_prdtype[, category_names]
 ordered_names <- names(category_to_encoded)[order(category_to_encoded)]
-logitscoresA = logitscoresA[, ordered_names]
+logitscoresA = as.matrix(logitscoresA[, ordered_names])
 
 # logitscoresB <- as.matrix(sampled_imgs_results_small_model_prdtype[, category_names])
 # logitscoresB = logitscoresB[, ordered_names]
-classificationB = sampled_imgs_results_small_model_prdtype$Prediction
+classificationB = sampled_imgs_results_big_model_prdtype$Prediction_smallmodel
 classificationB = as.vector(category_to_encoded[as.character(classificationB)])
+
+# trulabel_missing_idx = which(is.na(sampled_imgs_results_big_model_prdtype$truelabel))
+trulabel_missing_idx = sampled_imgs_results_big_model_prdtype$row_idx[is.na(sampled_imgs_results_big_model_prdtype$truelabel)]
+
+# convert prediction to index
+sampled_imgs_results_big_model_prdtype$Prediction_bigmodel_idx = as.vector(category_to_encoded[as.character(sampled_imgs_results_big_model_prdtype$Prediction)])
+sampled_imgs_results_big_model_prdtype$Prediction_smallmodel_idx = as.vector(category_to_encoded[as.character(sampled_imgs_results_big_model_prdtype$Prediction_smallmodel)])
 
 N = length(truelabel)
 L = dim(logitscoresA)[2]
@@ -226,30 +240,49 @@ model_code = "
 model_run<-jags(data = model_data,
                 parameters.to.save = model_params,
                 model.file = textConnection(model_code),
-                n.iter = 5000,
-                n.burnin = 2000,
+                n.iter = 2000,
+                n.burnin = 500,
                 n.thin = 1)
 
-posterior_samples <- coda.samples(model_run$model, variable.names=c("truelabel"), n.iter=2000)
+posterior_samples <- coda.samples(model_run$model, variable.names=c("truelabel"), n.iter=500)
 
 infer_labels = c()
+truelabel_missing2 = c()
+pred_missing_big_model2 = c()
+pred_missing_small_model2 = c()
+
 for(tmp in trulabel_missing_idx){
-  lab = paste0("truelabel[",tmp,"]")
+  tmp_idx = which(sampled_imgs_results_big_model_prdtype$row_idx == tmp)
+  tmp_true_label = sampled_imgs_results_big_model_prdtype$truelabel2[tmp_idx]
+  tmp_pred_big_label = sampled_imgs_results_big_model_prdtype$Prediction_bigmodel_idx[tmp_idx]
+  tmp_pred_small_label = sampled_imgs_results_big_model_prdtype$Prediction_smallmodel_idx[tmp_idx]
+  
+  lab = paste0("truelabel[",tmp_idx,"]")
   s = posterior_samples[[1]][,lab]
+  
   infer_labels = c(infer_labels, Mode(s))
+  truelabel_missing2 = c(truelabel_missing2, tmp_true_label)
+  pred_missing_big_model2 = c(pred_missing_big_model2, tmp_pred_big_label)
+  pred_missing_small_model2 = c(pred_missing_small_model2, tmp_pred_small_label)
 }
 
 infer_labels
-truelabel_missing
+truelabel_missing2
 pred_missing_big_model
 pred_missing_small_model
 
 print("Bayes model accuracy:")
-sum(infer_labels == truelabel_missing) / length(truelabel_missing)
+sum(infer_labels == truelabel_missing2) / length(truelabel_missing2)
 print("Big model accuracy:")
-sum(correct_pred_missing_big_model == "yes") / length(truelabel_missing)
+sum(correct_pred_missing_big_model == "yes") / length(truelabel_missing2)
 print("Small model accuracy:")
-sum(correct_pred_missing_small_model == "yes") / length(truelabel_missing)
+sum(correct_pred_missing_small_model == "yes") / length(truelabel_missing2)
 
-sum(pred_missing_big_model == truelabel_missing) / length(truelabel_missing)
-sum(pred_missing_small_model == truelabel_missing) / length(truelabel_missing)
+
+# print("Big model accuracy:")
+# sum(pred_missing_big_model2 == truelabel_missing2) / length(truelabel_missing2)
+# print("Small model accuracy:")
+# sum(pred_missing_small_model2 == truelabel_missing2) / length(truelabel_missing2)
+
+# sum(pred_missing_big_model == truelabel_missing) / length(truelabel_missing)
+# sum(pred_missing_small_model == truelabel_missing) / length(truelabel_missing)
