@@ -1,0 +1,31 @@
+,img_filename,product_type,image_reflection,image_clarity,prediction_confidence
+0,output_frame_0255.png,PotatochipsKeropok,Low,Medium,High
+1,output_frame_0240.png,Instant Noodles,Low,High,High
+2,IMG_0753_jpeg.rf.84148cda335656bb00d99e8b0c8eef2d.jpg,Instant Noodles,Medium,High,High
+3,IMG_0761_jpeg.rf.8262cb50117dceef482c37a3fb70c901.jpg,Instant Noodles,Low,High,High
+4,output_frame_0135.png,Babyfood,Low,High,Medium
+5,output_frame_0263.png,PotatoSticks,Low,Medium,High
+6,output_frame_0249.png,PotatochipsKeropok,Low,Medium,High
+7,output_frame_0222.png,InstantNoodles,Low,Low,Low
+8,output_frame_0016.png,Book,Low,Medium,High
+9,output_frame_0077.png,OtherDriedFood,Medium,Medium,High
+10,output_frame_0073.png,BiscuitsCrackersCookies,Low,High,High
+11,output_frame_0157.png,Babyfood,Low,Medium,Medium
+12,IMG_0763_jpeg.rf.ab3ab51557048dc2b180a7a9a0f9b1db.jpg,Instant Noodles,Low,Medium,High
+13,output_frame_0031.png,Book,Low,High,High
+14,output_frame_0037.png,Book,Low,Medium,High
+15,output_frame_0185.png,PotatochipsKeropok,Low,Medium,High
+16,output_frame_0252.png,PotatochipsKeropok,Medium,High,High
+17,output_frame_0160.png,WetWiper,Low,High,High
+18,output_frame_0009.png,Book,Low,High,High
+19,output_frame_0286.png,PotatoSticks,Low,Medium,High
+20,output_frame_0257.png,PotatochipsKeropok,Low,High,High
+21,output_frame_0177.png,OtherSauceDressingSoupbasePaste,Low,Medium,Low
+22,output_frame_0124.png,Babyfood,Low,Low,Low
+23,output_frame_0254.png,PotatochipsKeropok,Low,High,High
+24,output_frame_0142.png,Babyfood,Low,Low,Low
+25,IMG_0765_jpeg.rf.551aefbf65a4860b0d4757295ab92baa.jpg,InstantNoodles,Low,High,High
+26,IMG_0795_jpeg.rf.569c30ea5eca7c6c9a2d8c09a2a4a43c.jpg,InstantNoodles,Low,High,High
+27,output_frame_0067.png,BiscuitsCrackersCookies,Low,Medium,High
+28,output_frame_0183.png,InstantNoodles,Low,Medium,Low
+29,output_frame_0156.png,OtherNoodles,Low,Medium,Low
