@@ -33,10 +33,10 @@ all_categories = list(annotations['label'].unique())
 
 # load label encoder 
 def load_label_encoder():
-    le_prdtype = pickle.loads(open("./model_weights/le_prdtype.pickle", "rb").read())
-    le_weight = pickle.loads(open("./model_weights/le_weight.pickle", "rb").read())
-    le_halal = pickle.loads(open("./model_weights/le_halal.pickle", "rb").read())
-    le_healthy = pickle.loads(open("./model_weights/le_healthy.pickle", "rb").read())
+    le_prdtype = pickle.loads(open("../NN_model/le_prdtype.pickle", "rb").read())
+    le_weight = pickle.loads(open("../NN_model/le_weight.pickle", "rb").read())
+    le_halal = pickle.loads(open("../NN_model/le_halal.pickle", "rb").read())
+    le_healthy = pickle.loads(open("../NN_model/le_healthy.pickle", "rb").read())
     
     return le_prdtype, le_weight, le_halal, le_healthy
 
@@ -68,38 +68,6 @@ class MultiHeadResNet(nn.Module):
         return prdtype, weight, halal, healthy, box
 
 
-# class MultiHeadResNet(nn.Module):
-#     def __init__(self, num_classes_prdtype, num_classes_weight, num_classes_halal, num_classes_healthy):
-#         super(MultiHeadResNet, self).__init__()
-#         self.base_model = models.resnet50(pretrained=True)
-#         num_ftrs = self.base_model.fc.in_features
-#         self.base_model.fc = nn.Identity()
-
-#         self.fc_prdtype = self._make_head(num_ftrs, num_classes_prdtype)
-#         self.fc_weight = self._make_head(num_ftrs, num_classes_weight)
-#         self.fc_halal = self._make_head(num_ftrs, num_classes_halal)
-#         self.fc_healthy = self._make_head(num_ftrs, num_classes_healthy)
-#         self.fc_bbox = self._make_head(num_ftrs, 4, output_activation=None)
-
-#     def _make_head(self, in_features, out_features, output_activation=nn.Softmax(dim=1)):
-#         layers = [
-#             nn.Linear(in_features, 32),
-#             nn.ReLU(),
-#             nn.Dropout(0.2),
-#             nn.Linear(32, out_features)
-#         ]
-#         if output_activation:
-#             layers.append(output_activation)
-#         return nn.Sequential(*layers)
-
-#     def forward(self, x):
-#         x = self.base_model(x)
-#         prdtype = self.fc_prdtype(x)
-#         weight = self.fc_weight(x)
-#         halal = self.fc_halal(x)
-#         healthy = self.fc_healthy(x)
-#         bbox = self.fc_bbox(x)
-#         return prdtype, weight, halal, healthy, bbox
 
 
 # Load the trained MultiHeadResNet model
@@ -119,7 +87,7 @@ def load_model():
         num_classes_healthy=num_classes_healthy
     )
 
-    model_path = './model_weights/multi_head_model.pth'
+    model_path = '../NN_model/multi_head_model.pth'
     # print("test1")
     if os.path.exists(model_path):
         custom_resnet_model.load_state_dict(torch.load(model_path, map_location=CONFIGS['DEVICE']))
