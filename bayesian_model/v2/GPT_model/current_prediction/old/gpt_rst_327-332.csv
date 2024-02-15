@@ -1,0 +1,5 @@
+,img_filename,product_type,weight,halal,health,image_reflection,image_clarity,product_type_confidence,weight_confidence,halal_confidence,health_confidence
+0,2023_10_25_11_23_10_398347.jpg,Flour,Unpredictable,Unpredictable,Unpredictable,Low,Low,Low,Low,Low,Low
+1,2023_10_25_11_29_12_163138.jpg,Sugar,300-399g,Halal,NonHealthy,Low,High,High,High,Low,Medium
+2,2023_10_25_11_30_13_941552.jpg,Salt,500-599g,Halal,NonHealthy,Low,Medium,High,Medium,Low,Low
+3,2023_10_25_11_18_17_414290.jpg,Salt,2000g,Halal,NonHealthy,Medium,High,High,High,Low,Medium

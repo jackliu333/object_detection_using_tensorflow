@@ -1,0 +1,3 @@
+,img_filename,product_type,weight,halal,health,image_reflection,image_clarity,product_type_confidence,weight_confidence,halal_confidence,health_confidence
+0,2023_10_25_11_23_10_398347.jpg,MiloPowder,400-499g,Halal,Healthy,Low,High,High,Medium,Medium,Low
+1,2023_10_25_11_29_12_163138.jpg,FruitJuice,300-399g,Halal,NonHealthy,Medium,Medium,High,Low,Medium,Low

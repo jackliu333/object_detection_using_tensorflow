@@ -1,0 +1,3 @@
+,img_filename,product_type,weight,halal,health,image_reflection,image_clarity,product_type_confidence,weight_confidence,halal_confidence,health_confidence
+0,2023_10_25_11_23_10_398347.jpg,CannedBeefOtherMeats,300-399g,Halal,NonHealthy,Low,High,High,Medium,Medium,High
+1,2023_10_25_11_29_12_163138.jpg,CannedSardingMackerel,400-499g,Halal,NonHealthy,Low,High,High,Medium,Medium,High

@@ -1,0 +1,218 @@
+,img_filename,product_type,weight,halal,health,image_reflection,image_clarity,product_type_confidence,weight_confidence,halal_confidence,health_confidence
+0,IMG_20230428_123528_jpg.rf.5687b7b914f6d9aa98cadf060d1e3b00.jpg,Sugar,300-399g,Halal,NonHealthy,Low,High,High,High,Medium,High
+1,IMG_20230428_123522_jpg.rf.204ff37f497f2dce442c7cc3d291ef78.jpg,Flour,500-599g,Halal,NonHealthy,Low,High,High,High,Low,High
+2,IMG_20230428_123708_jpg.rf.141ecd0cefaea75c0b7a5f281475dd6b.jpg,Sugar,500-599g,Halal,NonHealthy,Low,High,High,High,Medium,High
+3,IMG_20230428_123521_jpg.rf.1069b402272252862ec686589ee0dc3c.jpg,Sugar,1-99g,Halal,NonHealthy,Medium,High,High,Medium,Low,High
+4,IMG_20230428_123659_jpg.rf.5e1b6c4caabe48cf36003cb4184ff380.jpg,Sugar,500-599g,Halal,NonHealthy,Low,High,High,High,Medium,High
+5,IMG_20230428_123520_jpg.rf.57a9c7c075e605c7c691efb1dcf227d8.jpg,Sugar,500-599g,Halal,NonHealthy,Low,High,High,High,Medium,High
+6,IMG_20230428_123527_jpg.rf.8dd407b0ee5203fd4a46ddf1e061a37f.jpg,Sugar,500-599g,Halal,NonHealthy,Low,High,High,High,Medium,High
+7,IMG_20230428_123529_jpg.rf.c757a35ff8715805953ae034409a23cd.jpg,Sugar,1-99g,Halal,NonHealthy,Low,High,High,Medium,Low,High
+8,IMG_20230428_123704_jpg.rf.5fc2415d06061ea102ef125a37bbc88c.jpg,Sugar,1-99g,Halal,NonHealthy,Low,High,High,Low,Low,High
+9,IMG_20230428_123703_jpg.rf.6a9c54175f59238cdc83999cdee6dad4.jpg,Instant Noodles,400-499g,Halal,NonHealthy,Low,High,High,Medium,Medium,High
+10,IMG_9845_JPG.rf.79179e2933d602f5396a50d0a96ea77b.jpg,Instant Noodles,700-799g,Halal,NonHealthy,Low,High,High,High,High,Medium
+11,IMG_9847_JPG.rf.9b1f1f5aef44a1c04751b432886e363e.jpg,Instant Noodles,700-799g,Halal,NonHealthy,Low,High,High,High,High,Medium
+12,IMG_9843_JPG.rf.06efa72d980beea92d81c2c2bb431b01.jpg,Instant Noodles,400-499g,Halal,NonHealthy,Low,High,High,Medium,High,High
+13,IMG_9850_JPG.rf.a656c02511bfa87362592d2143f2d886.jpg,Instant Noodles,700-799g,Halal,NonHealthy,Low,High,High,High,Medium,Low
+14,IMG_9841_JPG.rf.28ef5b4cff189e03a7ad931905e56f7e.jpg,Instant Noodles,500-599g,Halal,NonHealthy,Low,High,High,Medium,High,High
+15,IMG_9849_JPG.rf.9bd576b3de05d91a4a8c73290848470d.jpg,Instant Noodles,700-799g,Halal,NonHealthy,Low,High,High,High,Medium,High
+16,IMG_9842_JPG.rf.a3f3c34f9b3efe81ce6af2079b346bbd.jpg,Instant Noodles,400-499g,Halal,NonHealthy,Low,High,High,High,High,Medium
+17,IMG_9844_JPG.rf.cafa972310eb5e4d4175bd7757db0c40.jpg,Instant Noodles,700-799g,Halal,NonHealthy,Low,High,High,High,High,Medium
+18,IMG_9846_JPG.rf.94ff895c1b40623b89d9d089fd37f3bd.jpg,OtherNoodles,700-799g,NonHalal,NonHealthy,Low,High,High,Medium,Low,Low
+19,IMG_9848_JPG.rf.f9e97063d03e41b6848d8f2da0c5afbe.jpg,Oil,500-599g,Halal,NonHealthy,Medium,High,High,High,Medium,High
+20,IMG_5374_jpeg.rf.9be4c754ec8793e3f54cc402157e34b8.jpg,Oil,500-599g,Halal,NonHealthy,Low,High,High,Medium,Low,Low
+21,IMG_5373_jpeg.rf.731586d6d9b0413a7e4a9d3cf661d172.jpg,Oil,Not Available,Not Available,NonHealthy,Low,High,High,Low,Low,Medium
+22,IMG_5376_jpeg.rf.3ede76c9454b87eebe56589732fe142f.jpg,Oil,Not Available,Not Available,Not Available,Medium,High,High,Low,Low,Low
+23,IMG_5372_jpeg.rf.d1b65a32723308b39347274e4e488ce6.jpg,BiscuitsCrackersCookies,100-199g,Halal,Healthy,Low,High,High,Medium,Medium,High
+24,Photo-2023-04-28-12-14-16-PM_jpeg.rf.27cdf785c0c719af840095823f76ff59.jpg,BiscuitsCrackersCookies,200-299g,Halal,NonHealthy,Low,Medium,High,Low,Medium,Medium
+25,Crackers_200-299g_0311_Halal_10_png.rf.75c4901062bc1fc2401e3a91a838c344.jpg,BiscuitsCrackersCookies,700-799g,Halal,NonHealthy,Low,High,High,Medium,Medium,Medium
+26,Crackers_200-299g_0311_Halal_4_png.rf.28bcb095effa8ebe7109d3b5c9609132.jpg,BiscuitsCrackersCookies,200-299g,Halal,NonHealthy,Low,Medium,High,Medium,Low,Medium
+27,Crackers_200-299g_0311_Halal_7_png.rf.31a1e14a4a933649dc88a9160d46c071.jpg,BiscuitsCrackersCookies,700-799g,Halal,NonHealthy,Low,High,High,Low,Medium,High
+28,Crackers_200-299g_0311_Halal_9_png.rf.32c5e47f06e16c639029db205ef80fae.jpg,BiscuitsCrackersCookies,200-299g,Halal,NonHealthy,Low,High,High,Medium,Medium,Medium
+29,Crackers_200-299g_0311_Halal_6_png.rf.54db32aa5dbc86ea3a01774dd951b0f2.jpg,BiscuitsCrackersCookies,200-299g,Halal,NonHealthy,Medium,High,High,Medium,Low,Low
+30,Crackers_200-299g_0311_Halal_3_png.rf.6bf597e3df605a52556448839c5481f1.jpg,BiscuitsCrackersCookies,400-499g,Halal,NonHealthy,Low,High,High,Medium,Low,Low
+31,Crackers_200-299g_0311_Halal_2_png.rf.8641c9697247ebed85045e8f7bbf4f60.jpg,BiscuitsCrackersCookies,400-499g,Halal,NonHealthy,Low,High,High,Medium,Low,Low
+32,Crackers_200-299g_0311_Halal_13_png.rf.91e9cc0acc13c3ac93afc933af6e3b1f.jpg,BiscuitsCrackersCookies,300-399g,Halal,NonHealthy,Medium,High,High,High,High,Medium
+33,Crackers_200-299g_0311_Halal_12_png.rf.ac6b6e033ea8c5e53edaa3f2bcb1b54c.jpg,BiscuitsCrackersCookies,200-299g,Halal,NonHealthy,Medium,High,High,Medium,Medium,Low
+34,Crackers_200-299g_0311_Halal_1_png.rf.a1ea105eac35c77565ddc166b94d5f68.jpg,BiscuitsCrackersCookies,300-399g,Halal,NonHealthy,Low,Medium,High,Low,Medium,Medium
+35,Crackers_200-299g_0311_Halal_14_png.rf.c6eeba325c14a6fe80f661085d2c385d.jpg,BiscuitsCrackersCookies,100-199g,Halal,NonHealthy,Low,High,High,Low,Medium,Low
+36,Crackers_200-299g_0311_Halal_15_png.rf.a6940b3cd0353c5fd980c8d2e9817776.jpg,BiscuitsCrackersCookies,300-399g,Halal,NonHealthy,Low,High,High,High,Medium,High
+37,Crackers_200-299g_0311_Halal_5_png.rf.d5081210f8a443d6ae80876d7c17cd2f.jpg,Potatochips,100-199g,Halal,NonHealthy,Low,Medium,High,Low,Medium,High
+38,Crackers_200-299g_0311_Halal_11_png.rf.e6a292476bad4e300d4bccea225440e3.jpg,BiscuitsCrackersCookies,100-199g,Halal,NonHealthy,Low,High,High,Low,Medium,Low
+39,Crackers_100-199g_0311_Halal_7_png.rf.232448b00cbf58170056847376f1d8b5.jpg,BiscuitsCrackersCookies,200-299g,Halal,NonHealthy,Medium,High,High,Low,Medium,High
+40,Crackers_100-199g_0311_Halal_6_png.rf.1a2e8170a5f438d205a800fad013ac65.jpg,BeehoonVermicelli,400-499g,Halal,NonHealthy,Low,High,High,Medium,Low,Low
+41,Crackers_100-199g_0311_Halal_3_png.rf.28974f239876fa6a4f9c9f2c86a12fb2.jpg,Nuts,100-199g,Halal,NonHealthy,Medium,High,High,Low,Medium,Low
+42,Crackers_100-199g_0311_Halal_5_png.rf.4e9b14fb3894e9713423ea4f1c01c079.jpg,BeehoonVermicelli,400-499g,Halal,NonHealthy,Low,Medium,High,Medium,High,High
+43,Crackers_100-199g_0311_Halal_13_png.rf.1db4e652b6fc41e8c4ccd08d514a1333.jpg,BiscuitsCrackersCookies,300-399g,NonHalal,NonHealthy,Low,High,High,Medium,Low,Low
+44,Crackers_100-199g_0311_Halal_2_png.rf.4b00d7f518b45753688c26e4638b1b92.jpg,DriedFruits,100-199g,Halal,NonHealthy,Medium,High,High,Low,Medium,Low
+45,Crackers_100-199g_0311_Halal_4_png.rf.ad4bc0bc44e257fd4c23b9fa1ebdc7cc.jpg,Potatochips,100-199g,Halal,NonHealthy,Medium,Medium,High,Low,Medium,Low
+46,Crackers_100-199g_0311_Halal_8_png.rf.b0847e2b2bad5b7e24adeabbce0989d5.jpg,OtherNoodles,200-299g,Halal,NonHealthy,Low,High,High,Medium,Low,High
+47,Crackers_100-199g_0311_Halal_12_png.rf.b4bcc75eeb0ee5949218c86b438943fc.jpg,Potatochips,100-199g,Halal,NonHealthy,Low,Medium,High,Low,Medium,High
+48,Crackers_100-199g_0311_Halal_1_png.rf.cc677956410c7e5c00bb5613fffd7a8f.jpg,BiscuitsCrackersCookies,100-199g,Halal,NonHealthy,Medium,High,High,Low,Medium,Medium
+49,Crackers_100-199g_0311_Halal_11_png.rf.444cd4683f23c6db379fec4b93e8ea41.jpg,Potatochips,100-199g,Halal,NonHealthy,Low,Medium,High,High,Medium,High
+50,Crackers_100-199g_0311_Halal_9_png.rf.e72528eb1f628bf4ca42ad66001f9cee.jpg,Potatochips,100-199g,Halal,NonHealthy,Low,Medium,High,Medium,Low,High
+51,Crackers_100-199g_0311_Halal_15_png.rf.dedbc1127483ccb8632ca53acec8b208.jpg,Potatochips,100-199g,Halal,NonHealthy,Low,High,High,Medium,Low,High
+52,Crackers_100-199g_0311_Halal_10_png.rf.cc0c07791506c1c61e8fce6273ce2228.jpg,OtherSauceDressing,1-99g,NonHalal,NonHealthy,Low,Medium,Low,Medium,Low,Low
+53,Crackers_100-199g_0311_Halal_14_png.rf.6f68330c9887e31533c92f384dd72032.jpg,OtherSauceDressing,1-99g,NonHalal,NonHealthy,Low,Medium,Medium,High,Low,Low
+54,IMG_3474_jpeg.rf.1df971e35bf5357fcef0adee1208495d.jpg,OtherDriedFood,1-99g,NonHalal,Healthy,Low,Medium,Low,Low,Low,Medium
+55,IMG_3476_jpeg.rf.22fbe011faedb3d1869bc7aac4cc112d.jpg,OtherSauceDressing,1-99g,Halal,NonHealthy,Low,High,Low,Low,Low,Low
+56,IMG_3465_jpeg.rf.4ce0a8fe2561a6cbb97db85df8f4aff4.jpg,Nuts,1-99g,NonHalal,NonHealthy,Low,High,High,High,Low,Medium
+57,IMG_3475_jpeg.rf.1519a27544bea8a88239c17e207d2cbc.jpg,OtherDriedFood,100-199g,NonHalal,NonHealthy,Low,Medium,Low,Low,Low,Low
+58,IMG_3472_jpeg.rf.8f0d18a60a251cf5f28e5f4a87ca9c3d.jpg,Nuts,1-99g,NonHalal,Healthy,Low,High,High,High,Low,Medium
+59,IMG_3464_jpeg.rf.737dfe714b1c2f69fc2bd8c9b47dd599.jpg,Nuts,1-99g,NonHalal,NonHealthy,Low,High,High,High,Low,High
+60,IMG_3478_jpeg.rf.ded596be5e3501680dc9660dbf8cecd5.jpg,Nuts,1-99g,NonHalal,NonHealthy,Low,Medium,High,High,Low,Medium
+61,IMG_3473_jpeg.rf.e47dfa0ebe88e17352b8aa773e7616a3.jpg,SweetsChocolatesOthers,100-199g,Halal,NonHealthy,Low,Medium,Medium,Low,Low,Medium
+62,IMG_3477_jpeg.rf.f0eb910d160d41dd2994d20964f6c3b0.jpg,OtherDriedFood,100-199g,Halal,NonHealthy,Low,Medium,Low,Low,Low,Low
+63,IMG_3461_jpeg.rf.ff44b0d79b2d856667f0cb4db7cb36ca.jpg,OtherDriedFood,1-99g,Halal,Healthy,Medium,Low,Low,Low,Low,Low
+64,IMG_3462_jpeg.rf.e75a7c1fdc4f0f53c4186f3b3777f81f.jpg,HoneyOtherSpreads,200-299g,Halal,Healthy,Medium,Medium,High,Low,Low,Low
+65,IMG_3463_jpeg.rf.eb69f3bc670b015b28c24d24611d824e.jpg,OtherSauceDressing,100-199g,NonHalal,NonHealthy,Medium,High,High,Low,Low,Low
+66,IMG_6477_jpeg.rf.2ea2997416bbf9ec51056939f04f22d0.jpg,OtherSauceDressing,100-199g,Halal,NonHealthy,Medium,High,High,High,Low,Medium
+67,IMG_6472_jpeg.rf.16523c27e109a765fa18077f645249d2.jpg,HoneyOtherSpreads,300-399g,Halal,Healthy,Low,High,High,Medium,Low,Low
+68,IMG_6474_jpeg.rf.3a2c41b5305c511fa5c5aa5a77cbac18.jpg,OtherSauceDressing,200-299g,Halal,NonHealthy,Low,Medium,High,Medium,Low,High
+69,IMG_6458_jpeg.rf.79bc128665f129f09f23c55eb459510a.jpg,HoneyOtherSpreads,300-399g,Halal,Healthy,Low,High,High,Medium,Medium,Low
+70,IMG_6476_jpeg.rf.523ba8907ec5058af0e3c3cf5df0d926.jpg,Coffee,Unknown,Unknown,Unknown,Low,High,High,Low,Low,Low
+71,IMG_6459_jpeg.rf.e2bdb5ea8c09eb9a92d488f4ff17c103.jpg,HoneyOtherSpreads,300-399g,Halal,NonHealthy,Low,High,High,Medium,Low,Low
+72,IMG_6475_jpeg.rf.eaa31bb842a8daa981f0ab1d82ffa62d.jpg,HoneyOtherSpreads,300-399g,NonHalal,Healthy,Low,High,High,High,Low,Low
+73,IMG_6461_jpeg.rf.f0150fe3f237233cdbcf34b8bbff3699.jpg,BeehoonVermicelli,300-399g,Halal,NonHealthy,Low,Medium,Medium,Low,Low,Low
+74,IMG_6473_jpeg.rf.bf00488a7a2661158ac7772507679816.jpg,OtherNoodles,200-299g,Halal,NonHealthy,Low,High,High,Medium,Low,Low
+75,IMG_6460_jpeg.rf.81fecbe9388bdf692fe6a5c521df9696.jpg,OtherNoodles,400-499g,Halal,NonHealthy,Low,High,Medium,Medium,Low,Medium
+76,IMG_6462_jpeg.rf.f06f9e6df83c16765df95a973541a6b4.jpg,BeehoonVermicelli,400-499g,Halal,NonHealthy,Low,High,High,Medium,Low,Low
+77,IMG_0723_jpeg.rf.03692616665bb70f8741d39d5b866417.jpg,OtherNoodles,400-499g,Halal,Healthy,Low,High,High,Medium,Low,Low
+78,IMG_0726_jpeg.rf.be398d858dc6b946c277cdd3032ef235.jpg,TeaPowderLeaves,100-199g,Halal,Healthy,Low,High,Medium,Low,Low,Low
+79,IMG_0727_jpeg.rf.dc4b99a04a5fdc4ffd6ca4c3e45c5300.jpg,OtherNoodles,400-499g,Halal,NonHealthy,Medium,High,High,High,Medium,Medium
+80,IMG_0725_jpeg.rf.2fba6429a4cb639514682a9780e1724b.jpg,OtherNoodles,100-199g,Halal,NonHealthy,Low,High,High,Low,Medium,Low
+81,IMG_0724_jpeg.rf.b3ff38d67147f91b94f0818dd6c67659.jpg,OtherNoodles,400-499g,Halal,NonHealthy,Low,High,High,Medium,Low,High
+82,IMG_0910_jpeg.rf.00f70e48d7db1907df5a599397110b13.jpg,OtherNoodles,300-399g,Halal,NonHealthy,Low,High,High,Medium,Low,Medium
+83,IMG_0908_jpeg.rf.731ca6963977fe0a8a47ec1c2ca0cbc0.jpg,Unknown,Unknown,Unknown,Unknown,Low,Low,Low,Low,Low,Low
+84,IMG_0911_jpeg.rf.3523410e4d12bb7686eb82ea6765896e.jpg,OtherNoodles,400-499g,Halal,NonHealthy,Low,High,High,Medium,Low,Medium
+85,IMG_0905_jpeg.rf.b2ae1483882c9455f45686447af57c58.jpg,Nuts,100-199g,Halal,Healthy,Low,High,High,High,High,Medium
+86,IMG_0912_jpeg.rf.c28bb648801db28873a2696f7cfede5a.jpg,Nuts,100-199g,Halal,NonHealthy,Low,High,High,High,High,Medium
+87,IMG_0909_jpeg.rf.4a6139765fb8980135892d319291c8d0.jpg,Nuts,100-199g,Halal,Healthy,Low,High,High,High,Low,Low
+88,IMG_0913_jpeg.rf.4fcc1d7f7d5d11696655ca5f3dc792ff.jpg,Nuts,100-199g,Halal,NonHealthy,Low,High,High,High,High,Medium
+89,IMG_0906_jpeg.rf.6f0902070a4ae1dd4c6188155fb18446.jpg,Nuts,100-199g,Halal,NonHealthy,Low,High,High,High,Medium,High
+90,IMG_0907_jpeg.rf.1b02922942d43ac67075a116f22eece9.jpg,Nuts,100-199g,Halal,NonHealthy,Low,High,High,High,Medium,Low
+91,IMG_3367_jpeg.rf.18a3b661bac3d6ba3d50110eb506b3f3.jpg,Nuts,100-199g,Halal,Healthy,Low,High,High,Medium,Medium,Low
+92,IMG_3363_jpeg.rf.27b21f158f5ae3354846bd6206daee24.jpg,Nuts,200-299g,Halal,Healthy,Low,High,High,Medium,Medium,Medium
+93,IMG_3364_jpeg.rf.608fb0f05ab7295a5cd800933feef406.jpg,BeehoonVermicelli,100-199g,Halal,NonHealthy,Low,High,High,High,High,Low
+94,IMG_3362_jpeg.rf.2e62a40d141127e32dcc0387ff968e4c.jpg,Nuts,300-399g,Halal,Healthy,Low,High,High,Medium,Medium,Low
+95,IMG_3377_jpeg.rf.5db05ab921c8d748237b0c5b89859234.jpg,Nuts,100-199g,Halal,NonHealthy,Low,High,High,Medium,High,Low
+96,IMG_3378_jpeg.rf.906f43b07016f88d62bcc533929f3e50.jpg,Nuts,100-199g,Halal,NonHealthy,Low,High,High,High,High,High
+97,IMG_3366_jpeg.rf.bb9f9635c820f8ec2bfe5a2a1b2787ef.jpg,Nuts,200-299g,Halal,Healthy,Low,High,High,Medium,Low,Medium
+98,IMG_3395_jpeg.rf.dc5de9bdfe4d214cc053d6f8537bacd7.jpg,Nuts,200-299g,Halal,Healthy,Low,High,High,Medium,Medium,Low
+99,IMG_3370_jpeg.rf.6e882ffa3d25e70249e327f76e90eded.jpg,Nuts,200-299g,Halal,Healthy,Low,High,High,Medium,Medium,Medium
+100,IMG_3361_jpeg.rf.e9c6d5b1a4b608b9597839f73d487f64.jpg,Nuts,100-199g,Halal,NonHealthy,Medium,High,High,High,High,Low
+101,IMG_3365_jpeg.rf.9c5c8a6327843ba4ccddacedbdec6470.jpg,Nuts,100-199g,Halal,NonHealthy,Low,High,High,High,Low,Low
+102,IMG_3369_jpeg.rf.b1b0a9f2c7fe45fb47dbd546c759dca6.jpg,Nuts,100-199g,Halal,Healthy,Low,High,High,High,High,Medium
+103,IMG_3376_jpeg.rf.a8e4695d6bb97ce9e0cc9f940440a0f7.jpg,HoneyOtherSpreads,200-299g,Halal,Healthy,Medium,High,High,High,Medium,Low
+104,IMG_3392_jpeg.rf.84e82815866cb1cdd4b4fb22976f500c.jpg,HoneyOtherSpreads,300-399g,Halal,Healthy,Low,Medium,High,Medium,Low,Low
+105,IMG_3391_jpeg.rf.cdb42e0a2853b6d84ec8225930c836a7.jpg,HoneyOtherSpreads,500-599g,Halal,Healthy,Low,Medium,High,Medium,Low,Medium
+106,IMG_3379_jpeg.rf.efb5f19e78349200e1c9120192b5c613.jpg,RolledOatsInstantOatmeal,800-899g,Halal,Healthy,Low,High,High,Medium,High,High
+107,IMG_3368_jpeg.rf.f8dfe3e00309e5beee240208f597794e.jpg,BeehoonVermicelli,300-399g,Halal,Healthy,Low,High,High,High,Medium,High
+108,IMG_3380_jpeg.rf.fd566d9f933b40636da05831f41d145e.jpg,BeehoonVermicelli,400-499g,Halal,Healthy,Low,High,High,Medium,Low,Low
+109,IMG_6522_jpeg.rf.a352769efac0f839c5027f71f5b97cb3.jpg,OtherNoodles,400-499g,Halal,NonHealthy,Low,Medium,High,Medium,High,High
+110,IMG_6520_jpeg.rf.e48e65fd050e06aa56aea7c5c603b028.jpg,OtherNoodles,100-199g,Halal,NonHealthy,Low,High,Medium,Medium,Low,Low
+111,IMG_6521_jpeg.rf.9aeff523d7790d87bdb2b8fa19ea8254.jpg,BeehoonVermicelli,300-399g,Halal,NonHealthy,Low,High,High,Medium,Low,High
+112,IMG_2278_JPG.rf.92856df9fd88a45daec252a528bbea66.jpg,BeehoonVermicelli,400-499g,Halal,Healthy,Low,High,High,Medium,Low,Medium
+113,IMG_2275_JPG.rf.906876ee1ff11c8cb72e17a84927bee7.jpg,Unable to determine,Unable to determine,Unable to determine,Unable to determine,Low,Low,Low,Low,Low,Low
+114,IMG_2277_JPG.rf.03a2b98e27ba9f0291f2ed937d8c75f6.jpg,BeehoonVermicelli,300-399g,Halal,Healthy,Medium,High,High,Medium,Low,Low
+115,IMG_2276_JPG.rf.b946d7f6b9a184023dde929ac9558c44.jpg,Instant Noodles,Unidentifiable,Unidentifiable,Unidentifiable,Medium,Low,Medium,Low,Low,Low
+116,IMG_2279_JPG.rf.fba890ed4f2adac8f834b7349b3a4eaa.jpg,OtherNoodles,400-499g,Halal,NonHealthy,Low,High,Low,Low,Low,Low
+117,IMG_2203_JPG.rf.25c99b645c6f94e0762b0f1b4951f253.jpg,Instant Noodles,400-499g,Halal,NonHealthy,Low,Medium,High,Low,Low,Medium
+118,IMG_2202_JPG.rf.2d77c1134474800293969121576435fa.jpg,BeehoonVermicelli,400-499g,NonHalal,Healthy,Medium,High,High,Medium,Low,Low
+119,IMG_2212_JPG.rf.01c658419d19f33b211c826fc28b11ac.jpg,BeehoonVermicelli,100-199g,NonHalal,NonHealthy,High,Medium,High,High,Low,Low
+120,IMG_2200_JPG.rf.438b4cd6e0816e936d2fe47575cee5c7.jpg,BeehoonVermicelli,400-499g,Halal,NonHealthy,Low,Medium,High,Low,Medium,Low
+121,IMG_2214_JPG.rf.577def0e1a9e1b8f85c8f04c99f90f55.jpg,OtherNoodles,400-499g,NonHalal,NonHealthy,Low,High,High,Medium,Low,Low
+122,IMG_2213_JPG.rf.3d31bc57ba303b548cdcabbc85ba8b2e.jpg,Unable to determine from image,Unable to determine from image,Unable to determine from image,Unable to determine from image,Low,Low,Low,Low,Low,Low
+123,IMG_2207_JPG.rf.bad2039d2bbbc442cac1e16c5099f831.jpg,Instant Noodles,1-99g,Halal,NonHealthy,Low,Medium,High,Low,Medium,Low
+124,IMG_2210_JPG.rf.daa853cfd9796f29b5468b3286e7748c.jpg,BeehoonVermicelli,400-499g,Halal,NonHealthy,Low,High,High,High,Medium,Low
+125,IMG_2201_JPG.rf.496e224f5578bf61250e2e778ef85237.jpg,Instant Noodles,400-499g,NonHalal,NonHealthy,Medium,High,High,Medium,Low,Low
+126,IMG_2209_JPG.rf.cab96aee5f343878494d0213f0ee0c18.jpg,MiloPowder,400-499g,Halal,NonHealthy,Medium,Medium,High,High,Low,Medium
+127,IMG_2205_JPG.rf.d6a3dc5b089fee72fa787cbda1aa3c18.jpg,MiloPowder,400-499g,Halal,NonHealthy,Low,High,High,Medium,High,High
+128,IMG_2208_JPG.rf.859bd1a6e8cdbf8eac58c382804950f8.jpg,MiloPowder,400-499g,Halal,NonHealthy,Low,High,High,High,High,Medium
+129,IMG_2204_JPG.rf.d2da42fc5ed3def049f15b7339abc97d.jpg,ChocolateMaltPowder,400-499g,Halal,NonHealthy,Low,High,High,High,Medium,Medium
+130,IMG_2206_JPG.rf.3ab803a912fe19ead56c5715ed499c15.jpg,CerealBeveragePowder,200-299g,Halal,NonHealthy,Medium,High,High,Medium,Medium,Low
+131,IMG_2211_JPG.rf.d1ade6625a83346536edb0ac4c5ce90c.jpg,RolledOatsInstantOatmeal,800-899g,Halal,Healthy,Low,High,High,High,High,High
+132,IMG_5386_jpeg.rf.b8d1f2f4f3c207d23f4b62fc5a47c7d0.jpg,RolledOatsInstantOatmeal,800-899g,Halal,Healthy,Low,High,High,High,Medium,High
+133,IMG_5384_jpeg.rf.67921356eef6baa976cb0ada082f119b.jpg,RolledOatsInstantOatmeal,400-499g,Halal,Healthy,Low,Medium,High,High,Medium,Low
+134,IMG_5383_jpeg.rf.bb7808b651af7de060ccca32329ce126.jpg,OtherNoodles,500-599g,Halal,Healthy,Low,High,High,Medium,Medium,Low
+135,IMG_5382_jpeg.rf.90c3cf98dd817253bbfd8a8b54dc141b.jpg,PancakeMix,400-499g,Halal,NonHealthy,Medium,Medium,High,Low,Medium,Low
+136,IMG_5385_jpeg.rf.e49237d55fe0b3abaadeae2e25fc5e7e.jpg,HoneyOtherSpreads,500-599g,Halal,Healthy,Low,Low,High,Low,Low,Low
+137,IMG_9725_JPG.rf.264aa5f74ecfcb452c586df78e05bb41.jpg,HoneyOtherSpreads,500-599g,Halal,NonHealthy,Low,Low,Medium,Low,Low,Low
+138,IMG_9721_JPG.rf.2ae65e7edb5815c3cbe7cc721641a511.jpg,HoneyOtherSpreads,500-599g,Halal,Healthy,Low,Low,High,High,Low,Low
+139,IMG_9723_JPG.rf.7834a689521948597b514046a311906d.jpg,HoneyOtherSpreads,300-399g,Halal,NonHealthy,Low,Low,Medium,Low,Low,Low
+140,IMG_9722_JPG.rf.b04e761fa4016744962b683f0771f5a7.jpg,OtherSauceDressing,200-299g,Halal,NonHealthy,Low,High,High,Medium,Low,Low
+141,IMG_9724_JPG.rf.e96fbbdaf270f2604f9123546c34ae09.jpg,OtherSauceDressing,300-399g,Halal,NonHealthy,Medium,High,High,Medium,Low,High
+142,2023_8_11_12_12_19_402469_png.rf.a5181f050b65cee65a9e2c43e67fc355.jpg,OtherSauceDressing,300-399g,Halal,NonHealthy,Low,High,High,Medium,Low,Low
+143,2023_8_11_12_12_4_125851_png.rf.30f61a05c7b7cb631f853b5425ddd980.jpg,OtherNoodles,1-99g,NonHalal,NonHealthy,Low,High,Low,Low,Low,Low
+144,2023_8_11_12_12_11_373773_png.rf.77bc9f4d7678b005788bb34ce532b185.jpg,OtherSauceDressing,300-399g,Halal,NonHealthy,Medium,High,High,Medium,Low,Low
+145,2023_8_11_12_12_15_532585_png.rf.dbd2130e0c171077742e965d40d0580a.jpg,InstantMeals,1-99g,NonHalal,NonHealthy,Low,High,High,Medium,Low,Low
+146,2023_8_11_12_12_7_132078_png.rf.c21b3a66363f8e0ca87f2b4a3cfc93c2.jpg,OtherDriedFood,100-199g,NonHalal,NonHealthy,Low,High,Medium,High,Low,Medium
+147,IMG_5391_jpeg.rf.51276c21d5b591962deae6bc15a26336.jpg,OtherSauceDressing,200-299g,Halal,NonHealthy,Low,High,High,High,Medium,Low
+148,IMG_5392_jpeg.rf.f353b1bd684e1122adf890f77e45d4e6.jpg,InstantMeals,100-199g,NonHalal,NonHealthy,Medium,High,High,High,Low,Medium
+149,IMG_5388_jpeg.rf.58042732349da6f173df545f01de7d08.jpg,OtherDriedFood,100-199g,NonHalal,NonHealthy,Low,High,Medium,High,Low,Low
+150,IMG_5380_jpeg.rf.17a2f2747b57231bc6b2d1fa344ca685.jpg,SweetsChocolatesOthers,500-599g,Halal,NonHealthy,Low,High,High,Medium,Low,High
+151,IMG_5389_jpeg.rf.2e62f08e0dea5aa4e03d4619f918058d.jpg,SweetsChocolatesOthers,400-499g,Halal,NonHealthy,Low,High,High,Medium,Medium,High
+152,IMG_5381_jpeg.rf.3d64e118f0ec625b24b7479287b69a30.jpg,SweetsChocolatesOthers,300-399g,Halal,NonHealthy,Medium,High,High,Low,Medium,High
+153,IMG_5378_jpeg.rf.52bf308b218d05381b36b11a92ee29f6.jpg,BeehoonVermicelli,400-499g,NonHalal,NonHealthy,Low,High,High,High,Low,Low
+154,IMG_5390_jpeg.rf.b1193f2dde363bd0c4b192f1d86b5b6a.jpg,Pasta,400-499g,NonHalal,NonHealthy,Low,Medium,Low,Low,Low,Low
+155,IMG_5379_jpeg.rf.fa3b3daa7ff4a9f1a51e432cd7320eca.jpg,Pasta,500-599g,Halal,NonHealthy,Low,High,High,Medium,Low,High
+156,IMG_5377_jpeg.rf.69251c1681c0fa77a982f8bf12031917.jpg,Unknown,Unknown,Unknown,Unknown,Low,Low,Low,Low,Low,Low
+157,IMG_2133_jpeg.rf.27e58972dde01ae0130a3933b0ce9018.jpg,BeehoonVermicelli,400-499g,Halal,Healthy,Low,Medium,High,Low,Low,Low
+158,IMG_2136_jpeg.rf.30083130e32f19ec9d302a26f6d086d9.jpg,OtherSauceDressing,100-199g,Halal,NonHealthy,Low,Medium,Low,Low,Low,Low
+159,IMG_2135_jpeg.rf.6d0cbbf581f3ae68be071733e030b496.jpg,BeehoonVermicelli,400-499g,Halal,NonHealthy,Low,High,High,High,Low,High
+160,IMG_2328_JPG.rf.10328f50d54c11827e99a0afd34ccf70.jpg,BeehoonVermicelli,400-499g,Halal,Healthy,Low,High,High,High,Low,Low
+161,IMG_2299_JPG.rf.0a2097c42c0516765f7d6ce5aa297c30.jpg,OtherNoodles,600-699g,Halal,NonHealthy,Low,High,High,High,Medium,High
+162,IMG_2330_JPG.rf.2562c0290fe3830898217333df4bbb36.jpg,Instant Noodles,100-199g,NonHalal,NonHealthy,Medium,High,High,High,Low,Low
+163,IMG_2300_JPG.rf.2545dcf2cd4c82653393f19c492d9577.jpg,BeehoonVermicelli,400-499g,Halal,NonHealthy,Low,High,High,Medium,Low,Low
+164,IMG_3282_jpeg.rf.2cab2e3c3684b71dccc8e35e9cee6e90.jpg,BeehoonVermicelli,400-499g,Halal,NonHealthy,Low,High,High,High,Low,Low
+165,IMG_2301_JPG.rf.6931ffb52539d596994caa32dc284fb6.jpg,BeehoonVermicelli,400-499g,Halal,Healthy,Low,High,High,Medium,Low,Low
+166,IMG_2298_JPG.rf.87a95e98370ed4bfcb43f867feef6112.jpg,OtherNoodles,100-199g,Halal,NonHealthy,Low,Medium,High,Low,Low,Medium
+167,IMG_3280_jpeg.rf.57ac5b6f962b9d158aaae18cb270db57.jpg,BeehoonVermicelli,400-499g,Halal,Healthy,Low,High,High,High,Medium,Medium
+168,IMG_2331_JPG.rf.7cb1549bdedc755537b1b5cd03dd3f4c.jpg,OtherSauceDressing,200-299g,Halal,NonHealthy,Low,High,Low,Medium,High,High
+169,IMG_2329_JPG.rf.83d15b6cbb23140366258d5f460fb56f.jpg,OtherCannedVegetables,300-399g,Halal,NonHealthy,Low,High,High,High,Low,Medium
+170,IMG_3281_jpeg.rf.99be4df3d646a4197726bb5183648272.jpg,OtherCannedVegetables,200-299g,Halal,NonHealthy,Low,High,High,Medium,Low,Medium
+171,IMG_2297_JPG.rf.cb026ab3c2ba90b91d401e0400c0461e.jpg,CannedSoup,300-399g,Halal,NonHealthy,Low,High,High,High,Low,Low
+172,IMG_3279_jpeg.rf.0c875057637d0099744592cc9bac948e.jpg,CannedSoup,400-499g,Halal,NonHealthy,Low,High,High,Medium,Low,Low
+173,IMG_2332_JPG.rf.6a068c04bfe02ea8c081a0636a8d31de.jpg,BiscuitsCrackersCookies,400-499g,Halal,NonHealthy,Low,High,High,High,Medium,Medium
+174,IMG_3283_jpeg.rf.e3a4bce3f0e08daca412b1a62fc284a0.jpg,BiscuitsCrackersCookies,500-599g,Halal,NonHealthy,Low,High,High,Medium,Low,High
+175,IMG_5422_jpeg.rf.08e7ecb8e9576bcfd37a0fdd65e7f50d.jpg,BiscuitsCrackersCookies,400-499g,Halal,NonHealthy,Low,High,High,High,Medium,High
+176,IMG_5423_jpeg.rf.d6665b8ada97f3e0536db62bdb9cad04.jpg,BiscuitsCrackersCookies,300-399g,Halal,NonHealthy,Low,High,High,Medium,Medium,Low
+177,IMG_5421_jpeg.rf.9566b4eb3ed0f07599eb2258bc773f91.jpg,BiscuitsCrackersCookies,400-499g,Halal,NonHealthy,Medium,High,High,High,Medium,High
+178,IMG_5419_jpeg.rf.5dff5f421424d021f23e3a4a9307376f.jpg,BiscuitsCrackersCookies,300-399g,Halal,NonHealthy,Low,High,High,Medium,High,High
+179,IMG_5420_jpeg.rf.b400fdb587325f1e0221df61ec4faadc.jpg,SweetsChocolatesOthers,600-699g,Halal,NonHealthy,Low,High,High,Medium,Medium,Low
+180,IMG_5577_jpeg.rf.00fd5522a3c558927544a3563fbcaf10.jpg,BiscuitsCrackersCookies,700-799g,Halal,NonHealthy,Low,High,High,Medium,Low,Low
+181,IMG_5572_jpeg.rf.20a1abed40a56ef955a54d7287dcb310.jpg,BiscuitsCrackersCookies,300-399g,Halal,NonHealthy,Medium,High,High,Medium,Low,Low
+182,IMG_5575_jpeg.rf.14c4c9537b93274af8d94440909f01f2.jpg,BiscuitsCrackersCookies,300-399g,Halal,NonHealthy,Low,High,High,Medium,Low,High
+183,IMG_5571_jpeg.rf.3a194ec16cdfd627eaf5192e66ba0284.jpg,OtherNoodles,200-299g,Halal,NonHealthy,Low,High,High,Medium,Low,High
+184,IMG_5513_jpeg.rf.8b7a42f411abfe83a34c1a200a683b0e.jpg,OtherNoodles,300-399g,NonHalal,NonHealthy,Low,High,High,High,Low,Medium
+185,IMG_5541_jpeg.rf.621586160da04bac390b8772e53ceb91.jpg,OtherNoodles,200-299g,NonHalal,NonHealthy,Low,High,High,High,Low,Low
+186,IMG_5565_jpeg.rf.ad10d81654316ab0db2aeeff24bf3a23.jpg,OtherNoodles,400-499g,NonHalal,NonHealthy,Low,High,High,High,Low,Medium
+187,IMG_5573_jpeg.rf.84d93996c2b1f125782ddc7efd18db8f.jpg,OtherDriedFood,300-399g,NonHalal,NonHealthy,Low,High,High,High,Low,High
+188,IMG_5574_jpeg.rf.bc2190fb46b4b9547d6625d4bc8a18ee.jpg,BeehoonVermicelli,400-499g,Halal,NonHealthy,Medium,High,High,High,High,Low
+189,IMG_5570_jpeg.rf.d8479c10eb757a266a41752d2b280c73.jpg,OtherNoodles,400-499g,Halal,NonHealthy,Low,Medium,High,High,Low,Medium
+190,IMG_9888_JPG.rf.1b704dfe758fd504c1f59c1d89cfcea4.jpg,Nuts,400-499g,NonHalal,NonHealthy,Medium,Medium,Low,High,Low,Low
+191,IMG_9882_JPG.rf.8b8ed32ad11e4875ba2d060221bd1f23.jpg,Instant Noodles,100-199g,NonHalal,NonHealthy,Low,High,High,Medium,Low,High
+192,IMG_9889_JPG.rf.27e2e7a373ef50c444f7ca30fdde3b9c.jpg,BeehoonVermicelli,200-299g,Halal,NonHealthy,Low,High,High,Low,Low,Low
+193,IMG_9900_JPG.rf.8a3a21c92fc2861a722aa9039f0e051e.jpg,Instant Noodles,100-199g,NonHalal,NonHealthy,Low,High,High,Medium,Low,Medium
+194,IMG_9881_JPG.rf.ecc0dc3039dc8f7c9b890ba0dd8c6a1e.jpg,Instant Noodles,200-299g,NonHalal,NonHealthy,Low,High,High,Medium,Low,High
+195,IMG_9878_JPG.rf.eda65a74205ef0d7ed1be08fbd58f83b.jpg,BeehoonVermicelli,300-399g,NonHalal,NonHealthy,Medium,Medium,High,Low,Low,Low
+196,IMG_9876_JPG.rf.f2fd5e44ef6fb8e7e50692e2a2d1b99c.jpg,Instant Noodles,500-599g,NonHalal,NonHealthy,Low,High,High,Medium,Low,Low
+197,IMG_9885_JPG.rf.b5df7daf83308e0db454de569d155ee2.jpg,Instant Noodles,200-299g,NonHalal,NonHealthy,Low,High,High,Medium,Low,High
+198,IMG_9886_JPG.rf.df7c959094222095391c2ae1ccbdbcf0.jpg,BeehoonVermicelli,300-399g,Halal,NonHealthy,Low,High,High,Medium,Low,High
+199,IMG_9785_JPG.rf.1a6e126b31e47a5880c0e0e49c6fc953.jpg,BeehoonVermicelli,300-399g,Halal,NonHealthy,Medium,High,High,Medium,Low,Low
+200,IMG_9793_JPG.rf.834c56ca4c389defbe231f6f0ad1ab5e.jpg,BeehoonVermicelli,400-499g,Halal,NonHealthy,Low,Medium,High,Medium,Low,Low
+201,IMG_9784_JPG.rf.732e4d39908acc9bd0409a4185f7ae7d.jpg,OtherNoodles,Not enough information,Not enough information,Not enough information,Low,Medium,Medium,Low,Low,Low
+202,IMG_9787_JPG.rf.26536f2340380ed6d541b8628d558af7.jpg,BeehoonVermicelli,400-499g,Halal,NonHealthy,High,Low,Medium,Low,Low,Low
+203,IMG_9791_JPG.rf.0748cbb10c30ec47345c2ba71cb39fd3.jpg,BeehoonVermicelli,400-499g,Halal,NonHealthy,Medium,Low,Low,Low,Low,Low
+204,IMG_9783_JPG.rf.2d3a3514554de053739c991ff0ec8386.jpg,OtherNoodles,200-299g,Halal,NonHealthy,Medium,High,High,High,High,Medium
+205,IMG_9786_JPG.rf.e7c533a8b98410661d10ecd8ca9ad1e6.jpg,BeehoonVermicelli,200-299g,Halal,Healthy,Low,High,High,High,Medium,Medium
+206,IMG_9789_JPG.rf.2e966b6efa2ffc40e579405658322dd7.jpg,BeehoonVermicelli,200-299g,Halal,NonHealthy,Medium,Medium,High,High,High,Low
+207,IMG_9790_JPG.rf.7ca617e1a61836fb3a652bb991cdc689.jpg,BeehoonVermicelli,300-399g,NonHalal,NonHealthy,High,Low,Low,Low,Low,Low
+208,IMG_9792_JPG.rf.e7e3d6799b66901d6d01401faf18543b.jpg,OtherNoodles,300-399g,Halal,NonHealthy,Medium,High,High,Low,Medium,Low
+209,IMG_2291_JPG.rf.0a9eee31c5d4eeff5ee5ddfad9047e7f.jpg,BeehoonVermicelli,300-399g,Halal,NonHealthy,Low,Medium,High,Low,Low,Low
+210,IMG_2311_JPG.rf.672d88df873254f8df92badde9c95dfe.jpg,BeehoonVermicelli,300-399g,Halal,Healthy,Medium,Medium,High,Low,Low,Low
+211,IMG_2310_JPG.rf.af54581019c2fe54c4fd5dd1102b4a76.jpg,Unable to determine,Unable to determine,Unable to determine,Unable to determine,High,Low,Low,Low,Low,Low
+212,IMG_2322_JPG.rf.525b30126539ed4911cc5830cc9ca913.jpg,OtherCannedVegetables,300-399g,Halal,NonHealthy,Low,Low,Low,Low,Low,Low
+213,IMG_2308_JPG.rf.05a42f92222ffbf777f344f866c7e518.jpg,OtherDriedFood,1-99g,NonHalal,NonHealthy,Medium,High,Low,Low,Low,Low
+214,IMG_2288_JPG.rf.2673376304009b83190a7e8872f3e52d.jpg,OtherNoodles,200-299g,Halal,Healthy,Low,High,High,High,Medium,Low
+215,IMG_2316_JPG.rf.9a8e9dbcba56ebab84a6f7386dd61947.jpg,BeehoonVermicelli,400-499g,NonHalal,NonHealthy,Low,High,High,Medium,Low,Low
+216,IMG_2289_JPG.rf.978f7ddb9d49ea61609295b12db428f1.jpg,OtherNoodles,1-99g,NonHalal,NonHealthy,Medium,Low,Low,Low,Low,Low

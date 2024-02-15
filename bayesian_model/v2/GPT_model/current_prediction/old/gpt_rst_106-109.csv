@@ -1,0 +1,4 @@
+,img_filename,product_type,weight,halal,health,image_reflection,image_clarity,product_type_confidence,weight_confidence,halal_confidence,health_confidence
+0,2023_10_25_11_23_10_398347.jpg,BiscuitsCrackersCookies,400-499g,Halal,NonHealthy,Low,High,High,Medium,Low,High
+1,2023_10_25_11_29_12_163138.jpg,Instant Noodles,700-799g,Halal,NonHealthy,Medium,Medium,High,Low,Medium,Low
+2,2023_10_25_11_30_13_941552.jpg,BiscuitsCrackersCookies,100-199g,Halal,Healthy,Low,High,High,High,Medium,Medium

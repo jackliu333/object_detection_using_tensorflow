@@ -1,0 +1,17 @@
+,img_filename,product_type,weight,halal,health,image_reflection,image_clarity,product_type_confidence,weight_confidence,halal_confidence,health_confidence
+0,2023_10_25_11_23_10_398347.jpg,RolledOatsInstantOatmeal,500-599g,Halal,Healthy,Medium,High,High,High,Low,Medium
+1,2023_10_25_11_29_12_163138.jpg,RolledOatsInstantOatmeal,500-599g,Halal,Healthy,Low,High,High,High,Medium,High
+2,2023_10_25_11_30_13_941552.jpg,RolledOatsInstantOatmeal,Not visible,Halal,Healthy,Medium,Medium,High,Low,Medium,Medium
+3,2023_10_25_11_18_17_414290.jpg,RolledOatsInstantOatmeal,800-899g,Halal,Healthy,Low,High,High,High,High,Medium
+4,2023_10_25_11_24_30_751596.jpg,RolledOatsInstantOatmeal,100-199g,Halal,Healthy,Low,High,High,High,Medium,High
+5,2023_10_25_11_28_26_257957.jpg,RolledOatsInstantOatmeal,800-899g,Halal,Healthy,Low,High,High,High,High,High
+6,2023_10_25_11_27_36_553063.jpg,Salt,300-399g,Halal,NonHealthy,Medium,Medium,High,Medium,Low,Low
+7,2023_10_25_11_13_31_297935.jpg,Salt,900-999g,Halal,NonHealthy,Medium,High,High,High,Low,Medium
+8,2023_10_25_11_19_37_293026.jpg,Salt,500-599g,Halal,NonHealthy,Low,High,High,High,Medium,High
+9,2023_10_25_11_21_25_451071.jpg,Salt,Unknown,Halal,NonHealthy,Low,Medium,High,Low,Medium,High
+10,2023_10_25_12_0_24_122688.jpg,Salt,500-599g,Halal,NonHealthy,Low,High,High,High,Low,High
+11,IMG_5332_jpeg.rf.252e286febd9cc1909eca053f411e294.jpg,CannedSardines,100-199g,Halal,NonHealthy,Low,High,High,High,Medium,Low
+12,2023_10_25_11_49_31_952586.jpg,CannedSardingMackerel,400-499g,Halal,NonHealthy,Low,Medium,High,High,Medium,Low
+13,2023_10_25_12_15_35_372072.jpg,CannedSardines,100-199g,Halal,NonHealthy,Low,High,High,Medium,Low,High
+14,IMG_5325_jpeg.rf.3b6ff08f1118b0a4b31c12516318cda2.jpg,CannedSardines,300-399g,Halal,NonHealthy,Low,High,High,High,Medium,Low
+15,2023_10_25_11_44_49_143730.jpg,CannedSardingMackerel,400-499g,Halal,NonHealthy,Low,High,High,Medium,Medium,High

@@ -1,0 +1,6 @@
+,img_filename,product_type,weight,halal,health,image_reflection,image_clarity,product_type_confidence,weight_confidence,halal_confidence,health_confidence
+0,2023_10_25_11_23_10_398347.jpg,BiscuitsCrackersCookies,100-199g,Halal,NonHealthy,Low,Medium,High,Low,Low,High
+1,2023_10_25_11_29_12_163138.jpg,BiscuitsCrackersCookies,100-199g,Halal,Healthy,Medium,High,High,Low,Medium,Medium
+2,2023_10_25_11_30_13_941552.jpg,Potatochips,100-199g,Halal,NonHealthy,Low,Medium,High,Low,Medium,Low
+3,2023_10_25_11_18_17_414290.jpg,OtherDriedFood,200-299g,Halal,NonHealthy,Medium,High,High,Medium,Low,Medium
+4,2023_10_25_11_24_30_751596.jpg,Nuts,200-299g,Halal,NonHealthy,Low,Medium,High,Low,Low,Low

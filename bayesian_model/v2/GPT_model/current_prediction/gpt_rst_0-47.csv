@@ -1,0 +1,46 @@
+,img_filename,product_type,weight,halal,health,image_reflection,image_clarity,product_type_confidence,weight_confidence,halal_confidence,health_confidence
+0,2023_10_25_11_23_10_398347.jpg,OtherBakingNeeds,1-99g,Halal,Healthy,Low,Medium,Medium,Low,Medium,Low
+1,2023_10_25_11_29_12_163138.jpg,Unable to determine,Unable to determine,Unable to determine,Unable to determine,High,Low,Low,Low,Low,Low
+2,2023_10_25_11_30_13_941552.jpg,Unknown,Unknown,Unknown,Unknown,Low,Low,Low,Low,Low,Low
+3,2023_10_25_11_18_17_414290.jpg,MilkPowder,Not visible in the image,Halal,Healthy,Medium,Medium,High,Low,Medium,Medium
+4,2023_10_25_11_28_26_257957.jpg,MilkPowder,Not visible,Not visible,Not visible,Medium,Low,High,Low,Low,Low
+5,2023_10_25_11_27_36_553063.jpg,OtherHotBeverages,700-799g,Halal,Healthy,Low,High,High,Medium,High,Medium
+6,2023_10_25_11_13_31_297935.jpg,MilkPowder,900-999g,Halal,NonHealthy,Low,Medium,High,Medium,Low,High
+7,2023_10_25_11_19_37_293026.jpg,MilkPowder,400-499g,Halal,Healthy,Low,Medium,High,Medium,Medium,Low
+8,2023_10_25_11_21_25_451071.jpg,AdultMilk,700-799g,Halal,NonHealthy,Low,Medium,High,Medium,Low,Low
+9,2023_10_25_12_0_24_122688.jpg,BabyMilkPowder,900-999g,Halal,NonHealthy,Medium,High,High,Low,Medium,High
+10,IMG_5332_jpeg.rf.252e286febd9cc1909eca053f411e294.jpg,BabyMilkPowder,800-899g,Halal,Healthy,Low,High,High,Medium,Medium,Low
+11,2023_10_25_11_49_31_952586.jpg,MilkPowder,700-799g,NonHalal,Healthy,Low,Medium,High,Medium,Low,Medium
+12,2023_10_25_12_15_35_372072.jpg,BabyMilkPowder,700-799g,Halal,NonHealthy,Low,Low,Medium,Low,Low,Low
+13,IMG_5325_jpeg.rf.3b6ff08f1118b0a4b31c12516318cda2.jpg,BabyMilkPowder,800-899g,Halal,Healthy,Low,High,High,Medium,Low,Medium
+14,2023_10_25_11_44_49_143730.jpg,BabyMilkPowder,800-899g,Halal,Healthy,Low,Medium,High,Low,Medium,Low
+15,2023_10_25_12_8_11_460440.jpg,MilkPowder,700-799g,Halal,NonHealthy,Low,Medium,High,Low,Medium,Low
+16,2023_10_25_11_56_0_752681.jpg,BabyMilkPowder,800-899g,Halal,NonHealthy,Medium,Low,High,Medium,Low,Low
+17,2023_10_25_11_56_51_548094.jpg,BabyMilkPowder,Not visible,Halal,Healthy,Low,Medium,High,Low,Medium,Medium
+18,2023_10_25_12_8_59_18082.jpg,BabyMilkPowder,800-899g,Halal,Healthy,Low,Medium,High,Medium,Low,Low
+19,IMG_6846_jpeg.rf.394106442ecf012763a2933906b2ebfc.jpg,Babyfood,1-99g,Halal,Healthy,Medium,High,High,Medium,High,Medium
+20,IMG_6838_jpeg.rf.11f8e494ef6811b7562ec2f5085e494c.jpg,BiscuitsCrackersCookies,600-699g,Halal,NonHealthy,Low,High,High,High,High,High
+21,IMG_6847_jpeg.rf.392851b4b3577cef8b7cf6adb9e16479.jpg,Babyfood,1-99g,Halal,Healthy,Medium,High,High,High,Low,Medium
+22,IMG_6858_jpeg.rf.1b75f1c829eb5e2627e7d234a41ce4d6.jpg,BiscuitsCrackersCookies,500-599g,Halal,NonHealthy,Low,High,High,High,Low,Low
+23,IMG_6834_jpeg.rf.056ff28c5cde63278d8029e548bcd4ea.jpg,Babyfood,1-99g,Halal,Healthy,Low,High,High,High,Medium,Medium
+24,IMG_6865_jpeg.rf.31a3595db81bba6312ddc0b9236241ee.jpg,Babyfood,200-299g,Halal,Healthy,Low,High,High,Medium,Low,Low
+25,IMG_6855_jpeg.rf.4897baaabe7519e19de346d5dddd6c29.jpg,DriedFruits,1-99g,Halal,Healthy,Low,High,High,High,Low,Medium
+26,IMG_6828_jpeg.rf.956b9a2962f4f6e6484c9f790b51d640.jpg,Babyfood,1-99g,Halal,Healthy,Low,High,High,Medium,Low,Medium
+27,IMG_6823_jpeg.rf.e6dca97a9f92f0d8af8de3cc20054abb.jpg,Babyfood,100-199g,Halal,Healthy,Medium,High,High,Low,Low,Medium
+28,IMG_0404_jpeg.rf.a76f5ad4c25833a45f6778bca5839508.jpg,BiscuitsCrackersCookies,100-199g,Halal,NonHealthy,Medium,High,High,Low,Medium,Medium
+29,IMG_0393_jpeg.rf.2015ecf22ac79b66a037a49713ae8909.jpg,Babyfood,100-199g,Halal,Healthy,Low,High,High,High,Low,Medium
+30,IMG_0386-1-_jpeg.rf.0dc903ecd2fbd814d365fcf1268c8e2f.jpg,InstantMeals,1-99g,Halal,NonHealthy,Low,High,High,High,Medium,High
+31,IMG_0390_jpeg.rf.451b49c427a24edc73e8aa38e921a911.jpg,OtherSauceDressing,100-199g,Halal,Healthy,Low,High,High,Medium,Low,Medium
+32,2023_10_25_12_18_28_25599.jpg,BreakfastCereals,200-299g,Halal,Healthy,Low,High,High,Medium,Low,Low
+33,2023_10_25_12_21_11_520062.jpg,Babyfood,100-199g,Halal,Healthy,Low,Medium,Medium,Low,Low,Low
+34,2023_10_25_12_21_35_729703.jpg,Babyfood,200-299g,Halal,Healthy,Low,Medium,High,Medium,Medium,Low
+35,2023_10_25_12_19_30_574378.jpg,Babyfood,400-499g,Halal,Healthy,Low,High,High,Medium,Medium,Low
+36,2023_10_25_12_20_20_796823.jpg,OtherNoodles,200-299g,NonHalal,Healthy,Low,Medium,Low,Medium,Low,Low
+37,IMG_0069-1-_jpeg.rf.5d77e947d393f29afbed7701c6a72996.jpg,Babyfood,400-499g,Halal,NonHealthy,Low,High,High,Medium,Low,Low
+38,IMG_0056_jpeg.rf.3ea59c34afc99ffc04bda6fd5e9933d4.jpg,Babyfood,200-299g,NonHalal,Healthy,Low,High,High,Low,Low,Medium
+39,IMG_0063_jpeg.rf.3a9fa247bc41be745c1cff6963812745.jpg,BabyMilkPowder,700-799g,Halal,Healthy,Low,High,High,High,Low,Low
+40,IMG_2188_JPG.rf.1c95688bf2871c15979c6d8051bb09ea.jpg,OtherNoodles,200-299g,Halal,Healthy,Low,Medium,High,Low,Low,Low
+41,IMG_2197_JPG.rf.8285020c3be5e3351af8ab5832838724.jpg,BeehoonVermicelli,100-199g,Halal,NonHealthy,Medium,Medium,High,Low,Low,Low
+42,IMG_2177_JPG.rf.2b66c91a349891d4ce512327eb6d0b26.jpg,BeehoonVermicelli,400-499g,Halal,NonHealthy,High,Low,High,Medium,Low,Low
+43,20240123_3_0163.jpg,BeehoonVermicelli,300-399g,Halal,NonHealthy,Medium,High,High,Medium,Low,Low
+44,IMG_2212_JPG.rf.01c658419d19f33b211c826fc28b11ac.jpg,Potatochips,100-199g,Halal,NonHealthy,Low,High,Medium,Low,Low,High
