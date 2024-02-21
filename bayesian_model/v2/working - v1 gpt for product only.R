@@ -3,7 +3,7 @@ library(R2jags)
 
 # Read CSV files
 all_imgs_results_gpt <- read.csv("GPT_model/chatgpt_prediction_v1.csv")
-all_imgs_results_big_model <- read.csv("all_imgs_results_big_model.csv")
+all_imgs_results_big_model <- read.csv("../../NN_model/model_weights/original")
 
 ######### PROCESS BIG MODEL FILE #########
 # Select columns that start with 'ProductType_'

@@ -30,15 +30,15 @@ CONFIGS = {
 }
 
 # define existing categories
-annotations = pd.read_csv("../NN_model/master_list.csv")
+annotations = pd.read_csv("../master_list.csv")
 all_categories = list(annotations['label'].unique())
 
 # load label encoder 
 def load_label_encoder():
-    le_prdtype = pickle.loads(open("../NN_model/model_weights/le_prdtype.pickle", "rb").read())
-    le_weight = pickle.loads(open("../NN_model/model_weights/le_weight.pickle", "rb").read())
-    le_halal = pickle.loads(open("../NN_model/model_weights/le_halal.pickle", "rb").read())
-    le_healthy = pickle.loads(open("../NN_model/model_weights/le_healthy.pickle", "rb").read())
+    le_prdtype = pickle.loads(open("../NN_model/model_weights/original/le_prdtype.pickle", "rb").read())
+    le_weight = pickle.loads(open("../NN_model/model_weights/original/le_weight.pickle", "rb").read())
+    le_halal = pickle.loads(open("../NN_model/model_weights/original/le_halal.pickle", "rb").read())
+    le_healthy = pickle.loads(open("../NN_model/model_weights/original/le_healthy.pickle", "rb").read())
     
     return le_prdtype, le_weight, le_halal, le_healthy
 
@@ -86,7 +86,7 @@ def load_model():
         num_classes_healthy=num_classes_healthy
     )
 
-    model_path = '../NN_model/model_weights/multi_head_model.pth'
+    model_path = '../NN_model/model_weights/original/multi_head_model.pth'
     # print("test1")
     if os.path.exists(model_path):
         custom_resnet_model.load_state_dict(torch.load(model_path, map_location=CONFIGS['DEVICE']))
@@ -249,16 +249,18 @@ while True:
 
     # Define the instructions text
     instructions = [
-        "'1': Real time simple",
-        "'2': Real time complex",
-        "'3': Multiple frames simple",
-        "'0': Show video only",
-        "'q': Quit"
+        "1: Real time simple",
+        "2: Real time complex",
+        "3: Multiple frames simple",
+        "*4: Multiple frames GPT",
+        "*5: Multiple frames Human",
+        "0: Show video only",
+        "q: Quit"
     ]
 
     # Calculate the starting position for the instructions text on the top right corner
     # Adjust these values as needed for your video frame size and desired positioning
-    start_x = orig.shape[1] - 500  # Start 400 pixels from the right edge
+    start_x = orig.shape[1] - 530  # Start x pixels from the right edge
     start_y = 30  # Start 20 pixels from the top
     line_offset = 50  # Space between lines
 
@@ -364,8 +366,14 @@ while True:
 
         if CONFIGS['MULTIPLE_FRAME']:
             # print("starting scanning...")
-            start_scanning = True
+            first_scanning = True
             countdown_trigger = True
+
+            # cv2.imshow("Frame", orig)
+
+            # if first_scanning:
+            #     cv2.imshow("Frame", orig)
+            #     first_scanning = False
 
             # Display countdown if triggered
             # Countdown display logic
@@ -498,12 +506,16 @@ while True:
         CONFIGS['MULTIPLE_FRAME'] = False
         reset_multi_frame()
     elif key == ord("3"):
-        CONFIGS['RECOGNITION_ENABLED'] = True
-        CONFIGS['SINGLE_FRAME_TOP_PRED'] = False
-        CONFIGS['SINGLE_FRAME_TOP_TWO_PRED'] = False
-        CONFIGS['MULTIPLE_FRAME'] = True
-        countdown_active = True
-        countdown_start_time = time.time()  # Reset countdown start time
+        if not countdown_active and not show_result:
+            CONFIGS['RECOGNITION_ENABLED'] = True
+            CONFIGS['SINGLE_FRAME_TOP_PRED'] = False
+            CONFIGS['SINGLE_FRAME_TOP_TWO_PRED'] = False
+            CONFIGS['MULTIPLE_FRAME'] = True
+            countdown_active = True
+            countdown_start_time = time.time()  # Reset countdown start time
+            show_result = False
+        else:
+            reset_multi_frame()
     elif key == ord("0"):
         CONFIGS['RECOGNITION_ENABLED'] = False
         reset_multi_frame()
