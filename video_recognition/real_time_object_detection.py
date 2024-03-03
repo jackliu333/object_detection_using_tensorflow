@@ -14,6 +14,18 @@ import pandas as pd
 from collections import Counter
 from torchvision import models
 import os
+import base64
+import requests
+import sys
+import pandas as pd
+from openai import OpenAI
+import time
+import subprocess
+import json
+
+# Set the R_HOME environment variable to the R home directory used by RStudio
+os.environ['R_HOME'] = '/Library/Frameworks/R.framework/Resources'
+os.environ['PATH'] = '/Library/Frameworks/R.framework/Resources/bin' + os.pathsep + os.environ['PATH']
 
 CONFIGS = {
     # determine the current device and based on that set the pin memory
@@ -25,7 +37,7 @@ CONFIGS = {
     "CONFIDENCE_THRESHOLD": 0.15,
     "SINGLE_FRAME_TOP_PRED": False, # showing top prediction for each label;
     "SINGLE_FRAME_TOP_TWO_PRED": False, # showing the best one based on combinations of top two predictions observed within training set
-    "MULTIPLE_FRAME": False,
+    "MULTIPLE_FRAME3": False,
     "RECOGNITION_ENABLED": False
 }
 
@@ -35,16 +47,21 @@ all_categories = list(annotations['label'].unique())
 
 # load label encoder 
 def load_label_encoder():
-    le_prdtype = pickle.loads(open("../NN_model/model_weights/original/le_prdtype.pickle", "rb").read())
-    le_weight = pickle.loads(open("../NN_model/model_weights/original/le_weight.pickle", "rb").read())
-    le_halal = pickle.loads(open("../NN_model/model_weights/original/le_halal.pickle", "rb").read())
-    le_healthy = pickle.loads(open("../NN_model/model_weights/original/le_healthy.pickle", "rb").read())
+    le_prdtype = pickle.loads(open("../NN_model/model_weights/traindatawithin1/le_prdtype.pickle", "rb").read())
+    le_weight = pickle.loads(open("../NN_model/model_weights/traindatawithin1/le_weight.pickle", "rb").read())
+    le_halal = pickle.loads(open("../NN_model/model_weights/traindatawithin1/le_halal.pickle", "rb").read())
+    le_healthy = pickle.loads(open("../NN_model/model_weights/traindatawithin1/le_healthy.pickle", "rb").read())
     
     return le_prdtype, le_weight, le_halal, le_healthy
 
 le_prdtype, le_weight, le_halal, le_healthy = load_label_encoder()
-
+label_encoders = [le_prdtype, le_weight, le_halal, le_healthy]
 # print(le_prdtype.classes_)
+
+# get prediction label names for product type
+tmp_df = pd.read_csv("../NN_model/model_weights/traindatawithin1/all_imgs_results_big_model.csv")
+prdtype_colnames = tmp_df.filter(like='ProductType', axis=1).columns.tolist()
+# print(len(prdtype_colnames))
 
 class MultiHeadResNet(nn.Module):
     def __init__(self, num_classes_prdtype, num_classes_weight, num_classes_halal, num_classes_healthy):
@@ -86,7 +103,7 @@ def load_model():
         num_classes_healthy=num_classes_healthy
     )
 
-    model_path = '../NN_model/model_weights/original/multi_head_model.pth'
+    model_path = '../NN_model/model_weights/traindatawithin1/multi_head_model.pth'
     # print("test1")
     if os.path.exists(model_path):
         custom_resnet_model.load_state_dict(torch.load(model_path, map_location=CONFIGS['DEVICE']))
@@ -218,28 +235,253 @@ def get_top_two_predictions_and_frequencies(sublabel_list):
     
     return top_two_labels, top_two_probs
 
+def encode_image_array(image_array):
+    """Encodes an image array to Base64."""
+    _, buffer = cv2.imencode('.jpg', image_array)
+    return base64.b64encode(buffer).decode('utf-8')
+
+with open('/Users/liupeng/Desktop/Research/api.txt', 'r') as file:
+    api_key = file.read()
+
+def gpt_scoring(img, testflag=True):
+    if testflag:
+        data = {
+            'product_type': ['Sugar'],
+            'weight': ['300-399g'],
+            'halal': ['Halal'],
+            'health': ['NonHealthy'],
+            'image_reflection': ['Medium'],
+            'image_clarity': ['High'],
+            'product_type_confidence': ['High'],
+            'weight_confidence': ['High'],
+            'halal_confidence': ['Medium'],
+            'health_confidence': ['High']
+        }
+
+        # Creating the DataFrame
+        df = pd.DataFrame(data)
+        content = "gpt test flag"
+
+        time.sleep(2)
+
+        return df, content
+
+    base64_image = encode_image_array(img)
+
+    headers = {
+          "Content-Type": "application/json",
+          "Authorization": f"Bearer {api_key}"
+        }
+
+    payload = {
+              "model": "gpt-4-vision-preview",
+              "messages": [
+                {
+                  "role": "user",
+                  "content": [
+                    {
+                      "type": "text",
+                      "text": """ 
+                      For this image, can you make a prediction for the following four labels? 
+                      The product type is based on the appearance of the product, 
+                      the weight is to recognize how heavy the product is by identify the weight information on the appearance,
+                      the halal status is to recognize if the product is halal food or not, 
+                      and the healthy status is to recognize if the product is healthy if it contains a red triangle shape based on Singapore standard.
+                      Note that you can only choose one from the given options in the bracket for each label, even if you are not sure. 
+                      also there is no need to add an extra note to your answer.
+                        product type (
+                            Babyfood
+                            BabyMilkPowder
+                            BeehoonVermicelli
+                            BiscuitsCrackersCookies
+                            Book
+                            BreakfastCereals
+                            CannedBakedBeans
+                            CannedBeefOtherMeats
+                            CannedBraisedPeanuts
+                            CannedChicken
+                            CannedFruits
+                            CannedMushrooms
+                            CannedPacketCreamersSweet
+                            CannedPickles
+                            CannedPorkLunchronMeat
+                            CannedSardinesMackerel
+                            CannedSoup
+                            CannedTunaDace
+                            CannedVegetarianFood
+                            ChocolateMaltPowder
+                            ChocolateSpread
+                            CoffeePowder
+                            CoffeeTeaDrink
+                            CookingCreamMilk
+                            CookingPastePowder
+                            CornChip
+                            DarkSoySauce
+                            DriedBeans
+                            DriedFruits
+                            DriedMeatSeafood
+                            DriedVegetables
+                            FlavoredMilkDrink
+                            Flour
+                            FruitJuiceDrink
+                            HerbsSpices
+                            InstantMeals
+                            InstantNoodlesMultipack
+                            InstantNoodlesSingle
+                            Jam
+                            Kaya
+                            KetchupChilliSauce
+                            LightSoySauce
+                            MaternalMilkPowder
+                            MilkDrink
+                            MilkPowder
+                            Nuts
+                            Oil
+                            OtherBakingNeeds
+                            OtherCannedBeansPeasNuts
+                            OtherCannedSeafood
+                            OtherCannedVegetables
+                            OtherDriedFood
+                            OtherHotBeveragesPowder
+                            OtherNoodles
+                            OtherSauceDressing
+                            OtherSpreads
+                            Pasta
+                            PastaSauce
+                            PeanutButter
+                            Potatochips
+                            PotatoSticks
+                            RiceBrownOthers
+                            RiceWhite
+                            RolledOatsInstantOatmeal
+                            Salt
+                            SoftDrinksOtherReadyToDrink
+                            SoupStock
+                            Sugar
+                            SweetsChocolatesOthers
+                            TeaPowderLeaves
+                            WetWiper
+                        ),
+                        weight ('400-499g', '700-799g', '500-599g', '200-299g', '100-199g',
+                           '1-99g', '300-399g', '600-699g', '800-899g', '1000-1999g',
+                           '900-999g', '3000-3999g'
+                        ),
+                        halal status ('NonHalal', 'Halal'),
+                        healthy status ('NonHealthy', 'Healthy'),
+                        
+                        Also, provide the following assessment
+                        image reflection (High, Medium, Low)
+                        image clarity (High, Medium, Low)
+                        prediction confidence for the product type (High, Medium, Low)
+                        prediction confidence for the weight (High, Medium, Low)
+                        prediction confidence for the halal status (High, Medium, Low)
+                        prediction confidence for the healthy status (High, Medium, Low)
+
+                        format your answer in json format so that it could be easily converted to dataframe
+                        """
+                    },
+                    {
+                      "type": "image_url",
+                      "image_url": {
+                        "url": f"data:image/jpeg;base64,{base64_image}"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "max_tokens": 300
+            }
+
+    response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
+    content = response.json()['choices'][0]['message']['content']
+
+    response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
+
+    # Extracting the message content (the table with predictions)
+    content = response.json()['choices'][0]['message']['content']
+    # cat("GPT triggered")
+
+    # Parsing the content to extract prediction values
+    # Splitting the content string into lines and then parsing each line
+    lines = content.strip().split('\n')[2:]  # Skipping the header
+
+    # Parsing the strings to extract the relevant information
+    data_parsed = [line.replace('"', '').strip() for line in lines if ':' in line]
+    data_dict = {item.split(":")[0].strip(): item.split(":")[1].strip().strip(',') for item in data_parsed}
+
+    # Converting the dictionary into a DataFrame
+    df_from_strings = pd.DataFrame([data_dict])
+    col_names = ['product_type', 'weight', 'halal', 'health', 'image_reflection', 
+                  'image_clarity', 'product_type_confidence', 'weight_confidence',
+                  'halal_confidence', 'health_confidence']
+    parsed_data = df_from_strings
+    # Normalizing column names for consistency across all DataFrames
+    normalized_dfs = []
+    tmp_valid_paths = []
+
+    df = df_from_strings
+    if df.shape[1] != 0:
+        if df.shape[1] != 10:
+            print("--\n")
+            print(i)
+            print(df.shape[1])
+            if df.columns[-1]=="Note":
+                df.drop(columns=['Note'], inplace=True)
+                df.columns = col_names
+                normalized_dfs.append(df)
+                tmp_valid_paths.append(tmp_paths[i])
+            elif df.shape[1] == 11:
+                df = df.iloc[:,:-1]
+                df.columns = col_names
+        else:
+            # Renaming columns to have consistent names across all DataFrames
+            df.columns = col_names
+
+    # Combining all DataFrames into a single DataFrame
+    gpt_pred_df = df
+    
+    return gpt_pred_df, content
 
 # Video stream loop
 print("[INFO] starting video stream...")
 vs = VideoStream(src=0).start()
 time.sleep(2.0)
 
-
 def reset_multi_frame():
-    global sublabel_list_1, sublabel_list_2, sublabel_list_3, sublabel_list_4
-    global countdown_active, countdown_start_time, countdown_duration, show_result
+    global sublabel_list_prdtype3, sublabel_list_weight3, sublabel_list_halal3, sublabel_list_health3
+    global countdown_active3, countdown_start_time3, countdown_duration3, show_result3
+    global countdown_active4, countdown_start_time4, countdown_duration4, show_result4
+    global all_frames_logits_prdtype, all_frames_logits_weight, all_frames_logits_halal, all_frames_logits_health
+    global sublabel_list_prdtype4, sublabel_list_weight4, sublabel_list_halal4, sublabel_list_health4
 
-    # Lists to hold label predictions for each sublabel in multi-frame mode
-    sublabel_list_1 = []
-    sublabel_list_2 = []
-    sublabel_list_3 = []
-    sublabel_list_4 = []
+    # Lists to hold label predictions for each sublabel in multi-frame mode3
+    sublabel_list_prdtype3 = []
+    sublabel_list_weight3 = []
+    sublabel_list_halal3 = []
+    sublabel_list_health3 = []
+
+    # Lists to hold label predictions for each sublabel in multi-frame mode4
+    sublabel_list_prdtype4 = []
+    sublabel_list_weight4 = []
+    sublabel_list_halal4 = []
+    sublabel_list_health4 = []
+
+    # Lists to hold logits of all label types for all frames
+    all_frames_logits_prdtype = []
+    all_frames_logits_weight = []
+    all_frames_logits_halal = []
+    all_frames_logits_health = []
 
     # Initially, countdown is not active
-    countdown_active = False
-    countdown_start_time = 0
-    countdown_duration = 3  # Countdown from 3 seconds
-    show_result = False
+    countdown_active3 = False
+    countdown_start_time3 = 0
+    countdown_duration3 = 3  # Countdown from 3 seconds
+    show_result3 = False
+
+    countdown_active4 = False
+    countdown_start_time4 = 0
+    countdown_duration4 = 3.1  # Countdown from 3 seconds+
+    show_result4 = False
 
 reset_multi_frame()
 
@@ -252,7 +494,7 @@ while True:
         "1: Real time simple",
         "2: Real time complex",
         "3: Multiple frames simple",
-        "*4: Multiple frames GPT",
+        "4: Multiple frames GPT",
         "*5: Multiple frames Human",
         "0: Show video only",
         "q: Quit"
@@ -364,26 +606,20 @@ while True:
                     cv2.putText(orig, label_text, (text_x, text_y), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0, 255, 0), 3)
                     text_y += line_offset  # Move to the next line
 
-        if CONFIGS['MULTIPLE_FRAME']:
+        if CONFIGS['MULTIPLE_FRAME3']:
             # print("starting scanning...")
-            first_scanning = True
             countdown_trigger = True
-
             # cv2.imshow("Frame", orig)
-
-            # if first_scanning:
-            #     cv2.imshow("Frame", orig)
-            #     first_scanning = False
 
             # Display countdown if triggered
             # Countdown display logic
-            if countdown_active:
+            if countdown_active3:
                 current_time = time.time()
-                elapsed_time = current_time - countdown_start_time
-                countdown_time = countdown_duration - int(elapsed_time)
+                elapsed_time = current_time - countdown_start_time3
+                countdown_time = countdown_duration3 - int(elapsed_time)
 
                 # Display the countdown time if within the countdown period
-                if 0 < countdown_time <= countdown_duration:
+                if 0 < countdown_time <= countdown_duration3:
                     text = f"{countdown_time}"  # Display numbers 3 to 1
                     (frame_height, frame_width) = orig.shape[:2]
                     text_size = cv2.getTextSize(text, cv2.FONT_HERSHEY_SIMPLEX, 3, 2)[0]
@@ -399,30 +635,30 @@ while True:
                     # Extract the top predicted label index of the class labels
                     top_preds_indices = [class_labels[0][0] for _, class_labels in top_two_probs_and_indices]
                     
-                    sublabel_list_1.append(top_preds_indices[0])
-                    sublabel_list_2.append(top_preds_indices[1])
-                    sublabel_list_3.append(top_preds_indices[2])
-                    sublabel_list_4.append(top_preds_indices[3])
+                    sublabel_list_prdtype3.append(top_preds_indices[0])
+                    sublabel_list_weight3.append(top_preds_indices[1])
+                    sublabel_list_halal3.append(top_preds_indices[2])
+                    sublabel_list_health3.append(top_preds_indices[3])
 
                     # print(top_preds_indices)
                     # print(sublabel_list_1)
 
                 # Stop the countdown after reaching 0
                 if countdown_time < 0:
-                    countdown_active = False
-                    show_result = True
+                    countdown_active3 = False
+                    show_result3 = True
                     # print("count down complete")
 
-            if show_result:
-                print("show results")
-                first_time_process = True
+            if show_result3:
+                # print("show results")
+                
                 # print(sublabel_list_1)
-                if first_time_process:
+                if first_time_process3:
                     # Extract top two predictions and their relative frequencies for each sublabel list
-                    top_two_labels_1, top_two_probs_1 = get_top_two_predictions_and_frequencies(sublabel_list_1)
-                    top_two_labels_2, top_two_probs_2 = get_top_two_predictions_and_frequencies(sublabel_list_2)
-                    top_two_labels_3, top_two_probs_3 = get_top_two_predictions_and_frequencies(sublabel_list_3)
-                    top_two_labels_4, top_two_probs_4 = get_top_two_predictions_and_frequencies(sublabel_list_4)
+                    top_two_labels_1, top_two_probs_1 = get_top_two_predictions_and_frequencies(sublabel_list_prdtype3)
+                    top_two_labels_2, top_two_probs_2 = get_top_two_predictions_and_frequencies(sublabel_list_weight3)
+                    top_two_labels_3, top_two_probs_3 = get_top_two_predictions_and_frequencies(sublabel_list_halal3)
+                    top_two_labels_4, top_two_probs_4 = get_top_two_predictions_and_frequencies(sublabel_list_health3)
 
                     top_probs_combined = np.array([
                         top_two_probs_1,
@@ -457,7 +693,7 @@ while True:
                         label_scan, prob_scan = max(valid_labels_and_probs_scan, key=lambda x: x[1])
                         prob_scan *= 100
 
-                    first_time_process = False
+                    first_time_process3 = False
 
                 # Draw bounding box
                 cv2.rectangle(orig, (startX, startY), (endX, endY), (0, 255, 0), 2)
@@ -474,8 +710,215 @@ while True:
                     f"Confidence: {float(prob_scan):.2f}%"
                 ]
 
-                print(label_scan)
-                print(prob_scan)
+                # print(label_scan)
+                # print(prob_scan)
+
+                # Draw each label text in a new line
+                for label_text in label_texts:
+                    cv2.putText(orig, label_text, (text_x, text_y), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0, 255, 0), 3)
+                    text_y += line_offset  # Move to the next line
+
+        if CONFIGS['MULTIPLE_FRAME4']:
+            # print("starting scanning...")
+            countdown_trigger4 = True
+
+            # Display countdown if triggered
+            # Countdown display logic
+            if countdown_active4:
+                current_time = time.time()
+                elapsed_time = current_time - countdown_start_time4
+                countdown_time = countdown_duration4 - elapsed_time
+
+                # Display the countdown time if within the countdown period
+                if 0 < countdown_time <= countdown_duration4:
+                    if countdown_time <= 0.1:
+                        text = "Querying ChatGPT..."
+                        orig2 = orig.copy()
+                    else:
+                        text = f"{int(countdown_time)+1}"  # Display numbers 3 to 1 
+                    
+                    (frame_height, frame_width) = orig.shape[:2]
+                    text_size = cv2.getTextSize(text, cv2.FONT_HERSHEY_SIMPLEX, 3, 2)[0]
+                    text_x = (frame_width - text_size[0]) // 2
+                    text_y = (frame_height + text_size[1]) // 2
+                    cv2.putText(orig, text, (text_x, text_y), cv2.FONT_HERSHEY_SIMPLEX, 3, (0, 0, 255), 4)
+
+                    # Extract top two probabilities and indices for each sub-label
+                    top_two_probs_and_indices = [get_top_two_probs_and_indices(tensor) for tensor in 
+                                                 [labelPreds_prdtype, labelPreds_weight, labelPreds_halal, labelPreds_healthy]]
+                    # print(top_two_probs_and_indices)
+
+                    # Extract the top predicted label index of the class labels
+                    top_preds_indices = [class_labels[0][0] for _, class_labels in top_two_probs_and_indices]
+                    
+                    sublabel_list_prdtype4.append(top_preds_indices[0])
+                    sublabel_list_weight4.append(top_preds_indices[1])
+                    sublabel_list_halal4.append(top_preds_indices[2])
+                    sublabel_list_health4.append(top_preds_indices[3])
+
+                    # save logits of all frames
+                    all_frames_logits_prdtype.append(labelPreds_prdtype[0])
+                    all_frames_logits_weight.append(labelPreds_weight[0])
+                    all_frames_logits_halal.append(labelPreds_halal[0])
+                    all_frames_logits_health.append(labelPreds_healthy[0])
+
+                    
+
+                # Stop the countdown after reaching 0
+                if countdown_time < 0:
+                    countdown_active4 = False
+                    show_result4 = True
+                    # print("count down complete")
+                    # print(all_frames_logits_prdtype[:2])
+
+                    # big model prediction on prdtype as input for bayes model
+                    big_model_input = pd.DataFrame([t.tolist() for t in all_frames_logits_prdtype], columns=prdtype_colnames)
+                    # print(big_model_input.shape)
+
+                    # gpt prediction
+                    if not gpt_triggered:
+                        print("Calling GPT...")
+                        gpt_pred_df, gpt_content = gpt_scoring(orig, testflag=False)
+                        gpt_triggered = True  # Set the flag to True after triggering function
+                        # print(gpt_pred_df)
+                        print(gpt_content)
+
+
+            if show_result4:
+                # print("show results")
+
+                if first_time_process4:
+                    # print(len(all_frames_logits_prdtype))
+
+                    # Extract top two predictions and their relative frequencies for each sublabel list
+                    top_two_labels_1, top_two_probs_1 = get_top_two_predictions_and_frequencies(sublabel_list_prdtype4)
+                    top_two_labels_2, top_two_probs_2 = get_top_two_predictions_and_frequencies(sublabel_list_weight4)
+                    top_two_labels_3, top_two_probs_3 = get_top_two_predictions_and_frequencies(sublabel_list_halal4)
+                    top_two_labels_4, top_two_probs_4 = get_top_two_predictions_and_frequencies(sublabel_list_health4)
+
+                    top_probs_combined = np.array([
+                        top_two_probs_1,
+                        top_two_probs_2,
+                        top_two_probs_3,
+                        top_two_probs_4
+                    ]).astype('float32')
+
+                    top_labels_combined = np.array([
+                        top_two_labels_1,
+                        top_two_labels_2,
+                        top_two_labels_3,
+                        top_two_labels_4
+                    ])
+
+                    # Generate all possible label combinations and their joint probabilities
+                    all_possible_labels_scan, all_joint_probs_scan = generate_labels_and_probs(top_probs_combined, top_labels_combined, 
+                                                                                    [le_prdtype, le_weight, le_halal, le_healthy])
+
+                    # Filter out the valid labels and their joint probabilities
+                    valid_labels_and_probs_scan = [(label, prob) for label, prob in zip(all_possible_labels_scan, all_joint_probs_scan) if label in all_categories]
+
+                    # If there are no valid labels, set label to 'Nonfood'
+                    if not valid_labels_and_probs_scan:
+                        big_model_label_scan = "Nonfood"
+                        big_model_prob_scan = "NA"
+                    else:
+                        # Otherwise, pick the valid label with the highest joint probability
+                        big_model_label_scan, big_model_prob_scan = max(valid_labels_and_probs_scan, key=lambda x: x[1])
+                        big_model_prob_scan *= 100
+                        # print(big_model_prob_scan)
+
+                    print("Big model prediction")
+                    print(big_model_label_scan)
+
+                    ########## Enter into Bayes model #######
+                    # print(top_probs_combined)
+                    # print(top_labels_combined)
+                    top_pred_idx_big_model = [sub_list[0] for sub_list in top_labels_combined]
+                    # print(top_pred_idx_big_model)
+
+                    # top prediction for each label
+                    top_pred_label_big_model = [encoder.inverse_transform([idx])[0] for idx, encoder in zip(top_pred_idx_big_model, label_encoders)]
+                    # print(top_pred_label_big_model)
+
+                    # Prepare predictions on product type and image quality from GPT
+                    # print("GPT prediction")
+                    # print(gpt_pred_df)
+                    gpt_pred_label = gpt_pred_df['product_type'] + "_" + gpt_pred_df["weight"] + "_" + gpt_pred_df["halal"] + "_" + gpt_pred_df["health"]
+                    gpt_pred_label = gpt_pred_label.values[0]
+                    gpt_pred_confidence = "Product_" + gpt_pred_df['product_type_confidence'] + "-Weight_" + gpt_pred_df['weight_confidence'] + "-Halal_" + gpt_pred_df['halal_confidence'] + "-Health_" + gpt_pred_df['health_confidence']
+                    gpt_pred_confidence = gpt_pred_confidence.values[0]
+
+                    (frame_height, frame_width) = orig.shape[:2]
+                    text_size = cv2.getTextSize(text, cv2.FONT_HERSHEY_SIMPLEX, 3, 2)[0]
+                    text_x = (frame_width - text_size[0]) // 2
+                    text_y = (frame_height + text_size[1]) // 2
+                    text = "Applying Bayesian model..."
+                    cv2.putText(orig2, text, (text_x, text_y), cv2.FONT_HERSHEY_SIMPLEX, 3, (0, 0, 255), 4)
+                    cv2.imshow("Frame", orig2)
+                    cv2.waitKey(1)
+
+                    print("Applying Bayesian model...")
+                    # Call R script to perform scoring
+                    # Pass the JSON directly as an argument (ensure it's not too large)
+                    # input1 = df_json
+                    input1 = big_model_input.to_json(orient='records')
+                    input2 = gpt_pred_df.to_json(orient='records')
+
+                    # The command (ensure correct paths)
+                    command = ['Rscript', '../bayesian_model/v2/bayes_model_real_time.R', input1, input2]
+
+                    # Run the command and capture the output
+                    result = subprocess.run(command, capture_output=True, text=True)
+
+                    # Check if the command was executed successfully
+                    if result.returncode == 0:
+                        # Print stdout for debug messages and output
+                        # print("STDOUT from R:\n", result.stdout)
+                        # Parse the JSON output from the R script if needed
+                        try:
+                            output = json.loads(result.stdout)
+                            print("bayes model output")
+                            print(output)
+                            bayes_pred_prdtype = output['pred'][0]
+                            print("Output from R:", output)
+                        except json.JSONDecodeError:
+                            print("Failed to parse JSON output.")
+                    else:
+                        # Print stderr for errors
+                        print("Error running R script:\n", result.stderr)
+                        bayes_pred_prdtype = "NA"
+
+                    # time.sleep(3)
+                    # print(top_pred_label_big_model)
+                    # print(top_pred_label_big_model[1])
+                    # print(bayes_pred_prdtype)
+                    bayes_pred_label = bayes_pred_prdtype + "_" + top_pred_label_big_model[1] + "_" + top_pred_label_big_model[2] + "_" + top_pred_label_big_model[3]
+
+                    first_time_process4 = False
+
+                # Draw bounding box
+                cv2.rectangle(orig, (startX, startY), (endX, endY), (0, 255, 0), 2)
+
+                # Draw text
+                # cv2.putText(orig, label_text, (text_x, text_y), cv2.FONT_HERSHEY_SIMPLEX, 1.0, (0, 255, 0), 2)
+                # Define starting position for the text
+                text_x = 10
+                text_y = 50
+                line_offset = 50  # Offset between lines
+                # Prepare the label texts
+                label_texts = [
+                    f"-------- Deep Learning Model -------",
+                    f"Prediction: {big_model_label_scan}",
+                    f"Confidence: {float(big_model_prob_scan):.2f}%",
+                    f"-------- ChatGPT -------",
+                    f"Prediction: {gpt_pred_label}",
+                    f"Confidence: {gpt_pred_confidence}",
+                    f"-------- Bayesian Combination Model -------",
+                    f"Prediction: {bayes_pred_label}",
+                ]
+
+                # print(label_scan)
+                # print(prob_scan)
 
                 # Draw each label text in a new line
                 for label_text in label_texts:
@@ -497,23 +940,41 @@ while True:
         CONFIGS['RECOGNITION_ENABLED'] = True
         CONFIGS['SINGLE_FRAME_TOP_PRED'] = True
         CONFIGS['SINGLE_FRAME_TOP_TWO_PRED'] = False
-        CONFIGS['MULTIPLE_FRAME'] = False
+        CONFIGS['MULTIPLE_FRAME3'] = False
+        CONFIGS['MULTIPLE_FRAME4'] = False
         reset_multi_frame()
     elif key == ord("2"):
         CONFIGS['RECOGNITION_ENABLED'] = True
         CONFIGS['SINGLE_FRAME_TOP_PRED'] = False
         CONFIGS['SINGLE_FRAME_TOP_TWO_PRED'] = True
-        CONFIGS['MULTIPLE_FRAME'] = False
+        CONFIGS['MULTIPLE_FRAME3'] = False
+        CONFIGS['MULTIPLE_FRAME4'] = False
         reset_multi_frame()
     elif key == ord("3"):
-        if not countdown_active and not show_result:
+        if not countdown_active3 and not show_result3:
             CONFIGS['RECOGNITION_ENABLED'] = True
             CONFIGS['SINGLE_FRAME_TOP_PRED'] = False
             CONFIGS['SINGLE_FRAME_TOP_TWO_PRED'] = False
-            CONFIGS['MULTIPLE_FRAME'] = True
-            countdown_active = True
-            countdown_start_time = time.time()  # Reset countdown start time
-            show_result = False
+            CONFIGS['MULTIPLE_FRAME3'] = True
+            CONFIGS['MULTIPLE_FRAME4'] = False
+            countdown_active3 = True
+            countdown_start_time3 = time.time()  # Reset countdown start time
+            show_result3 = False
+            first_time_process3 = True
+        else:
+            reset_multi_frame()
+    elif key == ord("4"):
+        if not countdown_active4 and not show_result4:
+            CONFIGS['RECOGNITION_ENABLED'] = True
+            CONFIGS['SINGLE_FRAME_TOP_PRED'] = False
+            CONFIGS['SINGLE_FRAME_TOP_TWO_PRED'] = False
+            CONFIGS['MULTIPLE_FRAME3'] = False
+            CONFIGS['MULTIPLE_FRAME4'] = True
+            countdown_active4 = True
+            countdown_start_time4 = time.time()  # Reset countdown start time
+            show_result4 = False
+            first_time_process4 = True
+            gpt_triggered = False
         else:
             reset_multi_frame()
     elif key == ord("0"):

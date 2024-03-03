@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Nuts_100-199g_Halal_NonHealthy</folder>
+	<filename>20240301_5_0269.jpg</filename>
+	<path>C:\Users\Mio\Downloads\image_folder_template1\Nuts_100-199g_Halal_NonHealthy\20240301_5_0269.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1620</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Nuts_100-199g_Halal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>197</xmin>
+			<ymin>81</ymin>
+			<xmax>1291</xmax>
+			<ymax>1037</ymax>
+		</bndbox>
+	</object>
+</annotation>

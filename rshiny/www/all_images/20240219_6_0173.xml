@@ -1,0 +1,26 @@
+<annotation>
+	<folder>PastaSauce_600-699g_NonHalal_NonHealthy</folder>
+	<filename>20240219_6_0173.jpg</filename>
+	<path>C:\Users\Mio\Downloads\image_folder_template\PastaSauce_600-699g_NonHalal_NonHealthy\20240219_6_0173.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1920</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>PastaSauce_600-699g_NonHalal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>828</xmin>
+			<ymin>270</ymin>
+			<xmax>1025</xmax>
+			<ymax>856</ymax>
+		</bndbox>
+	</object>
+</annotation>

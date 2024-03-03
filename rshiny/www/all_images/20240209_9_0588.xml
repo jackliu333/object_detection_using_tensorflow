@@ -1,0 +1,26 @@
+<annotation>
+	<folder>InstantMeals_200_299g_NonHalal_NonHealthy</folder>
+	<filename>20240209_9_0588.jpg</filename>
+	<path>C:\Users\Mio\Downloads\image_folder_template\InstantMeals_200_299g_NonHalal_NonHealthy\20240209_9_0588.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1920</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>InstantMeals_200_299g_NonHalal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>741</xmin>
+			<ymin>32</ymin>
+			<xmax>1250</xmax>
+			<ymax>736</ymax>
+		</bndbox>
+	</object>
+</annotation>

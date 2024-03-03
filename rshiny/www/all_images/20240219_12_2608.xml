@@ -1,0 +1,26 @@
+<annotation>
+	<folder>OtherSauceDressing_200-299g_NonHalal_NonHealthy</folder>
+	<filename>20240219_12_2608.jpg</filename>
+	<path>C:\Users\Mio\Downloads\image_folder_template\OtherSauceDressing_200-299g_NonHalal_NonHealthy\20240219_12_2608.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1920</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>OtherSauceDressing_200-299g_NonHalal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>813</xmin>
+			<ymin>6</ymin>
+			<xmax>1328</xmax>
+			<ymax>643</ymax>
+		</bndbox>
+	</object>
+</annotation>

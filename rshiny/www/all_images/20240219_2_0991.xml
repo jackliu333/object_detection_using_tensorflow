@@ -1,0 +1,26 @@
+<annotation>
+	<folder>KetchupChillSauce_300-399g_Halal_NonHealthy</folder>
+	<filename>20240219_2_0991.jpg</filename>
+	<path>C:\Users\Mio\Downloads\image_folder_template\KetchupChillSauce_300-399g_Halal_NonHealthy\20240219_2_0991.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1920</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>KetchupChillSauce_300-399g_Halal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>1</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>1043</xmin>
+			<ymin>1</ymin>
+			<xmax>1280</xmax>
+			<ymax>749</ymax>
+		</bndbox>
+	</object>
+</annotation>

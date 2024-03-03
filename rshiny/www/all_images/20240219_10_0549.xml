@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Coffee_100-199g_NonHalal_NonHealthy</folder>
+	<filename>20240219_10_0549.jpg</filename>
+	<path>C:\Users\Mio\Downloads\image_folder_template\Coffee_100-199g_NonHalal_NonHealthy\20240219_10_0549.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1920</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Coffee_100-199g_NonHalal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>568</xmin>
+			<ymin>3</ymin>
+			<xmax>1072</xmax>
+			<ymax>937</ymax>
+		</bndbox>
+	</object>
+</annotation>

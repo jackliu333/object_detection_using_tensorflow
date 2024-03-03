@@ -1,0 +1,26 @@
+<annotation>
+	<folder>BiscuitsCrackersCookies_0-99g_NonHalal_NonHealthy</folder>
+	<filename>20240301_2_0016.jpg</filename>
+	<path>C:\Users\Mio\Downloads\image_folder_template1\BiscuitsCrackersCookies_0-99g_NonHalal_NonHealthy\20240301_2_0016.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1620</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>BiscuitsCrackersCookies_0-99g_NonHalal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>398</xmin>
+			<ymin>130</ymin>
+			<xmax>1194</xmax>
+			<ymax>836</ymax>
+		</bndbox>
+	</object>
+</annotation>

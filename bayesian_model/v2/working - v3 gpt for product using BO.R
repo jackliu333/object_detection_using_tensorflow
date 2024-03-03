@@ -1,10 +1,13 @@
 library(dplyr)
 library(R2jags)
-library(purrr)
 library(rBayesianOptimization)
+library(tictoc)
+library(foreach)
+library(doParallel)
+
 
 # Read CSV files
-all_imgs_results_gpt <- read.csv("GPT_model/chatgpt_prediction_v2.csv")
+all_imgs_results_gpt <- read.csv("GPT_model/chatgpt_prediction_v2 newlabel.csv")
 all_imgs_results_big_model <- read.csv("../../NN_model/model_weights/traindatawithin1/all_imgs_results_big_model.csv")
 product_group_df = read.csv("../product_group.csv")
 
@@ -14,16 +17,16 @@ all_imgs_results_gpt2 = all_imgs_results_gpt %>%
   rename(filepath = img_filename) %>% 
   left_join(product_group_df[,c("filepath","group","label")], by="filepath") %>% 
   filter(!is.na(group))
-dim(all_imgs_results_gpt2)
-table(all_imgs_results_gpt2$group)
+# dim(all_imgs_results_gpt2)
+# table(all_imgs_results_gpt2$group)
 
 # keep only records with group structure
-dim(all_imgs_results_big_model)
+# dim(all_imgs_results_big_model)
 all_imgs_results_big_model2 = all_imgs_results_big_model %>% 
   left_join(product_group_df[,c("filepath","group")], by = "filepath") %>% 
   filter(!is.na(group))
-dim(all_imgs_results_big_model2)
-table(all_imgs_results_big_model2$group)
+# dim(all_imgs_results_big_model2)
+# table(all_imgs_results_big_model2$group)
 
 # entract columns for each type of label
 col_prd = grep("Product", names(all_imgs_results_big_model2), value = TRUE)
@@ -207,55 +210,83 @@ Mode <- function(x) {
   ux[which.max(tabulate(match(x, ux)))]
 }
 
+# Choose the parameters to watch
+model_params <- c("muA1", "muA0", "sigmaA",
+                  "muB1", "rho", "delta_confidence", 
+                  "delta_clarity", "delta_reflection")
+
+nConflevels = length(unique(total_df$gpt_product_type_confidence))
+nClarity = length(unique(total_df$gpt_image_clarity))
+nReflection = length(unique(total_df$gpt_image_reflection))
+
+# thresholds for confidence level
+thresh_confidence = rep(NA, nConflevels-1)
+thresh_confidence[1] = 1 + 0.5
+thresh_confidence[nConflevels-1] = nConflevels-1 + 0.5
+
+# thresholds for confidence level
+thresh_clarity = rep(NA, nClarity-1)
+thresh_clarity[1] = 1 + 0.5
+thresh_clarity[nClarity-1] = nClarity-1 + 0.5
+
+# thresholds for reflection level
+thresh_reflection = rep(NA, nReflection-1)
+thresh_reflection[1] = 1 + 0.5
+thresh_reflection[nReflection-1] = nReflection-1 + 0.5
+
+total_df$prediction_bigmodel <- unique_lables[apply(total_df[,unique_lables], 1, which.max)]
+total_df$X = 1:nrow(total_df)
+
+# category to index mapping
+label_idx_df = data.frame("original_label"=unique_lables,
+                          "label_idx"=1:length(unique_lables))
+
+# encode categorical features from gpt
+total_df = total_df %>% 
+  mutate(gpt_product_type_confidence = case_when(gpt_product_type_confidence == "High" ~ 3,
+                                                 gpt_product_type_confidence == "Medium" ~ 2,
+                                                 gpt_product_type_confidence == "Low" ~ 1,
+                                                 TRUE ~ 0),
+         gpt_image_clarity = case_when(gpt_image_clarity == "High" ~ 3,
+                                       gpt_image_clarity == "Medium" ~ 2,
+                                       gpt_image_clarity == "Low" ~ 1,
+                                       TRUE ~ 0),
+         gpt_image_reflection = case_when(gpt_image_reflection == "High" ~ 3,
+                                          gpt_image_reflection == "Medium" ~ 2,
+                                          gpt_image_reflection == "Low" ~ 1,
+                                          TRUE ~ 0))
+
+total_df$true_label = total_df$label_prdtype
+
+# encode categorical predictions and true labels
+total_df = total_df %>% 
+  left_join(label_idx_df, by=c("true_label"="original_label")) 
+total_df = total_df %>% 
+  mutate(true_label_encoded = label_idx) %>% 
+  select(-label_idx)
+
+total_df = total_df %>% 
+  left_join(label_idx_df, by=c("prediction_bigmodel"="original_label")) 
+total_df = total_df %>% 
+  mutate(prediction_bigmodel_encoded = label_idx) %>% 
+  select(-label_idx)
+
+total_df = total_df %>% 
+  left_join(label_idx_df, by=c("gpt_product_type"="original_label")) 
+total_df = total_df %>% 
+  mutate(gpt_product_type_encoded = label_idx) %>% 
+  select(-label_idx)
+
+total_df = total_df[order(total_df$gpt_product_type_confidence),]
+total_df$true_label_encoded_raw = total_df$true_label_encoded
+
+
 # function that returns complementarity level of the Bayesian combined model based on temperature and test ratio
-calc_bayes_complement <- function(df, temperature, test_ratio){
+calc_bayes_complement <- function(df, temperature, test_ratio, seed){
+  set.seed(seed)
+    
   # Apply softmax with higher temperature to reduce gaps
   df[,unique_lables] <- t(apply(df[,unique_lables], 1, softmax_with_temp, temperature = temperature))
-  
-  df$prediction_bigmodel <- unique_lables[apply(df[,unique_lables], 1, which.max)]
-  df$X = 1:nrow(df)
-  df$true_label = df$label_prdtype
-  
-  # category to index mapping
-  label_idx_df = data.frame("original_label"=unique_lables,
-                            "label_idx"=1:length(unique_lables))
-  
-  # encode categorical features from gpt
-  df = df %>% 
-    mutate(gpt_product_type_confidence = case_when(gpt_product_type_confidence == "High" ~ 3,
-                                                   gpt_product_type_confidence == "Medium" ~ 2,
-                                                   gpt_product_type_confidence == "Low" ~ 1,
-                                                   TRUE ~ 0),
-           gpt_image_clarity = case_when(gpt_image_clarity == "High" ~ 3,
-                                         gpt_image_clarity == "Medium" ~ 2,
-                                         gpt_image_clarity == "Low" ~ 1,
-                                         TRUE ~ 0),
-           gpt_image_reflection = case_when(gpt_image_reflection == "High" ~ 3,
-                                            gpt_image_reflection == "Medium" ~ 2,
-                                            gpt_image_reflection == "Low" ~ 1,
-                                            TRUE ~ 0))
-  
-  # encode categorical predictions and true labels
-  df = df %>% 
-    left_join(label_idx_df, by=c("true_label"="original_label")) 
-  df = df %>% 
-    mutate(true_label_encoded = label_idx) %>% 
-    select(-label_idx)
-  
-  df = df %>% 
-    left_join(label_idx_df, by=c("prediction_bigmodel"="original_label")) 
-  df = df %>% 
-    mutate(prediction_bigmodel_encoded = label_idx) %>% 
-    select(-label_idx)
-  
-  df = df %>% 
-    left_join(label_idx_df, by=c("gpt_product_type"="original_label")) 
-  df = df %>% 
-    mutate(gpt_product_type_encoded = label_idx) %>% 
-    select(-label_idx)
-  
-  df = df[order(df$gpt_product_type_confidence),]
-  df$true_label_encoded_raw = df$true_label_encoded
   
   # indicator on gpt and machine correctness
   df$bigmodel_correct = ifelse(df$prediction_bigmodel_encoded==df$true_label_encoded, TRUE, FALSE)
@@ -294,23 +325,6 @@ calc_bayes_complement <- function(df, temperature, test_ratio){
   clarityB = as.integer(df$gpt_image_clarity)
   reflectionB = as.integer(df$gpt_image_reflection)
   
-  # thresholds for confidence level
-  nConflevels = length(unique(df$gpt_product_type_confidence))
-  thresh_confidence = rep(NA, nConflevels-1)
-  thresh_confidence[1] = 1 + 0.5
-  thresh_confidence[nConflevels-1] = nConflevels-1 + 0.5
-  
-  # thresholds for confidence level
-  nClarity = length(unique(df$gpt_image_clarity))
-  thresh_clarity = rep(NA, nClarity-1)
-  thresh_clarity[1] = 1 + 0.5
-  thresh_clarity[nClarity-1] = nClarity-1 + 0.5
-  
-  # thresholds for reflection level
-  nReflection = length(unique(df$gpt_image_reflection))
-  thresh_reflection = rep(NA, nReflection-1)
-  thresh_reflection[1] = 1 + 0.5
-  thresh_reflection[nReflection-1] = nReflection-1 + 0.5
   
   N = length(truelabel)
   L = dim(logitscoresA)[2]
@@ -331,122 +345,119 @@ calc_bayes_complement <- function(df, temperature, test_ratio){
                      thresh_clarity = thresh_clarity,
                      thresh_reflection = thresh_reflection)
   
-  # Choose the parameters to watch
-  model_params <- c("muA1", "muA0", "sigmaA",
-                    "muB1", "rho", "delta_confidence", 
-                    "delta_clarity", "delta_reflection")
+  
   
   model_code = "
-    model{
-      for (i in 1:N) {
-        # Prior on truelabel (true label can be observed or latent)
-        truelabel[i] ~ dcat( labelprob[1:L] )
-        
-        # Set the means based on true label
-        for (k in 1:L) {
-          muA[i,k] <- ifelse( truelabel[i]==k , muA1, muA0 )
-          muB[i,k] <- ifelse( truelabel[i]==k , muB1, muB0 )         
-        }
-        
-        # Generate the correlated logit scores for each label k
-        for (k in 1:L) {
-          # JAGS does not allow partial observations for multivariate normal, so constructing a bivariate normal using normal draws
-          logitscoresA[i,k] ~ dnorm( muA[i,k] , 1 / (sigmaA*sigmaA))         
-          logitscoresB[i,k] ~ dnorm(  sigmaB * rho * ((logitscoresA[i,k]-muA[i,k])/sigmaA) + muB[i,k] , 1 / (( 1-rho*rho ) * sigmaB * sigmaB ) )                
-        }
-        
-        # Exponentiate
-        for (k in 1:L) {
-          explogitB[i,k ] = exp( logitscoresB[i,k] ); 
-        }
-        sumexplogitB[i] = sum( explogitB[i,1:L] )
-        
-        # And normalize
-        for (k in 1:L) {
-          probscoresB[i,k ] = explogitB[i,k ] / sumexplogitB[i]
-        }
-        
-        # Compute softmax scores
-        for (k in 1:L) {
-          softmaxscores[i,k] <- exp( probscoresB[i,k] / tau )
-        }
-        
-        # Generate classification for classifier B
-        classificationB[i] ~ dcat( softmaxscores[i,1:L] )	   
-        
-        # Generate confidence rating for classifier B from an ordered probit model       
-        confidenceB[i] ~ dcat(pr_confidenceB[i, 1:nConflevels] )
-        pr_confidenceB[i,1] <- pnorm(thresh_confidence[1] , probscoresB[i, classificationB[i]]*delta_confidence , (1/sigmaB^2)*delta_confidence)
-        for(k in 2:(nConflevels-1)){
-            pr_confidenceB[i,k] <- max(0, pnorm(thresh_confidence[k] , probscoresB[i, classificationB[i]]*delta_confidence , (1/sigmaB^2)*delta_confidence)
-                               - pnorm(thresh_confidence[k-1] , probscoresB[i, classificationB[i]]*delta_confidence , (1/sigmaB^2)*delta_confidence))
-        }
-        pr_confidenceB[i, nConflevels] <- 1 - pnorm(thresh_confidence[nConflevels-1], probscoresB[i, classificationB[i]]*delta_confidence, (1/sigmaB^2)*delta_confidence)
-        
-        # Generate clarity rating for classifier B from an ordered probit model       
-        clarityB[i] ~ dcat(pr_clarityB[i, 1:nClarity] )
-        pr_clarityB[i,1] <- pnorm(thresh_clarity[1] , probscoresB[i, classificationB[i]]*delta_clarity, (1/sigmaB^2)*delta_clarity)
-        for(k in 2:(nClarity-1)){
-            pr_clarityB[i,k] <- max(0, pnorm(thresh_clarity[k] , probscoresB[i, classificationB[i]]*delta_clarity , (1/sigmaB^2)*delta_clarity)
-                               - pnorm(thresh_clarity[k-1] , probscoresB[i, classificationB[i]]*delta_clarity , (1/sigmaB^2)*delta_clarity))
-        }
-        pr_clarityB[i, nClarity] <- 1 - pnorm(thresh_clarity[nClarity-1], probscoresB[i, classificationB[i]]*delta_clarity, (1/sigmaB^2)*delta_clarity)
-        
-        # Generate reflection rating for classifier B from an ordered probit model       
-        reflectionB[i] ~ dcat(pr_reflectionB[i, 1:nReflection] )
-        pr_reflectionB[i,1] <- pnorm(thresh_reflection[1] , probscoresB[i, classificationB[i]]*delta_reflection, (1/sigmaB^2)*delta_reflection)
-        for(k in 2:(nReflection-1)){
-            pr_reflectionB[i,k] <- max(0, pnorm(thresh_reflection[k] , probscoresB[i, classificationB[i]]*delta_reflection , (1/sigmaB^2)*delta_reflection)
-                               - pnorm(thresh_reflection[k-1] , probscoresB[i, classificationB[i]]*delta_reflection, (1/sigmaB^2)*delta_reflection))
-        }
-        pr_reflectionB[i, nReflection] <- 1 - pnorm(thresh_reflection[nReflection-1], probscoresB[i, classificationB[i]]*delta_reflection, (1/sigmaB^2)*delta_reflection)
-    
+  model{
+    for (i in 1:N) {
+      # Prior on truelabel (true label can be observed or latent)
+      truelabel[i] ~ dcat( labelprob[1:L] )
+      
+      # Set the means based on true label
+      for (k in 1:L) {
+        muA[i,k] <- ifelse( truelabel[i]==k , muA1, muA0 )
+        muB[i,k] <- ifelse( truelabel[i]==k , muB1, muB0 )         
       }
       
-      # Uniform prior over labels
-      for (k in 1:L) { 
-          # Unnormalized
-          labelprob[k] <- 1 
+      # Generate the correlated logit scores for each label k
+      for (k in 1:L) {
+        # JAGS does not allow partial observations for multivariate normal, so constructing a bivariate normal using normal draws
+        logitscoresA[i,k] ~ dnorm( muA[i,k] , 1 / (sigmaA*sigmaA))         
+        logitscoresB[i,k] ~ dnorm(  sigmaB * rho * ((logitscoresA[i,k]-muA[i,k])/sigmaA) + muB[i,k] , 1 / (( 1-rho*rho ) * sigmaB * sigmaB ) )                
       }
       
-      # Uniform prior over cutpoints for the ordered probit model
-      for ( k in 2:(nConflevels-2) ) {  # 1 and nConflevels-1 are fixed, not stochastic
-        thresh_confidence[k] ~ dnorm( k+0.5 , 1/2^2 )
+      # Exponentiate
+      for (k in 1:L) {
+        explogitB[i,k ] = exp( logitscoresB[i,k] ); 
       }
-      for ( k in 2:(nConflevels-2) ) {  
-        thresh_clarity[k] ~ dnorm( k+0.5 , 1/2^2 )
-      }
-      for ( k in 2:(nConflevels-2) ) {  
-        thresh_reflection[k] ~ dnorm( k+0.5 , 1/2^2 )
+      sumexplogitB[i] = sum( explogitB[i,1:L] )
+      
+      # And normalize
+      for (k in 1:L) {
+        probscoresB[i,k ] = explogitB[i,k ] / sumexplogitB[i]
       }
       
-      # Priors and constants 
-      muA1   ~ dnorm(0,precmu)
-      muA0   ~ dnorm(0,precmu)
-      sigmaA ~ dunif(0.01,bsigma)
-      muB1   ~ dnorm(0,precmu)
-      muB0   <- 0   
-      sigmaB <- 1
-      rho    ~ dunif(-1,1)
-      tau    <- 0.05
-      delta_confidence ~ dunif(1,bdelta)
-      delta_clarity ~ dunif(1,bdelta)
-      delta_reflection ~ dunif(1,bdelta)
-      # delta <- 1
-      precmu <- 0.01
-      bdelta <- 3
-      bsigma <- 0.1
+      # Compute softmax scores
+      for (k in 1:L) {
+        softmaxscores[i,k] <- exp( probscoresB[i,k] / tau )
+      }
+      
+      # Generate classification for classifier B
+      classificationB[i] ~ dcat( softmaxscores[i,1:L] )	   
+      
+      # Generate confidence rating for classifier B from an ordered probit model       
+      confidenceB[i] ~ dcat(pr_confidenceB[i, 1:nConflevels] )
+      pr_confidenceB[i,1] <- pnorm(thresh_confidence[1] , probscoresB[i, classificationB[i]]*delta_confidence , (1/sigmaB^2)*delta_confidence)
+      for(k in 2:(nConflevels-1)){
+          pr_confidenceB[i,k] <- max(0, pnorm(thresh_confidence[k] , probscoresB[i, classificationB[i]]*delta_confidence , (1/sigmaB^2)*delta_confidence)
+                             - pnorm(thresh_confidence[k-1] , probscoresB[i, classificationB[i]]*delta_confidence , (1/sigmaB^2)*delta_confidence))
+      }
+      pr_confidenceB[i, nConflevels] <- 1 - pnorm(thresh_confidence[nConflevels-1], probscoresB[i, classificationB[i]]*delta_confidence, (1/sigmaB^2)*delta_confidence)
+      
+      # Generate clarity rating for classifier B from an ordered probit model       
+      clarityB[i] ~ dcat(pr_clarityB[i, 1:nClarity] )
+      pr_clarityB[i,1] <- pnorm(thresh_clarity[1] , probscoresB[i, classificationB[i]]*delta_clarity, (1/sigmaB^2)*delta_clarity)
+      for(k in 2:(nClarity-1)){
+          pr_clarityB[i,k] <- max(0, pnorm(thresh_clarity[k] , probscoresB[i, classificationB[i]]*delta_clarity , (1/sigmaB^2)*delta_clarity)
+                             - pnorm(thresh_clarity[k-1] , probscoresB[i, classificationB[i]]*delta_clarity , (1/sigmaB^2)*delta_clarity))
+      }
+      pr_clarityB[i, nClarity] <- 1 - pnorm(thresh_clarity[nClarity-1], probscoresB[i, classificationB[i]]*delta_clarity, (1/sigmaB^2)*delta_clarity)
+      
+      # Generate reflection rating for classifier B from an ordered probit model       
+      reflectionB[i] ~ dcat(pr_reflectionB[i, 1:nReflection] )
+      pr_reflectionB[i,1] <- pnorm(thresh_reflection[1] , probscoresB[i, classificationB[i]]*delta_reflection, (1/sigmaB^2)*delta_reflection)
+      for(k in 2:(nReflection-1)){
+          pr_reflectionB[i,k] <- max(0, pnorm(thresh_reflection[k] , probscoresB[i, classificationB[i]]*delta_reflection , (1/sigmaB^2)*delta_reflection)
+                             - pnorm(thresh_reflection[k-1] , probscoresB[i, classificationB[i]]*delta_reflection, (1/sigmaB^2)*delta_reflection))
+      }
+      pr_reflectionB[i, nReflection] <- 1 - pnorm(thresh_reflection[nReflection-1], probscoresB[i, classificationB[i]]*delta_reflection, (1/sigmaB^2)*delta_reflection)
+  
     }
-    "
+    
+    # Uniform prior over labels
+    for (k in 1:L) { 
+        # Unnormalized
+        labelprob[k] <- 1 
+    }
+    
+    # Uniform prior over cutpoints for the ordered probit model
+    for ( k in 2:(nConflevels-2) ) {  # 1 and nConflevels-1 are fixed, not stochastic
+      thresh_confidence[k] ~ dnorm( k+0.5 , 1/2^2 )
+    }
+    for ( k in 2:(nConflevels-2) ) {  
+      thresh_clarity[k] ~ dnorm( k+0.5 , 1/2^2 )
+    }
+    for ( k in 2:(nConflevels-2) ) {  
+      thresh_reflection[k] ~ dnorm( k+0.5 , 1/2^2 )
+    }
+    
+    # Priors and constants 
+    muA1   ~ dnorm(0,precmu)
+    muA0   ~ dnorm(0,precmu)
+    sigmaA ~ dunif(0.01,bsigma)
+    muB1   ~ dnorm(0,precmu)
+    muB0   <- 0   
+    sigmaB <- 1
+    rho    ~ dunif(-1,1)
+    tau    <- 0.05
+    delta_confidence ~ dunif(1,bdelta)
+    delta_clarity ~ dunif(1,bdelta)
+    delta_reflection ~ dunif(1,bdelta)
+    # delta <- 1
+    precmu <- 0.01
+    bdelta <- 3
+    bsigma <- 0.1
+  }
+  "
   
   model_run<-jags(data = model_data,
                   parameters.to.save = model_params,
                   model.file = textConnection(model_code),
-                  n.iter = 1000,
-                  n.burnin = 200,
+                  n.iter = 500,
+                  n.burnin = 100,
                   n.thin = 1)
   
-  posterior_samples <- coda.samples(model_run$model, variable.names=c("truelabel"), n.iter=200)
+  posterior_samples <- coda.samples(model_run$model, variable.names=c("truelabel"), n.iter=100)
   
   infer_labels = c()
   true_labels = c()
@@ -480,68 +491,233 @@ calc_bayes_complement <- function(df, temperature, test_ratio){
   print(sum(infer_labels==true_labels) / length(true_labels))
   
   bayes_complementarity = sum(infer_labels==true_labels) / max(sum(gpt_labels==true_labels), sum(bigmodel_labels==true_labels))
-  
-  return(bayes_complementarity)
+    
+  return(list(bayes_model = model_run, bayes_complementarity = bayes_complementarity))
 }
 
-calc_bayes_complement(total_df, temperature=0.9, test_ratio=0.7)
+# calc_bayes_complement(total_df, temperature=0.9, test_ratio=0.7, seed=1)
+
+# Register the parallel backend to use multiple cores
+no_cores <- detectCores() - 1  # Use one less than the total number of cores
+registerDoParallel(cores=no_cores)
+
+# Prepare a vector of seed values
+tic()
+seed_values <- c(1, 2, 3)
+results <- foreach(seed=seed_values) %dopar% {
+  calc_bayes_complement(total_df, temperature=0.9, test_ratio=0.7, seed=seed)$bayes_complementarity
+}
+stopImplicitCluster()
+toc()
+mean(sapply(results, function(x) x))
 
 
+####### Hyperparameter tuning using Bayesian Optimization ######
+# objective_function <- function(temperature, test_ratio) {
+#   no_cores <- detectCores() - 1  # Use one less than the total number of cores
+#   registerDoParallel(cores=no_cores)
+#   
+#   seed_values <- c(1, 2, 3)
+#   results <- foreach(seed=seed_values) %dopar% {
+#     calc_bayes_complement(total_df, temperature=temperature, test_ratio=test_ratio, seed=seed)
+#   }
+#   stopImplicitCluster()
+#   
+#   list(Score = mean(sapply(results, function(x) x)))
+# }
+# 
+# bounds <- list(temperature = c(0, 3), test_ratio = c(0.5, 0.9))
+# 
+# set.seed(123) # For reproducibility
+# bayes_opt_result <- BayesianOptimization(
+#   FUN = objective_function,
+#   bounds = bounds,
+#   init_points = 10,
+#   n_iter = 20,
+#   acq = "ei",
+#   verbose = TRUE
+# )
+# # 1.053476
+# bayes_opt_result$Best_Par
 
 
-objective_function <- function(params) {
-  # Extract parameters from the input data frame
-  temperature <- as.numeric(params[1, "temperature"])
-  test_ratio <- as.numeric(params[1, "test_ratio"])
-  print(temperature)
-  print(test_ratio)
-  
-  # Assuming calc_bayes_complement is your function to optimize
-  result <- calc_bayes_complement(total_df, temperature = temperature, test_ratio = test_ratio)
-  
-  # Return the optimization result as a list with a named element 'Score'
-  # Ensure to negate the result if the objective is to minimize
-  list(Score = result)
+# best improvement of 5% at temperature=0.9, test_ratio=0.7
+opt_bayes_model = calc_bayes_complement(total_df, temperature=0.9, test_ratio=0.7, seed=1)$bayes_model
+
+############ SCORING ###########
+posterior_samples2 <- coda.samples(opt_bayes_model$model, variable.names=model_params, n.iter=100)
+
+# Extract summary statistics from posterior samples
+summary_stats <- summary(posterior_samples2)$statistics
+
+# Initialize model code with dynamic priors based on posterior summaries
+model_code_new <- "model{\n"
+
+# Generate priors dynamically
+for (param_name in rownames(summary_stats)) {
+  mean_val <- summary_stats[param_name, "Mean"]
+  sd_val <- summary_stats[param_name, "SD"]
+  if (param_name == "sigmaA") { # Handle sigmaA with a uniform distribution as an example
+    lower_bound <- max(0.00001, mean_val - 10 * sd_val) # Ensure positive and adjust as necessary
+    upper_bound <- mean_val + 10 * sd_val
+    model_code_new <- paste(model_code_new, sprintf("    %s ~ dunif(%f, %f)\n", param_name, lower_bound, upper_bound), sep="")
+  } else {
+    precision_val <- 1 / (sd_val^2)
+    model_code_new <- paste(model_code_new, sprintf("    %s ~ dnorm(%f, %f)\n", param_name, mean_val, precision_val), sep="")
+  }
 }
 
-bounds <- list(temperature = c(0, 3), test_ratio = c(0.5, 0.9))
+# Add the rest of the model structure
+rest_of_model <- "
+  for (i in 1:N) {
+    # Prior on truelabel (true label can be observed or latent)
+    truelabel[i] ~ dcat( labelprob[1:L] )
+    
+    # Set the means based on true label
+    for (k in 1:L) {
+      muA[i,k] <- ifelse( truelabel[i]==k , muA1, muA0 )
+      muB[i,k] <- ifelse( truelabel[i]==k , muB1, muB0 )         
+    }
+    
+    # Generate the correlated logit scores for each label k
+    for (k in 1:L) {
+      # JAGS does not allow partial observations for multivariate normal, so constructing a bivariate normal using normal draws
+      logitscoresA[i,k] ~ dnorm( muA[i,k] , 1 / (sigmaA*sigmaA))         
+      logitscoresB[i,k] ~ dnorm(  sigmaB * rho * ((logitscoresA[i,k]-muA[i,k])/sigmaA) + muB[i,k] , 1 / (( 1-rho*rho ) * sigmaB * sigmaB ) )                
+    }
+    
+    # Exponentiate
+    for (k in 1:L) {
+      explogitB[i,k ] = exp( logitscoresB[i,k] ); 
+    }
+    sumexplogitB[i] = sum( explogitB[i,1:L] )
+    
+    # And normalize
+    for (k in 1:L) {
+      probscoresB[i,k ] = explogitB[i,k ] / sumexplogitB[i]
+    }
+    
+    # Compute softmax scores
+    for (k in 1:L) {
+      softmaxscores[i,k] <- exp( probscoresB[i,k] / tau )
+    }
+    
+    # Generate classification for classifier B
+    classificationB[i] ~ dcat( softmaxscores[i,1:L] )	   
+    
+    # Generate confidence rating for classifier B from an ordered probit model       
+    confidenceB[i] ~ dcat(pr_confidenceB[i, 1:nConflevels] )
+    pr_confidenceB[i,1] <- pnorm(thresh_confidence[1] , probscoresB[i, classificationB[i]]*delta_confidence , (1/sigmaB^2)*delta_confidence)
+    for(k in 2:(nConflevels-1)){
+        pr_confidenceB[i,k] <- max(0, pnorm(thresh_confidence[k] , probscoresB[i, classificationB[i]]*delta_confidence , (1/sigmaB^2)*delta_confidence)
+                           - pnorm(thresh_confidence[k-1] , probscoresB[i, classificationB[i]]*delta_confidence , (1/sigmaB^2)*delta_confidence))
+    }
+    pr_confidenceB[i, nConflevels] <- 1 - pnorm(thresh_confidence[nConflevels-1], probscoresB[i, classificationB[i]]*delta_confidence, (1/sigmaB^2)*delta_confidence)
+    
+    # Generate clarity rating for classifier B from an ordered probit model       
+    clarityB[i] ~ dcat(pr_clarityB[i, 1:nClarity] )
+    pr_clarityB[i,1] <- pnorm(thresh_clarity[1] , probscoresB[i, classificationB[i]]*delta_clarity, (1/sigmaB^2)*delta_clarity)
+    for(k in 2:(nClarity-1)){
+        pr_clarityB[i,k] <- max(0, pnorm(thresh_clarity[k] , probscoresB[i, classificationB[i]]*delta_clarity , (1/sigmaB^2)*delta_clarity)
+                           - pnorm(thresh_clarity[k-1] , probscoresB[i, classificationB[i]]*delta_clarity , (1/sigmaB^2)*delta_clarity))
+    }
+    pr_clarityB[i, nClarity] <- 1 - pnorm(thresh_clarity[nClarity-1], probscoresB[i, classificationB[i]]*delta_clarity, (1/sigmaB^2)*delta_clarity)
+    
+    # Generate reflection rating for classifier B from an ordered probit model       
+    reflectionB[i] ~ dcat(pr_reflectionB[i, 1:nReflection] )
+    pr_reflectionB[i,1] <- pnorm(thresh_reflection[1] , probscoresB[i, classificationB[i]]*delta_reflection, (1/sigmaB^2)*delta_reflection)
+    for(k in 2:(nReflection-1)){
+        pr_reflectionB[i,k] <- max(0, pnorm(thresh_reflection[k] , probscoresB[i, classificationB[i]]*delta_reflection , (1/sigmaB^2)*delta_reflection)
+                           - pnorm(thresh_reflection[k-1] , probscoresB[i, classificationB[i]]*delta_reflection, (1/sigmaB^2)*delta_reflection))
+    }
+    pr_reflectionB[i, nReflection] <- 1 - pnorm(thresh_reflection[nReflection-1], probscoresB[i, classificationB[i]]*delta_reflection, (1/sigmaB^2)*delta_reflection)
 
-set.seed(123) # For reproducibility
-bayes_opt_result <- BayesianOptimization(
-  FUN = objective_function,
-  bounds = bounds,
-  init_points = 5,
-  n_iter = 20,
-  acq = "ei",
-  verbose = TRUE
-)
+  }
+  
+  # Uniform prior over labels
+  for (k in 1:L) { 
+      # Unnormalized
+      labelprob[k] <- 1 
+  }
+  
+  # Uniform prior over cutpoints for the ordered probit model
+  for ( k in 2:(nConflevels-2) ) {  # 1 and nConflevels-1 are fixed, not stochastic
+    thresh_confidence[k] ~ dnorm( k+0.5 , 1/2^2 )
+  }
+  for ( k in 2:(nConflevels-2) ) {  
+    thresh_clarity[k] ~ dnorm( k+0.5 , 1/2^2 )
+  }
+  for ( k in 2:(nConflevels-2) ) {  
+    thresh_reflection[k] ~ dnorm( k+0.5 , 1/2^2 )
+  }
+  
+  # add constants
+  muB0   <- 0   
+  sigmaB <- 1
+  tau    <- 0.05
+  precmu <- 0.01
+  bdelta <- 3
+  bsigma <- 0.1
+}"
 
-# Test the objective function with a dummy data frame
-test_params <- data.frame(temperature = 1, test_ratio = 0.7)
-print(objective_function(test_params))
+# Complete the new model code
+model_code_new <- paste(model_code_new, rest_of_model, sep="\n")
+
+# Print or use the dynamically generated model code
+cat(model_code_new)
+
+bayes_pred = c()
+for(i in 1:nrow(total_df)){
+  # Set up the data
+  test_logitscoresA = total_df[i, unique_lables]
+  test_classificationB = total_df$gpt_product_type_encoded[i]
+  test_confidenceB = total_df$gpt_product_type_confidence[i]
+  test_clarityB = total_df$gpt_image_clarity[i]
+  test_reflectionB = total_df$gpt_image_reflection[i]
+  
+  model_data_new <- list(N = 1, 
+                         L = length(unique_lables), 
+                         nConflevels = nConflevels,
+                         nClarity = nClarity,
+                         nReflection = nReflection,
+                         logitscoresA = test_logitscoresA, 
+                         classificationB = test_classificationB, 
+                         confidenceB = test_confidenceB,
+                         clarityB = test_clarityB,
+                         reflectionB = test_reflectionB,
+                         truelabel = NA,
+                         thresh_confidence = thresh_confidence,
+                         thresh_clarity = thresh_clarity,
+                         thresh_reflection = thresh_reflection)
+  
+  # prediction for new data
+  model_run_new <- jags(data = model_data_new,
+                        model.file = textConnection(model_code_new),  # Use the dynamically generated model code if applicable
+                        n.chains = 3,
+                        n.iter = 500,
+                        n.burnin = 100,
+                        n.thin = 1,
+                        parameters.to.save = c("truelabel"))
+  
+  # Extract posterior samples for inference
+  posterior_samples_new <- coda.samples(model_run_new$model, variable.names = c("truelabel"), n.iter = 100)
+  
+  bayes_pred = c(bayes_pred, Mode(posterior_samples_new[[1]]))
+}
+
+sum(bayes_pred == total_df$true_label_encoded_raw) / nrow(total_df)
+sum(total_df$prediction_bigmodel_encoded == total_df$true_label_encoded_raw) / nrow(total_df)
+sum(total_df$gpt_product_type_encoded == total_df$true_label_encoded_raw) / nrow(total_df)
+
+total_df$bayes_pred_encoded = bayes_pred
+# convert encoded predictions to actual names
+total_df = total_df %>% 
+  left_join(label_idx_df, by=c("bayes_pred_encoded"="label_idx")) 
+total_df = total_df %>% 
+  mutate(bayes_pred = original_label) %>% 
+  select(-original_label)
 
 
-print(bayes_opt_result$Best_Par)
-
-
-
-              
+# write.csv(total_df, "total_df_for_product.csv",row.names = F)
              
             
-                     
-      
-  
-      
-          
-                         
-                    
-                              
-                                      
-                             
-                      
-                      
-                      
-            
-                                     
-                     
-     

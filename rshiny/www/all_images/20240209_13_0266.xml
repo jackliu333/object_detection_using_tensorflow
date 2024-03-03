@@ -1,0 +1,26 @@
+<annotation>
+	<folder>Pasta_500-599g_Halal_NonHealthy</folder>
+	<filename>20240209_13_0266.jpg</filename>
+	<path>C:\Users\Mio\Downloads\image_folder_template\Pasta_500-599g_Halal_NonHealthy\20240209_13_0266.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1920</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>Pasta_500-599g_Halal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>730</xmin>
+			<ymin>3</ymin>
+			<xmax>1402</xmax>
+			<ymax>600</ymax>
+		</bndbox>
+	</object>
+</annotation>

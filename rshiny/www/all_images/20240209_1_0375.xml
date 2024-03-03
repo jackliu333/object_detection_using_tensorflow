@@ -1,0 +1,26 @@
+<annotation>
+	<folder>PotatoChipsKeropok_0-99g_Halal_NonHealthy</folder>
+	<filename>20240209_1_0375.jpg</filename>
+	<path>C:\Users\Mio\Downloads\image_folder_template\PotatoChipsKeropok_0-99g_Halal_NonHealthy\20240209_1_0375.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1920</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>PotatoChipsKeropok_0-99g_Halal_NonHealthy</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>513</xmin>
+			<ymin>79</ymin>
+			<xmax>922</xmax>
+			<ymax>478</ymax>
+		</bndbox>
+	</object>
+</annotation>
