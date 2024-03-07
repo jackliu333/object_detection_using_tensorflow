@@ -5,7 +5,6 @@ library(tictoc)
 library(foreach)
 library(doParallel)
 
-
 # Read CSV files
 all_imgs_results_gpt <- read.csv("GPT_model/chatgpt_prediction_v2 newlabel.csv")
 all_imgs_results_big_model <- read.csv("../../NN_model/model_weights/traindatawithin1/all_imgs_results_big_model.csv")

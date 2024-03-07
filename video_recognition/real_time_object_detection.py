@@ -38,7 +38,8 @@ CONFIGS = {
     "SINGLE_FRAME_TOP_PRED": False, # showing top prediction for each label;
     "SINGLE_FRAME_TOP_TWO_PRED": False, # showing the best one based on combinations of top two predictions observed within training set
     "MULTIPLE_FRAME3": False,
-    "RECOGNITION_ENABLED": False
+    "RECOGNITION_ENABLED": False,
+    "MODEL_PATH": 'traindatawithin1'
 }
 
 # define existing categories
@@ -47,10 +48,10 @@ all_categories = list(annotations['label'].unique())
 
 # load label encoder 
 def load_label_encoder():
-    le_prdtype = pickle.loads(open("../NN_model/model_weights/traindatawithin1/le_prdtype.pickle", "rb").read())
-    le_weight = pickle.loads(open("../NN_model/model_weights/traindatawithin1/le_weight.pickle", "rb").read())
-    le_halal = pickle.loads(open("../NN_model/model_weights/traindatawithin1/le_halal.pickle", "rb").read())
-    le_healthy = pickle.loads(open("../NN_model/model_weights/traindatawithin1/le_healthy.pickle", "rb").read())
+    le_prdtype = pickle.loads(open(os.path.join('../NN_model/model_weights', CONFIGS['MODEL_PATH'], 'le_prdtype.pickle'), "rb").read())
+    le_weight = pickle.loads(open(os.path.join('../NN_model/model_weights', CONFIGS['MODEL_PATH'], 'le_weight.pickle'), "rb").read())
+    le_halal = pickle.loads(open(os.path.join('../NN_model/model_weights', CONFIGS['MODEL_PATH'], 'le_halal.pickle'), "rb").read())
+    le_healthy = pickle.loads(open(os.path.join('../NN_model/model_weights', CONFIGS['MODEL_PATH'], 'le_healthy.pickle'), "rb").read())
     
     return le_prdtype, le_weight, le_halal, le_healthy
 
@@ -59,7 +60,7 @@ label_encoders = [le_prdtype, le_weight, le_halal, le_healthy]
 # print(le_prdtype.classes_)
 
 # get prediction label names for product type
-tmp_df = pd.read_csv("../NN_model/model_weights/traindatawithin1/all_imgs_results_big_model.csv")
+tmp_df = pd.read_csv(os.path.join('../NN_model/model_weights', CONFIGS['MODEL_PATH'], 'all_imgs_results_big_model.csv'))
 prdtype_colnames = tmp_df.filter(like='ProductType', axis=1).columns.tolist()
 # print(len(prdtype_colnames))
 
@@ -103,7 +104,7 @@ def load_model():
         num_classes_healthy=num_classes_healthy
     )
 
-    model_path = '../NN_model/model_weights/traindatawithin1/multi_head_model.pth'
+    model_path = os.path.join('../NN_model/model_weights', CONFIGS['MODEL_PATH'], 'multi_head_model.pth')
     # print("test1")
     if os.path.exists(model_path):
         custom_resnet_model.load_state_dict(torch.load(model_path, map_location=CONFIGS['DEVICE']))
