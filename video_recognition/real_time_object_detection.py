@@ -39,7 +39,7 @@ CONFIGS = {
     "SINGLE_FRAME_TOP_TWO_PRED": False, # showing the best one based on combinations of top two predictions observed within training set
     "MULTIPLE_FRAME3": False,
     "RECOGNITION_ENABLED": False,
-    "MODEL_PATH": 'traindatawithin1'
+    "MODEL_PATH": 'trainingdataAll'
 }
 
 # define existing categories
@@ -60,7 +60,7 @@ label_encoders = [le_prdtype, le_weight, le_halal, le_healthy]
 # print(le_prdtype.classes_)
 
 # get prediction label names for product type
-tmp_df = pd.read_csv(os.path.join('../NN_model/model_weights', CONFIGS['MODEL_PATH'], 'all_imgs_results_big_model.csv'))
+tmp_df = pd.read_csv(os.path.join('../NN_model/model_weights', CONFIGS['MODEL_PATH'], 'main_imgs_results_big_model.csv'))
 prdtype_colnames = tmp_df.filter(like='ProductType', axis=1).columns.tolist()
 # print(len(prdtype_colnames))
 
@@ -245,27 +245,27 @@ with open('/Users/liupeng/Desktop/Research/api.txt', 'r') as file:
     api_key = file.read()
 
 def gpt_scoring(img, testflag=True):
-    if testflag:
-        data = {
-            'product_type': ['Sugar'],
-            'weight': ['300-399g'],
-            'halal': ['Halal'],
-            'health': ['NonHealthy'],
-            'image_reflection': ['Medium'],
-            'image_clarity': ['High'],
-            'product_type_confidence': ['High'],
-            'weight_confidence': ['High'],
-            'halal_confidence': ['Medium'],
-            'health_confidence': ['High']
+    test_df = {
+            'product_type': ['Unknown'],
+            'weight': ['Unknown'],
+            'halal': ['Unknown'],
+            'health': ['Unknown'],
+            'image_reflection': ['Unknown'],
+            'image_clarity': ['Unknown'],
+            'product_type_confidence': ['Unknown'],
+            'weight_confidence': ['Unknown'],
+            'halal_confidence': ['Unknown'],
+            'health_confidence': ['Unknown']
         }
 
-        # Creating the DataFrame
-        df = pd.DataFrame(data)
-        content = "gpt test flag"
+    # Creating the DataFrame
+    test_df = pd.DataFrame(test_df)
+    test_content = "Unkonwn"
 
+    if testflag:
         time.sleep(2)
 
-        return df, content
+        return test_df, test_content
 
     base64_image = encode_image_array(img)
 
@@ -394,7 +394,15 @@ def gpt_scoring(img, testflag=True):
             }
 
     response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
-    content = response.json()['choices'][0]['message']['content']
+    # content = response.json()['choices'][0]['message']['content']
+
+    try:
+        # Attempt to access the data that may cause a KeyError
+        content = response.json()['choices'][0]['message']['content']
+    except KeyError as e:
+        # Handle the error: for example, log it, assign a default value, etc.
+        print(f"KeyError occurred: {e}")
+        return test_df, test_content
 
     response = requests.post("https://api.openai.com/v1/chat/completions", headers=headers, json=payload)
 
