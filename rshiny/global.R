@@ -41,6 +41,31 @@ for (element in elements) {
 }
 
 
+write.csv(data.frame(all_prdtypes), 'all_prdtypes.csv', row.names = FALSE)
+
+
+# Load necessary library
+library(fs)
+
+# Specify the source file and the parent directory
+source_file <- "error_track_template.xlsx"
+parent_directory <- "folder_template"
+
+# List all subdirectories within the parent directory
+# Set recursive = FALSE if you only want immediate subdirectories
+subdirectories <- fs::dir_ls(parent_directory, recurse = TRUE, type = "directory")
+
+# Copy the file to each subdirectory
+for (subdir in subdirectories) {
+  # Construct the destination path
+  dest_file <- file.path(subdir, basename(source_file))
+  
+  # Copy the file
+  file.copy(source_file, dest_file)
+  
+  # Optional: Print a message for confirmation
+  cat("Copied to:", dest_file, "\n")
+}
 
 
 # length(unique(df$label2[df$tag != "test"]))
