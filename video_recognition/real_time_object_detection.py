@@ -17,7 +17,6 @@ import os
 import base64
 import requests
 import sys
-import pandas as pd
 from openai import OpenAI
 import time
 import subprocess
