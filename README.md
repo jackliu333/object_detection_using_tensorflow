@@ -71,8 +71,7 @@ Implemented in R via JAGS (`rjags`). The active script is `bayesian_model/v1/wor
 
 ```bibtex
 @inproceedings{liu2026generalizing,
-  title     = {Generalizing {Bayesian} {Human--AI} Collaboration:
-               Theory and Application in Data-Scarce Environments},
+  title     = {Generalizing Bayesian Human--AI Collaboration: Theory and Application in Data-Scarce Environments},
   author    = {Liu, Peng and Sun, Hailong and Teo, Chung-Piaw and Chou, Mabel},
   booktitle = {Proceedings of the 35th International Joint Conference on
                Artificial Intelligence (IJCAI--ECAI)},
